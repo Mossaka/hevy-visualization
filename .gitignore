@@ -33,7 +33,6 @@ instance/
 flask_session/
 
 # Data files
-*.csv
 *.xlsx
 *.xls
 *.db

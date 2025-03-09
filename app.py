@@ -511,5 +511,8 @@ if __name__ == '__main__':
     # Load data on startup
     df, category_df = load_data()
     
-    # Run the app on port 8000 to avoid conflicts with AirPlay on macOS
-    app.run(host='0.0.0.0', port=8000, debug=True) 
+    # Get port from environment variable or default to 8000
+    port = int(os.environ.get('PORT', 8000))
+    
+    # Run the app
+    app.run(host='0.0.0.0', port=port, debug=False) 

@@ -10,6 +10,17 @@ html {
     min-height: 320px;
 }
 
+/* Thin bars chart styling */
+.thin-bars {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+/* Make chart bars thinner */
+.thin-bars .plotly .bars .point {
+    width: 15px !important;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
     width: 8px;

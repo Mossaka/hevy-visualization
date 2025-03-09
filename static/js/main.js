@@ -395,21 +395,35 @@ function createMonthlyTopExercisesChart(data) {
                 color: '#fff',
                 width: 1
             }
-        }
+        },
+        width: 0.5, // Make bars thinner
+        bargap: 0.3  // Add more gap between bars
     };
     
     const layout = {
         margin: { t: 10, r: 10, l: 70, b: 120 },
         xaxis: {
             tickangle: -45,
-            automargin: true
+            automargin: true,
+            tickfont: {
+                size: 10 // Smaller font for x-axis labels
+            }
         },
         yaxis: {
             title: 'Total Volume (Weight × Reps)'
-        }
+        },
+        autosize: true,
+        height: 320,
+        barmode: 'group',
+        bargap: 0.3
     };
     
-    Plotly.newPlot('monthly-top-exercises-chart', [trace], layout, {responsive: true});
+    const config = {
+        responsive: true,
+        displayModeBar: false
+    };
+    
+    Plotly.newPlot('monthly-top-exercises-chart', [trace], layout, config);
 }
 
 // Create monthly volume chart

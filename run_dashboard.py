@@ -300,8 +300,15 @@ def main():
                     
                     print("Updated app.py to use port 8000")
                     
-                    # Start the Flask app on port 8000
-                    command = f"python app.py"
+                    # Check if we're in production environment (Render)
+                    if 'PORT' in os.environ and os.environ.get('FLASK_ENV') == 'production':
+                        # Use gunicorn in production
+                        port = os.environ.get('PORT', '10000')
+                        command = f"gunicorn app:app --bind=0.0.0.0:{port} --workers=4 --preload"
+                    else:
+                        # Use Flask development server locally
+                        command = f"python app.py"
+                    
                     process = subprocess.Popen(
                         command,
                         shell=True,

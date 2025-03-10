@@ -511,8 +511,9 @@ if __name__ == '__main__':
     # Load data on startup
     df, category_df = load_data()
     
+    # Only run the dev server when executed directly, not when run by gunicorn
     # Get port from environment variable or default to 8000
     port = int(os.environ.get('PORT', 8000))
     
-    # Run the app
+    # This will only run when file is executed directly, not through gunicorn
     app.run(host='0.0.0.0', port=port, debug=False) 

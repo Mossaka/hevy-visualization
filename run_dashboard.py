@@ -88,49 +88,6 @@ def copy_plots_to_static():
     
     print("\nAll plots copied to static/images directory.")
 
-def update_navbar():
-    """Update the navbar in index.html to include the static images section."""
-    print_header("Updating navbar in index.html")
-    
-    try:
-        # Read the current index.html file
-        with open('templates/index.html', 'r') as file:
-            content = file.read()
-        
-        # Check if the static images link already exists
-        if 'href="#static-images"' in content:
-            print("Static images link already exists in navbar")
-            return True
-        
-        # Add the static images link to the navbar
-        navbar_links = """
-                        <a href="#workout-balance" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                            Workout Balance
-                        </a>
-                        <a href="#static-images" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                            Static Images
-                        </a>"""
-        
-        # Replace the existing navbar links
-        new_content = content.replace(
-            """
-                        <a href="#workout-balance" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                            Workout Balance
-                        </a>""", 
-            navbar_links
-        )
-        
-        # Write the updated content back to the file
-        with open('templates/index.html', 'w') as file:
-            file.write(new_content)
-        
-        print("Successfully updated navbar in index.html.")
-        return True
-    
-    except Exception as e:
-        print(f"Error updating navbar in index.html: {e}")
-        return False
-
 def main():
     """Main function to run all analysis and start the web dashboard."""
     start_time = datetime.now()
@@ -150,12 +107,6 @@ def main():
     if not run_command("python generate_report.py", "Generating HTML Report"):
         print("HTML report generation failed. Exiting.")
         return
-    
-    # Copy plots to static directory
-    copy_plots_to_static()
-    
-    # Update navbar
-    update_navbar()
     
     # Calculate elapsed time
     elapsed_time = datetime.now() - start_time

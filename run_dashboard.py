@@ -164,7 +164,7 @@ def main():
                     if is_production:
                         # Use gunicorn in production
                         port = os.environ.get('PORT', '10000')
-                        command = f"gunicorn app:app --bind=0.0.0.0:{port}="
+                        command = f"gunicorn app:app --bind=0.0.0.0:{port}"
                         print(f"Starting server in PRODUCTION mode on port {port}")
                     else:
                         # Use Flask development server locally

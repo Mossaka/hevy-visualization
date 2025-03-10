@@ -88,96 +88,6 @@ def copy_plots_to_static():
     
     print("\nAll plots copied to static/images directory.")
 
-def update_index_html():
-    """Update the index.html file to include static images."""
-    print_header("Updating index.html to include static images")
-    
-    # Create a new section in the HTML file to display static images
-    static_images_section = """
-    <!-- Static Images Section -->
-    <section id="static-images" class="mb-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">Static Visualizations</h2>
-        
-        <div class="bg-white shadow rounded-lg p-6">
-            <h3 class="text-lg font-medium text-gray-900 mb-4">Basic Analysis</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                    <h4 class="text-md font-medium text-gray-700 mb-2">Exercise Frequency</h4>
-                    <img src="{{ url_for('static', filename='images/exercise_frequency.png') }}" alt="Exercise Frequency" class="w-full rounded-lg">
-                </div>
-                <div>
-                    <h4 class="text-md font-medium text-gray-700 mb-2">Exercise Volume</h4>
-                    <img src="{{ url_for('static', filename='images/exercise_volume.png') }}" alt="Exercise Volume" class="w-full rounded-lg">
-                </div>
-                <div>
-                    <h4 class="text-md font-medium text-gray-700 mb-2">Weight Distribution</h4>
-                    <img src="{{ url_for('static', filename='images/weight_distribution.png') }}" alt="Weight Distribution" class="w-full rounded-lg">
-                </div>
-                <div>
-                    <h4 class="text-md font-medium text-gray-700 mb-2">Reps Distribution</h4>
-                    <img src="{{ url_for('static', filename='images/reps_distribution.png') }}" alt="Reps Distribution" class="w-full rounded-lg">
-                </div>
-                <div class="md:col-span-2">
-                    <h4 class="text-md font-medium text-gray-700 mb-2">Exercise Set Heatmap</h4>
-                    <img src="{{ url_for('static', filename='images/exercise_set_heatmap.png') }}" alt="Exercise Set Heatmap" class="w-full rounded-lg">
-                </div>
-            </div>
-        </div>
-        
-        <div class="mt-6 bg-white shadow rounded-lg p-6">
-            <h3 class="text-lg font-medium text-gray-900 mb-4">Category Analysis</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                    <h4 class="text-md font-medium text-gray-700 mb-2">Category Distribution</h4>
-                    <img src="{{ url_for('static', filename='images/category_distribution.png') }}" alt="Category Distribution" class="w-full rounded-lg">
-                </div>
-                <div>
-                    <h4 class="text-md font-medium text-gray-700 mb-2">Category Volume</h4>
-                    <img src="{{ url_for('static', filename='images/category_volume.png') }}" alt="Category Volume" class="w-full rounded-lg">
-                </div>
-                <div>
-                    <h4 class="text-md font-medium text-gray-700 mb-2">Workout Balance (Pie)</h4>
-                    <img src="{{ url_for('static', filename='images/workout_balance_pie.png') }}" alt="Workout Balance Pie" class="w-full rounded-lg">
-                </div>
-                <div>
-                    <h4 class="text-md font-medium text-gray-700 mb-2">Workout Balance (Bar)</h4>
-                    <img src="{{ url_for('static', filename='images/workout_balance_bar.png') }}" alt="Workout Balance Bar" class="w-full rounded-lg">
-                </div>
-            </div>
-        </div>
-        
-        <div class="mt-6">
-            <a href="{{ url_for('static', filename='../report/workout_analysis.html') }}" target="_blank" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
-                View Full HTML Report
-            </a>
-        </div>
-    </section>
-    """
-    
-    try:
-        # Read the current index.html file
-        with open('templates/index.html', 'r') as file:
-            content = file.read()
-        
-        # Check if the static images section already exists
-        if "<!-- Static Images Section -->" in content:
-            print("Static images section already exists in index.html")
-            return True
-        
-        # Insert the static images section before the footer
-        new_content = content.replace("<!-- Footer -->", f"{static_images_section}\n\n    <!-- Footer -->")
-        
-        # Write the updated content back to the file
-        with open('templates/index.html', 'w') as file:
-            file.write(new_content)
-        
-        print("Successfully updated index.html with static images section.")
-        return True
-    
-    except Exception as e:
-        print(f"Error updating index.html: {e}")
-        return False
-
 def update_navbar():
     """Update the navbar in index.html to include the static images section."""
     print_header("Updating navbar in index.html")
@@ -243,9 +153,6 @@ def main():
     
     # Copy plots to static directory
     copy_plots_to_static()
-    
-    # Update index.html
-    update_index_html()
     
     # Update navbar
     update_navbar()

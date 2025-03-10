@@ -272,7 +272,7 @@ def analyze_intensity(df):
 def main():
     """Main function to run the category analysis."""
     # Load data
-    file_path = 'data/March 8, 2025.csv'
+    file_path = 'data/March 10, 2025.csv'
     df = load_data(file_path)
     
     # Preprocess data

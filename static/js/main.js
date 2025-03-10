@@ -21,6 +21,11 @@ const chartColors = [
 let availableMonths = [];
 let currentMonthIndex = 0;
 
+// Global variables for workout date navigation
+let availableWorkoutDates = [];
+let currentDateIndex = 0;
+let currentDaysCount = 3;
+
 // Format numbers with commas
 function formatNumber(num) {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -40,6 +45,12 @@ function formatDuration(minutes) {
 
 // Initialize the dashboard
 document.addEventListener('DOMContentLoaded', function() {
+    // Load workout dates for navigation
+    loadWorkoutDates();
+    
+    // Load recent workouts data
+    loadRecentWorkouts();
+    
     // Load summary data
     loadSummaryData();
     
@@ -49,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load monthly summary data
     loadMonthlySummary();
     
-    // Load big three analysis data
+    // Load Big Three Lifts data
     loadBigThreeAnalysis();
     
     // Load exercise data
@@ -277,31 +288,249 @@ function navigateToNextMonth() {
     }
 }
 
+// Load and display the most recent workouts
+function loadRecentWorkouts(daysCount = null, dateIndex = null) {
+    // Update days count if provided
+    if (daysCount !== null) {
+        currentDaysCount = daysCount;
+    }
+    
+    // Update date index if provided
+    if (dateIndex !== null) {
+        currentDateIndex = dateIndex;
+    }
+    
+    // Show loading state
+    const container = document.getElementById('recent-workouts-container');
+    container.innerHTML = `
+        <div class="col-span-3 flex justify-center items-center p-8">
+            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
+            <span class="ml-2 text-gray-600">Loading workouts...</span>
+        </div>
+    `;
+    
+    // Build the URL with query parameters
+    const url = `/api/recent_workouts?days=${currentDaysCount}&index=${currentDateIndex}`;
+    
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            console.log('Recent workouts data:', data);
+            
+            // Clear the loading placeholders
+            container.innerHTML = '';
+            
+            if (!data || data.length === 0 || data.error) {
+                container.innerHTML = `
+                    <div class="col-span-3 bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center">
+                        <p class="text-gray-500">No workout data available for this date range</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Iterate through each workout day
+            data.forEach(day => {
+                const dayCard = document.createElement('div');
+                dayCard.className = 'bg-white p-4 rounded-lg shadow-sm border border-gray-200';
+                
+                let workoutList = '';
+                
+                // Add content for each workout
+                day.workouts.forEach(workout => {
+                    const exerciseList = workout.exercises.map(ex => {
+                        // Create a detailed table for each set
+                        const setDetails = ex.set_details.map((set, index) => {
+                            // Style based on whether this is a PR
+                            const prClass = set.is_pr ? 'bg-red-50 font-medium' : '';
+                            
+                            // PR badge
+                            const isPR = set.is_pr ? 
+                                '<span class="ml-1 text-xs font-medium bg-red-100 text-red-800 px-1.5 py-0.5 rounded">PR</span>' : 
+                                '';
+                            
+                            // Set type display
+                            const setTypeClass = set.set_type === 'warmup' ? 'text-gray-500 italic' : 'text-gray-900';
+                            const setTypeLabel = set.set_type === 'warmup' ? ' (warmup)' : '';
+                            
+                            const notes = set.notes ? `<div class="text-xs text-gray-500">${set.notes}</div>` : '';
+                            const weightDisplay = set.weight > 0 ? `${set.weight} lbs` : 'Bodyweight';
+                            
+                            return `
+                                <tr class="border-t border-gray-100 ${prClass}">
+                                    <td class="py-1 pr-2 text-xs ${setTypeClass}">${index + 1}${setTypeLabel}</td>
+                                    <td class="py-1 px-2 text-xs ${setTypeClass}">${set.reps}</td>
+                                    <td class="py-1 px-2 text-xs ${setTypeClass}">${weightDisplay}${isPR}</td>
+                                </tr>
+                                ${notes ? `<tr><td colspan="3" class="pb-1">${notes}</td></tr>` : ''}
+                            `;
+                        }).join('');
+                        
+                        return `
+                            <li class="mb-3">
+                                <div class="font-medium text-sm">${ex.name}</div>
+                                <div class="text-xs text-gray-500 mb-1">
+                                    ${ex.sets} sets, ${ex.total_reps} total reps, ${ex.avg_weight > 0 ? `${ex.avg_weight} lbs avg` : 'Bodyweight'}
+                                </div>
+                                <table class="w-full text-left">
+                                    <thead>
+                                        <tr class="text-xs text-gray-500">
+                                            <th class="py-1 pr-2">Set</th>
+                                            <th class="py-1 px-2">Reps</th>
+                                            <th class="py-1 px-2">Weight</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        ${setDetails}
+                                    </tbody>
+                                </table>
+                            </li>
+                        `;
+                    }).join('');
+                    
+                    workoutList += `
+                        <div class="mb-4">
+                            <h4 class="text-md font-semibold text-gray-800">${workout.name}</h4>
+                            <p class="text-xs text-gray-500 mb-2">${workout.exercise_count} exercises, ${formatNumber(Math.round(workout.volume))} lbs total</p>
+                            <ul class="ml-2">
+                                ${exerciseList}
+                            </ul>
+                        </div>
+                    `;
+                });
+                
+                dayCard.innerHTML = `
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">${day.date}</h3>
+                    ${workoutList}
+                `;
+                
+                container.appendChild(dayCard);
+            });
+            
+            // Update the date navigation text
+            updateWorkoutDateNavigation();
+        })
+        .catch(error => {
+            console.error('Error loading recent workouts:', error);
+            const container = document.getElementById('recent-workouts-container');
+            container.innerHTML = `
+                <div class="col-span-3 bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center">
+                    <p class="text-red-500">Failed to load workout data</p>
+                    <p class="text-sm text-gray-500 mt-2">Error: ${error.message}</p>
+                </div>
+            `;
+        });
+}
+
+// Load all available workout dates
+function loadWorkoutDates() {
+    fetch('/api/workout_dates')
+        .then(response => response.json())
+        .then(data => {
+            console.log('Workout dates:', data);
+            if (data && data.dates) {
+                availableWorkoutDates = data.dates;
+                // Reset to showing the most recent dates
+                currentDateIndex = 0;
+                updateWorkoutDateNavigation();
+            }
+        })
+        .catch(error => {
+            console.error('Error loading workout dates:', error);
+        });
+}
+
+// Update the workout date navigation text and button states
+function updateWorkoutDateNavigation() {
+    const prevBtn = document.getElementById('prev-date-btn');
+    const nextBtn = document.getElementById('next-date-btn');
+    const display = document.getElementById('current-date-display');
+    
+    if (currentDateIndex === 0) {
+        display.textContent = 'Latest Workouts';
+    } else {
+        const startIdx = currentDateIndex * currentDaysCount;
+        const endIdx = Math.min(startIdx + currentDaysCount, availableWorkoutDates.length);
+        if (startIdx < availableWorkoutDates.length) {
+            const startDate = availableWorkoutDates[startIdx];
+            const endDate = availableWorkoutDates[endIdx - 1] || startDate;
+            display.textContent = `${endDate} to ${startDate}`;
+        } else {
+            display.textContent = 'No more workouts';
+        }
+    }
+    
+    // Update button states
+    prevBtn.disabled = currentDateIndex <= 0;
+    prevBtn.classList.toggle('text-gray-300', currentDateIndex <= 0);
+    
+    const hasMoreDates = (currentDateIndex + 1) * currentDaysCount < availableWorkoutDates.length;
+    nextBtn.disabled = !hasMoreDates;
+    nextBtn.classList.toggle('text-gray-300', !hasMoreDates);
+}
+
+// Load a specific range of workout dates
+function loadCustomWorkoutRange() {
+    loadRecentWorkouts(currentDaysCount, currentDateIndex);
+}
+
+// Navigate to previous set of workout dates
+function navigateToPreviousWorkoutDates() {
+    if (currentDateIndex > 0) {
+        currentDateIndex--;
+        loadCustomWorkoutRange();
+    }
+}
+
+// Navigate to next set of workout dates
+function navigateToNextWorkoutDates() {
+    const maxIndex = Math.ceil(availableWorkoutDates.length / currentDaysCount) - 1;
+    if (currentDateIndex < maxIndex) {
+        currentDateIndex++;
+        loadCustomWorkoutRange();
+    }
+}
+
 // Set up event listeners
 function setupEventListeners() {
-    // Exercise select change event
-    document.getElementById('exercise-select').addEventListener('change', function() {
-        const exercise = this.value;
-        if (exercise) {
-            loadExerciseDetails(exercise);
-        } else {
-            document.getElementById('exercise-details').classList.add('hidden');
-        }
-    });
-    
-    // Category select change event
-    document.getElementById('category-select').addEventListener('change', function() {
-        const category = this.value;
-        if (category) {
-            loadCategoryExercises(category);
-        } else {
-            document.getElementById('category-exercises').classList.add('hidden');
-        }
-    });
-    
-    // Month navigation buttons
+    // Monthly navigation
     document.getElementById('prev-month-btn').addEventListener('click', navigateToPreviousMonth);
     document.getElementById('next-month-btn').addEventListener('click', navigateToNextMonth);
+    
+    // Workout date navigation
+    document.getElementById('prev-date-btn').addEventListener('click', navigateToPreviousWorkoutDates);
+    document.getElementById('next-date-btn').addEventListener('click', navigateToNextWorkoutDates);
+    
+    // Days count selector
+    document.getElementById('workout-days-count').addEventListener('change', function() {
+        const selectedValue = parseInt(this.value);
+        currentDateIndex = 0; // Reset to first page
+        loadRecentWorkouts(selectedValue);
+    });
+    
+    // Exercise selection
+    const exerciseSelect = document.getElementById('exercise-select');
+    if (exerciseSelect) {
+        exerciseSelect.addEventListener('change', function() {
+            if (this.value) {
+                loadExerciseDetails(this.value);
+            } else {
+                document.getElementById('exercise-details').classList.add('hidden');
+            }
+        });
+    }
+    
+    // Category selection
+    const categorySelect = document.getElementById('category-select');
+    if (categorySelect) {
+        categorySelect.addEventListener('change', function() {
+            if (this.value) {
+                loadCategoryExercises(this.value);
+            } else {
+                document.getElementById('category-exercises').classList.add('hidden');
+            }
+        });
+    }
 }
 
 // Load exercise details

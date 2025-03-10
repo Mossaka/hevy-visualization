@@ -22,7 +22,7 @@ def load_data():
     global df, category_df
     
     # Load data
-    file_path = 'data/March 8, 2025.csv'
+    file_path = 'data/March 10, 2025.csv'
     df = analyze_workout.load_data(file_path)
     
     # Preprocess data
@@ -506,6 +506,145 @@ def get_workout_balance():
     
     data = [{"category": cat, "percentage": float(pct)} for cat, pct in category_percentage.items()]
     return jsonify(data)
+
+@app.route('/api/recent_workouts')
+def get_recent_workouts():
+    """Get workouts for a specific date range."""
+    if df is None:
+        return jsonify({"error": "No data loaded"})
+    
+    # Check if a specific number of days is requested
+    days_count = request.args.get('days', '3')
+    try:
+        days_count = int(days_count)
+    except ValueError:
+        days_count = 3
+    
+    # Check if a specific date index is requested
+    date_index = request.args.get('index', '0')
+    try:
+        date_index = int(date_index)
+    except ValueError:
+        date_index = 0
+    
+    # Get unique workout days (dates)
+    workout_dates = sorted(df['date'].unique(), reverse=True)
+    
+    # Calculate the range of dates to show based on index and count
+    start_idx = date_index * days_count
+    end_idx = min(start_idx + days_count, len(workout_dates))
+    
+    # If start index is beyond available dates, return empty
+    if start_idx >= len(workout_dates):
+        return jsonify([])
+    
+    # Get the dates for the requested range
+    selected_dates = workout_dates[start_idx:end_idx]
+    
+    # Calculate the maximum weight for each exercise across the entire dataset
+    # Only consider "normal" sets, not warmups
+    max_weights = {}
+    for exercise in df['exercise_title'].unique():
+        exercise_data = df[df['exercise_title'] == exercise]
+        normal_sets = exercise_data[exercise_data['set_type'] == 'normal']
+        if len(normal_sets) > 0:
+            max_weights[exercise] = normal_sets['weight_lbs'].max()
+        else:
+            max_weights[exercise] = 0
+    
+    result = []
+    for date in selected_dates:
+        # Filter data for this date
+        day_data = df[df['date'] == date]
+        
+        # Get unique workout names for this day
+        workouts = day_data['title'].unique()
+        
+        # Get exercises for each workout
+        workout_details = []
+        for workout in workouts:
+            workout_exercises = day_data[day_data['title'] == workout]['exercise_title'].unique()
+            
+            # Calculate total volume for this workout
+            workout_volume = day_data[day_data['title'] == workout]['volume'].sum()
+            
+            # Get exercise details
+            exercise_details = []
+            for exercise in workout_exercises:
+                exercise_data = day_data[(day_data['title'] == workout) & 
+                                       (day_data['exercise_title'] == exercise)]
+                
+                sets = len(exercise_data)
+                total_reps = exercise_data['reps'].sum()
+                avg_weight = exercise_data['weight_lbs'].mean()
+                
+                # Get individual set details for this exercise
+                set_details = []
+                for _, set_row in exercise_data.iterrows():
+                    # Calculate if this is a PR (personal record)
+                    is_pr = False
+                    if (set_row['set_type'] == 'normal' and 
+                        set_row['weight_lbs'] == max_weights.get(exercise, 0) and
+                        max_weights.get(exercise, 0) > 0):
+                        is_pr = True
+                    
+                    # Get notes if they exist
+                    notes = set_row.get('exercise_notes', '')
+                    if pd.isna(notes):
+                        notes = ''
+                    
+                    set_details.append({
+                        "reps": int(set_row['reps']),
+                        "weight": float(set_row['weight_lbs']) if not np.isnan(set_row['weight_lbs']) else 0,
+                        "notes": notes,
+                        "is_pr": is_pr,
+                        "set_type": set_row['set_type']
+                    })
+                
+                exercise_details.append({
+                    "name": exercise,
+                    "sets": sets,
+                    "total_reps": int(total_reps),
+                    "avg_weight": round(float(avg_weight), 1) if not np.isnan(avg_weight) else 0,
+                    "set_details": set_details
+                })
+            
+            workout_details.append({
+                "name": workout,
+                "exercise_count": len(workout_exercises),
+                "volume": float(workout_volume),
+                "exercises": exercise_details
+            })
+        
+        # Format date as string
+        date_str = date.strftime("%b %d, %Y")
+        
+        result.append({
+            "date": date_str,
+            "workouts": workout_details
+        })
+    
+    return jsonify(result)
+
+@app.route('/api/workout_dates')
+def get_workout_dates():
+    """Get all available workout dates."""
+    if df is None:
+        return jsonify({"error": "No data loaded"})
+    
+    # Get unique workout days
+    workout_dates = df['date'].unique()
+    
+    # Sort dates in descending order
+    sorted_dates = sorted(workout_dates, reverse=True)
+    
+    # Format dates
+    formatted_dates = [date.strftime("%b %d, %Y") for date in sorted_dates]
+    
+    return jsonify({
+        "dates": formatted_dates,
+        "total": len(formatted_dates)
+    })
 
 if __name__ == '__main__':
     # Load data on startup

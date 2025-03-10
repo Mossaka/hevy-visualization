@@ -351,7 +351,7 @@ def generate_report(df):
 def main():
     """Main function to run the report generation."""
     # Load data
-    file_path = 'data/March 8, 2025.csv'
+    file_path = 'data/March 10, 2025.csv'
     df = analyze_workout.load_data(file_path)
     
     # Generate report

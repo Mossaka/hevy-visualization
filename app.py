@@ -124,15 +124,43 @@ def get_monthly_summary():
             "top_exercises": []
         })
     
+    # Calculate workout duration for the month
+    workout_durations = 0
+    
+    # Debug information
+    print(f"\n===== DEBUG: MONTHLY DURATION CALCULATION =====")
+    
+    # Group by both title AND date to identify unique workout sessions
+    unique_workouts = month_data.groupby(['title', 'date']).agg({
+        'start_time': 'min',
+        'end_time': 'max'
+    }).reset_index()
+    
+    print(f"Found {len(unique_workouts)} unique workout sessions for this month")
+    
+    for _, workout in unique_workouts.iterrows():
+        try:
+            # Make sure we're dealing with datetime objects
+            start_time = pd.to_datetime(workout['start_time'])
+            end_time = pd.to_datetime(workout['end_time'])
+            
+            # Calculate duration in minutes
+            duration_minutes = (end_time - start_time).total_seconds() / 60
+            
+            workout_durations += duration_minutes
+            print(f"Workout: {workout['title']} on {workout['date']}")
+            print(f"  Start: {start_time}, End: {end_time}")
+            print(f"  Duration: {duration_minutes/60:.2f} hours")
+        except Exception as e:
+            print(f"Error processing workout {workout['title']}: {str(e)}")
+    
+    print(f"Total duration for month: {workout_durations/60:.2f} hours")
+    print(f"===============================================\n")
+    
     # Calculate monthly stats
     monthly_workouts = month_data['title'].nunique()
     monthly_sets = len(month_data)
     monthly_volume = float(month_data['volume'].sum())
-    
-    # Calculate total workout duration for the month
-    workout_durations = month_data.groupby('title').apply(
-        lambda x: (x['end_time'].max() - x['start_time'].min()).total_seconds() / 60
-    ).sum()
     
     # Get top exercises for the month
     monthly_top_exercises = month_data.groupby('exercise_title')['volume'].sum().sort_values(ascending=False).head(5)
@@ -157,14 +185,33 @@ def get_time_analysis():
         'set_index': 'count',
     }).reset_index()
     
-    # Calculate workout duration by month
-    monthly_duration = df.groupby(['month', 'title']).apply(
-        lambda x: (x['end_time'].max() - x['start_time'].min()).total_seconds() / 60
-    ).reset_index()
-    monthly_duration = monthly_duration.groupby('month')[0].sum().reset_index()
+    # Calculate workout duration by month - using the corrected approach
+    monthly_durations = []
+    for month in monthly_data['month']:
+        month_df = df[df['month'] == month]
+        
+        # Group by both title AND date to identify unique workout sessions
+        unique_workouts = month_df.groupby(['title', 'date']).agg({
+            'start_time': 'min',
+            'end_time': 'max'
+        }).reset_index()
+        
+        month_duration = 0
+        for _, workout in unique_workouts.iterrows():
+            start_time = pd.to_datetime(workout['start_time'])
+            end_time = pd.to_datetime(workout['end_time'])
+            duration_minutes = (end_time - start_time).total_seconds() / 60
+            month_duration += duration_minutes
+        
+        monthly_durations.append({
+            'month': month,
+            'duration_minutes': month_duration
+        })
+    
+    monthly_duration_df = pd.DataFrame(monthly_durations)
     
     # Merge duration data
-    monthly_data = monthly_data.merge(monthly_duration, on='month', how='left')
+    monthly_data = monthly_data.merge(monthly_duration_df, on='month', how='left')
     
     # Convert to list of dictionaries for JSON
     monthly_result = []
@@ -174,7 +221,7 @@ def get_time_analysis():
             "workouts": int(row['title']),
             "volume": float(row['volume']),
             "sets": int(row['set_index']),
-            "duration_minutes": float(row[0]) if not pd.isna(row[0]) else 0
+            "duration_minutes": float(row['duration_minutes']) if not pd.isna(row['duration_minutes']) else 0
         })
     
     # Yearly analysis
@@ -184,14 +231,33 @@ def get_time_analysis():
         'set_index': 'count',
     }).reset_index()
     
-    # Calculate workout duration by year
-    yearly_duration = df.groupby(['year', 'title']).apply(
-        lambda x: (x['end_time'].max() - x['start_time'].min()).total_seconds() / 60
-    ).reset_index()
-    yearly_duration = yearly_duration.groupby('year')[0].sum().reset_index()
+    # Calculate workout duration by year - using the corrected approach
+    yearly_durations = []
+    for year in yearly_data['year']:
+        year_df = df[df['year'] == year]
+        
+        # Group by both title AND date to identify unique workout sessions
+        unique_workouts = year_df.groupby(['title', 'date']).agg({
+            'start_time': 'min',
+            'end_time': 'max'
+        }).reset_index()
+        
+        year_duration = 0
+        for _, workout in unique_workouts.iterrows():
+            start_time = pd.to_datetime(workout['start_time'])
+            end_time = pd.to_datetime(workout['end_time'])
+            duration_minutes = (end_time - start_time).total_seconds() / 60
+            year_duration += duration_minutes
+        
+        yearly_durations.append({
+            'year': year,
+            'duration_minutes': year_duration
+        })
+    
+    yearly_duration_df = pd.DataFrame(yearly_durations)
     
     # Merge duration data
-    yearly_data = yearly_data.merge(yearly_duration, on='year', how='left')
+    yearly_data = yearly_data.merge(yearly_duration_df, on='year', how='left')
     
     # Convert to list of dictionaries for JSON
     yearly_result = []
@@ -201,7 +267,7 @@ def get_time_analysis():
             "workouts": int(row['title']),
             "volume": float(row['volume']),
             "sets": int(row['set_index']),
-            "duration_minutes": float(row[0]) if not pd.isna(row[0]) else 0
+            "duration_minutes": float(row['duration_minutes']) if not pd.isna(row['duration_minutes']) else 0
         })
     
     return jsonify({

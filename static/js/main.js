@@ -810,38 +810,147 @@ function createBigThreeProgressChart(elementId, data, liftName) {
         return;
     }
     
+    // Sort data by date ascending for proper trend calculation
+    data.sort((a, b) => new Date(a.date) - new Date(b.date));
+    
     const dates = data.map(item => item.date);
     const maxWeights = data.map(item => item.max_weight);
     
-    const trace = {
+    // Calculate 5-point moving average for trend line
+    const movingAvgWeights = [];
+    const windowSize = 5;
+    
+    for (let i = 0; i < maxWeights.length; i++) {
+        let sum = 0;
+        let count = 0;
+        
+        // Look at window_size points centered at current point
+        for (let j = Math.max(0, i - Math.floor(windowSize/2)); 
+             j <= Math.min(maxWeights.length - 1, i + Math.floor(windowSize/2)); j++) {
+            sum += maxWeights[j];
+            count++;
+        }
+        
+        movingAvgWeights.push(sum / count);
+    }
+    
+    // Set colors based on lift type
+    const primaryColor = liftName === 'Bench Press' ? '#0ea5e9' : 
+                         liftName === 'Squat' ? '#ef4444' : '#10b981';
+    
+    const secondaryColor = liftName === 'Bench Press' ? 'rgba(14, 165, 233, 0.2)' : 
+                           liftName === 'Squat' ? 'rgba(239, 68, 68, 0.2)' : 'rgba(16, 185, 129, 0.2)';
+    
+    // Create the main data trace
+    const dataTrace = {
         x: dates,
         y: maxWeights,
         type: 'scatter',
-        mode: 'lines+markers',
+        mode: 'markers',
         name: 'Max Weight',
-        line: {
-            color: liftName === 'Bench Press' ? '#0ea5e9' : 
-                   liftName === 'Squat' ? '#ef4444' : '#10b981',
-            width: 3
-        },
         marker: {
-            size: 8
-        }
+            size: 8,
+            color: primaryColor,
+            line: {
+                width: 1,
+                color: 'white'
+            }
+        },
+        hovertemplate: '%{y} lbs<br>%{x}<extra></extra>'
     };
     
+    // Create trend line trace
+    const trendTrace = {
+        x: dates,
+        y: movingAvgWeights,
+        type: 'scatter',
+        mode: 'lines',
+        name: 'Trend',
+        line: {
+            color: primaryColor,
+            width: 3,
+            shape: 'spline',
+            smoothing: 1
+        },
+        hoverinfo: 'skip'
+    };
+    
+    // Create range area trace
+    const rangeTrace = {
+        x: dates.concat(dates.slice().reverse()),
+        y: maxWeights.map(w => w * 0.85).concat(maxWeights.slice().reverse()),
+        fill: 'toself',
+        fillcolor: secondaryColor,
+        line: { color: 'transparent' },
+        showlegend: false,
+        hoverinfo: 'skip',
+        name: 'Range'
+    };
+    
+    // Define y-axis ranges to be consistent across all three lifts
+    const yaxisRanges = {
+        'Bench Press': [120, 200],
+        'Squat': [150, 300],
+        'Deadlift': [180, 300]
+    };
+    
+    const yRange = yaxisRanges[liftName] || [0, Math.max(...maxWeights) * 1.1];
+    
+    // Create layout with consistent y-axis and improved design
     const layout = {
-        margin: { t: 5, r: 5, l: 40, b: 40 },
+        margin: { t: 10, r: 10, l: 45, b: 50 },
         xaxis: {
             title: 'Date',
-            showgrid: false
+            showgrid: true,
+            gridcolor: '#f3f4f6',
+            tickformat: '%b %Y',
+            tickangle: -45,
+            tickfont: { size: 10 },
+            nticks: 6
         },
         yaxis: {
-            title: 'Weight (lbs)'
+            title: 'Weight (lbs)',
+            showgrid: true,
+            gridcolor: '#f3f4f6',
+            zeroline: false,
+            range: yRange
         },
-        showlegend: false
+        showlegend: false,
+        plot_bgcolor: 'white',
+        hovermode: 'closest',
+        shapes: [{
+            // Draw horizontal line at the max weight
+            type: 'line',
+            x0: dates[0],
+            x1: dates[dates.length - 1],
+            y0: Math.max(...maxWeights),
+            y1: Math.max(...maxWeights),
+            line: {
+                color: primaryColor,
+                width: 1,
+                dash: 'dot'
+            }
+        }],
+        annotations: [{
+            // Annotate the max weight
+            x: dates[maxWeights.indexOf(Math.max(...maxWeights))],
+            y: Math.max(...maxWeights),
+            text: `PR: ${Math.max(...maxWeights)} lbs`,
+            font: { color: primaryColor, size: 10 },
+            showarrow: true,
+            arrowhead: 1,
+            arrowcolor: primaryColor,
+            arrowsize: 0.8,
+            arrowwidth: 1,
+            ax: 0,
+            ay: -20
+        }]
     };
     
-    Plotly.newPlot(elementId, [trace], layout, {responsive: true});
+    Plotly.newPlot(elementId, [rangeTrace, dataTrace, trendTrace], layout, {
+        responsive: true, 
+        displayModeBar: false
+    });
 }
 
 // Create exercise frequency chart

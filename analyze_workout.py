@@ -148,7 +148,7 @@ def visualize_data(df, exercise_counts, volume_stats):
 def main():
     """Main function to run the analysis."""
     # Load data
-    file_path = 'data/March 11, 2025.csv'
+    file_path = 'data/March 17, 2025.csv'
     df = load_data(file_path)
     
     # Explore and preprocess data

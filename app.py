@@ -22,7 +22,7 @@ def load_data():
     global df, category_df
     
     # Load data
-    file_path = 'data/March 11, 2025.csv'
+    file_path = 'data/March 17, 2025.csv'
     df = analyze_workout.load_data(file_path)
     
     # Preprocess data

@@ -125,7 +125,12 @@
                         <a href="#workout-balance" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                             Workout Balance
                         </a>
-                        
+                        <a href="#personal-records" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            PRs & Training
+                        </a>
+                        <a href="#goal-setting" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Goals 2025
+                        </a>
                         <a href="#all-time-summary" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                             All Time
                         </a>
@@ -427,13 +432,13 @@
                     <label for="category-select" class="block text-sm font-medium text-gray-700">Select Category</label>
                     <select id="category-select" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm rounded-md">
                         <option value="">Select a category</option>
-                        <option value="Chest">Chest</option>
-                        <option value="Back">Back</option>
-                        <option value="Legs">Legs</option>
-                        <option value="Shoulders">Shoulders</option>
-                        <option value="Arms">Arms</option>
-                        <option value="Core">Core</option>
-                        <option value="Other">Other</option>
+                        <option value="Chest">💪 Chest</option>
+                        <option value="Back">🏋️ Back</option>
+                        <option value="Legs">🦵 Legs</option>
+                        <option value="Shoulders">🤸 Shoulders</option>
+                        <option value="Arms">💪 Arms</option>
+                        <option value="Core">🔥 Core</option>
+                        <option value="Other">⚡ Other</option>
                     </select>
                 </div>
                 
@@ -478,6 +483,258 @@
                 <div class="bg-white shadow rounded-lg p-6">
                     <h3 class="text-lg font-medium text-gray-900 mb-4">Volume Percentage by Category</h3>
                     <div id="workout-balance-bar-chart" class="h-80"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Personal Records & Training Section -->
+        <section id="personal-records" class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Personal Records & Training Guide</h2>
+            
+            <!-- PR Cards -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6 mb-8">
+                <!-- Bench Press PR -->
+                <div class="bg-white shadow rounded-lg p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-medium text-gray-900">Bench Press</h3>
+                        <i class="fas fa-trophy text-yellow-500 text-xl"></i>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-500">Current Max:</span>
+                            <span class="text-sm font-medium" id="bench-current-max">-</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-500">Est. 1RM:</span>
+                            <span class="text-lg font-bold text-primary-600" id="bench-estimated-1rm">-</span>
+                        </div>
+                        <div class="text-xs text-gray-400" id="bench-best-set">-</div>
+                    </div>
+                </div>
+                
+                <!-- Squat PR -->
+                <div class="bg-white shadow rounded-lg p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-medium text-gray-900">Squat</h3>
+                        <i class="fas fa-trophy text-yellow-500 text-xl"></i>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-500">Current Max:</span>
+                            <span class="text-sm font-medium" id="squat-current-max">-</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-500">Est. 1RM:</span>
+                            <span class="text-lg font-bold text-primary-600" id="squat-estimated-1rm">-</span>
+                        </div>
+                        <div class="text-xs text-gray-400" id="squat-best-set">-</div>
+                    </div>
+                </div>
+                
+                <!-- Deadlift PR -->
+                <div class="bg-white shadow rounded-lg p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-medium text-gray-900">Deadlift</h3>
+                        <i class="fas fa-trophy text-yellow-500 text-xl"></i>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-500">Current Max:</span>
+                            <span class="text-sm font-medium" id="deadlift-current-max">-</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-500">Est. 1RM:</span>
+                            <span class="text-lg font-bold text-primary-600" id="deadlift-estimated-1rm">-</span>
+                        </div>
+                        <div class="text-xs text-gray-400" id="deadlift-best-set">-</div>
+                    </div>
+                </div>
+                
+                <!-- Overhead Press PR -->
+                <div class="bg-white shadow rounded-lg p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-medium text-gray-900">Overhead Press</h3>
+                        <i class="fas fa-trophy text-yellow-500 text-xl"></i>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-500">Current Max:</span>
+                            <span class="text-sm font-medium" id="ohp-current-max">-</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-500">Est. 1RM:</span>
+                            <span class="text-lg font-bold text-primary-600" id="ohp-estimated-1rm">-</span>
+                        </div>
+                        <div class="text-xs text-gray-400" id="ohp-best-set">-</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Training Guide -->
+            <div class="bg-white shadow rounded-lg p-6">
+                <h3 class="text-lg font-medium text-gray-900 mb-6">Training Recommendations</h3>
+                
+                <!-- Training Type Selector -->
+                <div class="mb-6">
+                    <div class="flex space-x-4">
+                        <button id="hypertrophy-tab" class="px-4 py-2 text-sm font-medium rounded-md bg-primary-100 text-primary-700 border border-primary-200">
+                            Hypertrophy
+                        </button>
+                        <button id="strength-tab" class="px-4 py-2 text-sm font-medium rounded-md bg-gray-100 text-gray-700 border border-gray-200">
+                            Strength
+                        </button>
+                        <button id="power-tab" class="px-4 py-2 text-sm font-medium rounded-md bg-gray-100 text-gray-700 border border-gray-200">
+                            Power
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Training Recommendations Content -->
+                <div id="training-recommendations">
+                    <!-- Content will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- Goal Setting Section -->
+        <section id="goal-setting" class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">2025 Strength Goals</h2>
+            <p class="text-gray-600 mb-6">Target: 20% increase in 1RM for all main lifts by end of year</p>
+            
+            <!-- Goal Progress Cards -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                <!-- Bench Press Goal -->
+                <div class="bg-white shadow rounded-lg p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-medium text-gray-900">Bench Press Goal</h3>
+                        <span class="text-sm font-medium text-gray-500" id="bench-goal-status">-</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex justify-between text-sm">
+                            <span>Jan 1 Baseline:</span>
+                            <span class="font-medium text-gray-600" id="bench-baseline-1rm">-</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>Current 1RM:</span>
+                            <span class="font-medium" id="bench-current-1rm">-</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>Goal 1RM:</span>
+                            <span class="font-medium text-green-600" id="bench-goal-1rm">-</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>Remaining:</span>
+                            <span class="font-medium text-orange-600" id="bench-remaining">-</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-primary-600 h-2 rounded-full transition-all duration-300" id="bench-progress-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="text-center text-sm text-gray-500" id="bench-progress-text">0% Complete</div>
+                    </div>
+                </div>
+                
+                <!-- Squat Goal -->
+                <div class="bg-white shadow rounded-lg p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-medium text-gray-900">Squat Goal</h3>
+                        <span class="text-sm font-medium text-gray-500" id="squat-goal-status">-</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex justify-between text-sm">
+                            <span>Jan 1 Baseline:</span>
+                            <span class="font-medium text-gray-600" id="squat-baseline-1rm">-</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>Current 1RM:</span>
+                            <span class="font-medium" id="squat-current-1rm">-</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>Goal 1RM:</span>
+                            <span class="font-medium text-green-600" id="squat-goal-1rm">-</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>Remaining:</span>
+                            <span class="font-medium text-orange-600" id="squat-remaining">-</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-primary-600 h-2 rounded-full transition-all duration-300" id="squat-progress-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="text-center text-sm text-gray-500" id="squat-progress-text">0% Complete</div>
+                    </div>
+                </div>
+                
+                <!-- Deadlift Goal -->
+                <div class="bg-white shadow rounded-lg p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-medium text-gray-900">Deadlift Goal</h3>
+                        <span class="text-sm font-medium text-gray-500" id="deadlift-goal-status">-</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex justify-between text-sm">
+                            <span>Jan 1 Baseline:</span>
+                            <span class="font-medium text-gray-600" id="deadlift-baseline-1rm">-</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>Current 1RM:</span>
+                            <span class="font-medium" id="deadlift-current-1rm">-</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>Goal 1RM:</span>
+                            <span class="font-medium text-green-600" id="deadlift-goal-1rm">-</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>Remaining:</span>
+                            <span class="font-medium text-orange-600" id="deadlift-remaining">-</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-primary-600 h-2 rounded-full transition-all duration-300" id="deadlift-progress-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="text-center text-sm text-gray-500" id="deadlift-progress-text">0% Complete</div>
+                    </div>
+                </div>
+                
+                <!-- Overhead Press Goal -->
+                <div class="bg-white shadow rounded-lg p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-medium text-gray-900">Overhead Press Goal</h3>
+                        <span class="text-sm font-medium text-gray-500" id="ohp-goal-status">-</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex justify-between text-sm">
+                            <span>Jan 1 Baseline:</span>
+                            <span class="font-medium text-gray-600" id="ohp-baseline-1rm">-</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>Current 1RM:</span>
+                            <span class="font-medium" id="ohp-current-1rm">-</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>Goal 1RM:</span>
+                            <span class="font-medium text-green-600" id="ohp-goal-1rm">-</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>Remaining:</span>
+                            <span class="font-medium text-orange-600" id="ohp-remaining">-</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-primary-600 h-2 rounded-full transition-all duration-300" id="ohp-progress-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="text-center text-sm text-gray-500" id="ohp-progress-text">0% Complete</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Motivation Section -->
+            <div class="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-lg p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-900 mb-2">Stay Motivated!</h3>
+                        <p class="text-gray-600" id="motivation-message">Loading motivation...</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-2xl font-bold text-primary-600" id="days-remaining">-</div>
+                        <div class="text-sm text-gray-500">Days Left</div>
+                    </div>
                 </div>
             </div>
         </section>

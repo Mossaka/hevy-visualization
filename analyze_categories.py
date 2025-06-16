@@ -9,6 +9,17 @@ import numpy as np
 plt.style.use('ggplot')
 sns.set(font_scale=1.2)
 
+# Define exercise categories with emojis
+CATEGORY_EMOJIS = {
+    'Chest': '💪',
+    'Back': '🏋️',
+    'Legs': '🦵',
+    'Shoulders': '🤸',
+    'Arms': '💪',
+    'Core': '🔥',
+    'Other': '⚡'
+}
+
 # Define exercise categories
 EXERCISE_CATEGORIES = {
     'Chest': [
@@ -41,6 +52,11 @@ EXERCISE_CATEGORIES = {
     ],
     'Other': []  # Will catch anything not in the above categories
 }
+
+def get_category_display_name(category):
+    """Get category name with emoji for display."""
+    emoji = CATEGORY_EMOJIS.get(category, '📊')
+    return f"{emoji} {category}"
 
 def load_data(file_path):
     """Load workout data from CSV file."""
@@ -101,24 +117,30 @@ def analyze_categories(df):
     
     # Plot category distribution
     plt.figure(figsize=(12, 6))
-    ax = category_counts.plot(kind='bar', color=sns.color_palette("viridis", len(category_counts)))
-    plt.title('Exercise Distribution by Category')
-    plt.xlabel('Category')
-    plt.ylabel('Number of Sets')
+    category_display_names = [get_category_display_name(cat) for cat in category_counts.index]
+    ax = plt.bar(category_display_names, category_counts.values, 
+                 color=sns.color_palette("viridis", len(category_counts)))
+    plt.title('Exercise Distribution by Category', fontsize=16, fontweight='bold')
+    plt.xlabel('Category', fontsize=12)
+    plt.ylabel('Number of Sets', fontsize=12)
     plt.xticks(rotation=45, ha='right')
+    plt.grid(axis='y', alpha=0.3)
     plt.tight_layout()
-    plt.savefig('category_plots/category_distribution.png')
+    plt.savefig('category_plots/category_distribution.png', dpi=300, bbox_inches='tight')
     print("Saved category distribution plot to category_plots/category_distribution.png")
     
     # Plot volume by category
     plt.figure(figsize=(12, 6))
-    ax = category_volume.plot(kind='bar', x='category', y='volume', color=sns.color_palette("viridis", len(category_volume)))
-    plt.title('Total Volume by Category')
-    plt.xlabel('Category')
-    plt.ylabel('Total Volume (Weight × Reps)')
+    category_display_names = [get_category_display_name(cat) for cat in category_volume['category']]
+    ax = plt.bar(category_display_names, category_volume['volume'], 
+                 color=sns.color_palette("viridis", len(category_volume)))
+    plt.title('Total Volume by Category', fontsize=16, fontweight='bold')
+    plt.xlabel('Category', fontsize=12)
+    plt.ylabel('Total Volume (Weight × Reps)', fontsize=12)
     plt.xticks(rotation=45, ha='right')
+    plt.grid(axis='y', alpha=0.3)
     plt.tight_layout()
-    plt.savefig('category_plots/category_volume.png')
+    plt.savefig('category_plots/category_volume.png', dpi=300, bbox_inches='tight')
     print("Saved category volume plot to category_plots/category_volume.png")
     
     # Analyze top exercises in each category
@@ -148,12 +170,14 @@ def analyze_category_exercises(df, category):
         y='volume',
         color=sns.color_palette("viridis", top_n)
     )
-    plt.title(f'Top {top_n} {category} Exercises by Volume')
-    plt.xlabel('Exercise')
-    plt.ylabel('Total Volume (Weight × Reps)')
+    category_display_name = get_category_display_name(category)
+    plt.title(f'Top {top_n} {category_display_name} Exercises by Volume', fontsize=16, fontweight='bold')
+    plt.xlabel('Exercise', fontsize=12)
+    plt.ylabel('Total Volume (Weight × Reps)', fontsize=12)
     plt.xticks(rotation=45, ha='right')
+    plt.grid(axis='y', alpha=0.3)
     plt.tight_layout()
-    plt.savefig(f'category_plots/{category.lower()}_top_exercises.png')
+    plt.savefig(f'category_plots/{category.lower()}_top_exercises.png', dpi=300, bbox_inches='tight')
     print(f"Saved top {category} exercises plot to category_plots/{category.lower()}_top_exercises.png")
     
     # Calculate average weight and reps for top exercises
@@ -185,32 +209,31 @@ def analyze_workout_balance(df):
     
     # Plot workout balance as a pie chart
     plt.figure(figsize=(10, 8))
+    category_display_names = [get_category_display_name(cat) for cat in category_percentage['category']]
     plt.pie(
         category_percentage['percentage'],
-        labels=category_percentage['category'],
+        labels=category_display_names,
         autopct='%1.1f%%',
         startangle=90,
         colors=sns.color_palette("viridis", len(category_percentage))
     )
     plt.axis('equal')
-    plt.title('Workout Volume Distribution by Category')
+    plt.title('Workout Volume Distribution by Category', fontsize=16, fontweight='bold')
     plt.tight_layout()
-    plt.savefig('category_plots/workout_balance_pie.png')
+    plt.savefig('category_plots/workout_balance_pie.png', dpi=300, bbox_inches='tight')
     print("Saved workout balance pie chart to category_plots/workout_balance_pie.png")
     
     # Plot workout balance as a horizontal bar chart
     plt.figure(figsize=(10, 6))
-    ax = category_percentage.plot(
-        kind='barh',
-        x='category',
-        y='percentage',
-        color=sns.color_palette("viridis", len(category_percentage))
-    )
-    plt.title('Workout Volume Distribution by Category')
-    plt.xlabel('Percentage of Total Volume')
-    plt.ylabel('Category')
+    category_display_names = [get_category_display_name(cat) for cat in category_percentage['category']]
+    ax = plt.barh(category_display_names, category_percentage['percentage'], 
+                  color=sns.color_palette("viridis", len(category_percentage)))
+    plt.title('Workout Volume Distribution by Category', fontsize=16, fontweight='bold')
+    plt.xlabel('Percentage of Total Volume', fontsize=12)
+    plt.ylabel('Category', fontsize=12)
+    plt.grid(axis='x', alpha=0.3)
     plt.tight_layout()
-    plt.savefig('category_plots/workout_balance_bar.png')
+    plt.savefig('category_plots/workout_balance_bar.png', dpi=300, bbox_inches='tight')
     print("Saved workout balance bar chart to category_plots/workout_balance_bar.png")
     
     return category_percentage
@@ -234,18 +257,16 @@ def analyze_intensity(df):
     category_weight = df.groupby('category')['weight_lbs'].mean().reset_index()
     category_weight = category_weight.sort_values('weight_lbs', ascending=False)
     
-    ax = category_weight.plot(
-        kind='bar',
-        x='category',
-        y='weight_lbs',
-        color=sns.color_palette("viridis", len(category_weight))
-    )
-    plt.title('Average Weight by Category')
-    plt.xlabel('Category')
-    plt.ylabel('Average Weight (lbs)')
+    category_display_names = [get_category_display_name(cat) for cat in category_weight['category']]
+    ax = plt.bar(category_display_names, category_weight['weight_lbs'], 
+                 color=sns.color_palette("viridis", len(category_weight)))
+    plt.title('Average Weight by Category', fontsize=16, fontweight='bold')
+    plt.xlabel('Category', fontsize=12)
+    plt.ylabel('Average Weight (lbs)', fontsize=12)
     plt.xticks(rotation=45, ha='right')
+    plt.grid(axis='y', alpha=0.3)
     plt.tight_layout()
-    plt.savefig('category_plots/category_weight.png')
+    plt.savefig('category_plots/category_weight.png', dpi=300, bbox_inches='tight')
     print("Saved category weight plot to category_plots/category_weight.png")
     
     # Plot average reps by category
@@ -253,18 +274,16 @@ def analyze_intensity(df):
     category_reps = df.groupby('category')['reps'].mean().reset_index()
     category_reps = category_reps.sort_values('reps', ascending=False)
     
-    ax = category_reps.plot(
-        kind='bar',
-        x='category',
-        y='reps',
-        color=sns.color_palette("viridis", len(category_reps))
-    )
-    plt.title('Average Reps by Category')
-    plt.xlabel('Category')
-    plt.ylabel('Average Reps')
+    category_display_names = [get_category_display_name(cat) for cat in category_reps['category']]
+    ax = plt.bar(category_display_names, category_reps['reps'], 
+                 color=sns.color_palette("viridis", len(category_reps)))
+    plt.title('Average Reps by Category', fontsize=16, fontweight='bold')
+    plt.xlabel('Category', fontsize=12)
+    plt.ylabel('Average Reps', fontsize=12)
     plt.xticks(rotation=45, ha='right')
+    plt.grid(axis='y', alpha=0.3)
     plt.tight_layout()
-    plt.savefig('category_plots/category_reps.png')
+    plt.savefig('category_plots/category_reps.png', dpi=300, bbox_inches='tight')
     print("Saved category reps plot to category_plots/category_reps.png")
     
     return intensity_stats

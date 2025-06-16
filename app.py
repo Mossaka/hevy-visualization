@@ -49,6 +49,24 @@ def load_data():
     
     return df, category_df
 
+def calculate_one_rep_max(weight, reps):
+    """Calculate 1RM using Epley formula: 1RM = weight * (1 + reps/30)"""
+    if reps == 0 or weight == 0:
+        return 0
+    if reps == 1:
+        return weight
+    return weight * (1 + reps / 30)
+
+def calculate_brzycki_1rm(weight, reps):
+    """Calculate 1RM using Brzycki formula: 1RM = weight / (1.0278 - 0.0278 * reps)"""
+    if reps == 0 or weight == 0:
+        return 0
+    if reps == 1:
+        return weight
+    if reps > 10:
+        return weight * (1 + reps / 30)
+    return weight / (1.0278 - 0.0278 * reps)
+
 @app.route('/')
 def index():
     """Render the main dashboard page."""
@@ -710,6 +728,224 @@ def get_workout_dates():
     return jsonify({
         "dates": formatted_dates,
         "total": len(formatted_dates)
+    })
+
+@app.route('/api/personal_records')
+def get_personal_records():
+    """Get personal records with 1RM calculations and training recommendations."""
+    
+    main_lifts = ['Bench Press (Barbell)', 'Squat (Barbell)', 'Deadlift (Barbell)', 'Overhead Press (Barbell)']
+    
+    pr_data = {}
+    
+    for lift in main_lifts:
+        lift_data = df[df['exercise_title'] == lift].copy()
+        
+        if lift_data.empty:
+            pr_data[lift] = {
+                "current_max_weight": 0,
+                "estimated_1rm": 0,
+                "best_set": None,
+                "total_sets": 0,
+                "hypertrophy_recommendation": {},
+                "strength_recommendation": {},
+                "power_recommendation": {}
+            }
+            continue
+        
+        normal_sets = lift_data[lift_data['set_type'] == 'normal']
+        
+        if normal_sets.empty:
+            normal_sets = lift_data
+        
+        normal_sets['estimated_1rm'] = normal_sets.apply(
+            lambda row: calculate_brzycki_1rm(row['weight_lbs'], row['reps']), axis=1
+        )
+        
+        best_1rm_idx = normal_sets['estimated_1rm'].idxmax()
+        best_set = normal_sets.loc[best_1rm_idx]
+        
+        current_max_weight = normal_sets['weight_lbs'].max()
+        estimated_1rm = normal_sets['estimated_1rm'].max()
+        
+        hypertrophy_weight = estimated_1rm * 0.65
+        hypertrophy_weight_high = estimated_1rm * 0.80
+        
+        strength_weight = estimated_1rm * 0.80
+        strength_weight_high = estimated_1rm * 0.90
+        
+        power_weight = estimated_1rm * 0.30
+        power_weight_high = estimated_1rm * 0.60
+        
+        pr_data[lift] = {
+            "current_max_weight": float(current_max_weight),
+            "estimated_1rm": float(estimated_1rm),
+            "best_set": {
+                "weight": float(best_set['weight_lbs']),
+                "reps": int(best_set['reps']),
+                "date": best_set['date'].strftime('%Y-%m-%d'),
+                "estimated_1rm": float(best_set['estimated_1rm'])
+            },
+            "total_sets": len(normal_sets),
+            "hypertrophy_recommendation": {
+                "weight_range": f"{hypertrophy_weight:.0f}-{hypertrophy_weight_high:.0f} lbs",
+                "rep_range": "8-15 reps",
+                "sets": "3-5 sets",
+                "rest": "60-90 seconds",
+                "description": "Muscle growth focus - moderate weight, higher volume"
+            },
+            "strength_recommendation": {
+                "weight_range": f"{strength_weight:.0f}-{strength_weight_high:.0f} lbs",
+                "rep_range": "1-6 reps", 
+                "sets": "3-6 sets",
+                "rest": "3-5 minutes",
+                "description": "Maximum strength focus - heavy weight, low reps"
+            },
+            "power_recommendation": {
+                "weight_range": f"{power_weight:.0f}-{power_weight_high:.0f} lbs",
+                "rep_range": "1-5 reps",
+                "sets": "3-6 sets", 
+                "rest": "3-5 minutes",
+                "description": "Explosive power focus - light to moderate weight, fast movement"
+            }
+        }
+    
+    training_principles = {
+        "hypertrophy": {
+            "title": "Hypertrophy Training (Muscle Growth)",
+            "intensity": "65-80% of 1RM",
+            "volume": "High volume, moderate intensity",
+            "frequency": "2-3x per week per muscle group",
+            "research_note": "Based on Schoenfeld et al. (2017) meta-analysis showing optimal hypertrophy occurs at 6-20 reps with 65-85% 1RM"
+        },
+        "strength": {
+            "title": "Strength Training (Max Effort)",
+            "intensity": "80-100% of 1RM", 
+            "volume": "Low volume, high intensity",
+            "frequency": "2-3x per week with adequate recovery",
+            "research_note": "Based on Helms et al. (2018) recommendations for strength development at >85% 1RM"
+        },
+        "power": {
+            "title": "Power Training (Speed-Strength)",
+            "intensity": "30-60% of 1RM",
+            "volume": "Low volume, explosive intent",
+            "frequency": "2-3x per week when fresh",
+            "research_note": "Based on Cormie et al. (2011) showing optimal power development at 30-60% 1RM with maximal intent"
+        }
+    }
+    
+    return jsonify({
+        "personal_records": pr_data,
+        "training_principles": training_principles
+    })
+
+@app.route('/api/goal_setting')
+def get_goal_setting():
+    """Get goal setting data with progress tracking for 20% improvement."""
+    
+    main_lifts = ['Bench Press (Barbell)', 'Squat (Barbell)', 'Deadlift (Barbell)', 'Overhead Press (Barbell)']
+    
+    goal_data = {}
+    
+    # Define the baseline date (January 1, 2025)
+    baseline_date = datetime(2025, 1, 1).date()
+    
+    for lift in main_lifts:
+        lift_data = df[df['exercise_title'] == lift].copy()
+        
+        if lift_data.empty:
+            goal_data[lift] = {
+                "baseline_1rm": 0,
+                "current_1rm": 0,
+                "goal_1rm": 0,
+                "progress_percentage": 0,
+                "remaining_lbs": 0,
+                "status": "No data available"
+            }
+            continue
+        
+        normal_sets = lift_data[lift_data['set_type'] == 'normal']
+        if normal_sets.empty:
+            normal_sets = lift_data
+        
+        normal_sets['estimated_1rm'] = normal_sets.apply(
+            lambda row: calculate_brzycki_1rm(row['weight_lbs'], row['reps']), axis=1
+        )
+        
+        # Get baseline 1RM (best performance around January 1, 2025)
+        # Look for data within 30 days of Jan 1, 2025 to establish baseline
+        baseline_window_start = datetime(2024, 12, 1).date()
+        baseline_window_end = datetime(2025, 2, 1).date()
+        
+        baseline_data = normal_sets[
+            (normal_sets['date'] >= baseline_window_start) & 
+            (normal_sets['date'] <= baseline_window_end)
+        ]
+        
+        if baseline_data.empty:
+            # If no data in baseline window, use earliest 2025 data
+            early_2025_data = normal_sets[normal_sets['date'] >= baseline_date]
+            if not early_2025_data.empty:
+                baseline_1rm = early_2025_data['estimated_1rm'].max()
+            else:
+                # Fallback to all-time best if no 2025 data
+                baseline_1rm = normal_sets['estimated_1rm'].max()
+        else:
+            baseline_1rm = baseline_data['estimated_1rm'].max()
+        
+        # Get current 1RM (best performance in recent weeks)
+        recent_data = normal_sets.tail(20)  # Last 20 sets
+        current_1rm = recent_data['estimated_1rm'].max() if not recent_data.empty else baseline_1rm
+        
+        # Goal is 20% improvement from baseline
+        goal_1rm = baseline_1rm * 1.20
+        
+        # Calculate progress percentage based on improvement from baseline
+        if goal_1rm > baseline_1rm:
+            progress_made = current_1rm - baseline_1rm
+            total_progress_needed = goal_1rm - baseline_1rm
+            progress_percentage = (progress_made / total_progress_needed) * 100
+            progress_percentage = max(0, min(100, progress_percentage))
+        else:
+            progress_percentage = 100  # Already at or above goal
+        
+        remaining_lbs = max(0, goal_1rm - current_1rm)
+        
+        # Status based on progress
+        if progress_percentage >= 100:
+            status = "Goal Achieved! 🎉"
+        elif progress_percentage >= 75:
+            status = "Almost There! 💪"
+        elif progress_percentage >= 50:
+            status = "Good Progress 📈"
+        elif progress_percentage >= 25:
+            status = "Getting Started 🚀"
+        else:
+            status = "Building Foundation 💪"
+        
+        goal_data[lift] = {
+            "baseline_1rm": float(baseline_1rm),
+            "current_1rm": float(current_1rm),
+            "goal_1rm": float(goal_1rm),
+            "progress_percentage": float(progress_percentage),
+            "remaining_lbs": float(remaining_lbs),
+            "status": status
+        }
+    
+    end_of_year = datetime(datetime.now().year, 12, 31)
+    days_remaining = (end_of_year - datetime.now()).days
+    
+    # Calculate how much of the year has passed
+    start_of_year = datetime(datetime.now().year, 1, 1)
+    days_elapsed = (datetime.now() - start_of_year).days
+    year_progress = (days_elapsed / 365) * 100
+    
+    return jsonify({
+        "goals": goal_data,
+        "target_date": "End of 2025",
+        "days_remaining": days_remaining,
+        "year_progress": year_progress,
+        "motivation_message": f"You're {year_progress:.1f}% through 2025 with {days_remaining} days left to achieve your 20% strength goals! Stay consistent and trust the process."
     })
 
 if __name__ == '__main__':

@@ -1,6 +1,17 @@
 // Main JavaScript file for Hevy Analytics
 
-// Color palettes for charts
+// Category emojis and colors
+const categoryEmojis = {
+    'Chest': '💪',
+    'Back': '🏋️',
+    'Legs': '🦵',
+    'Shoulders': '🤸',
+    'Arms': '💪',
+    'Core': '🔥',
+    'Other': '⚡'
+};
+
+// Color palettes for charts with gradients
 const categoryColors = {
     'Chest': '#0ea5e9',
     'Back': '#8b5cf6',
@@ -11,10 +22,29 @@ const categoryColors = {
     'Other': '#6b7280'
 };
 
+// Gradient colors for enhanced visual appeal
+const categoryGradients = {
+    'Chest': ['#0ea5e9', '#0284c7'],
+    'Back': ['#8b5cf6', '#7c3aed'],
+    'Legs': ['#ef4444', '#dc2626'],
+    'Shoulders': ['#f59e0b', '#d97706'],
+    'Arms': ['#10b981', '#059669'],
+    'Core': ['#6366f1', '#4f46e5'],
+    'Other': ['#6b7280', '#4b5563']
+};
+
 const chartColors = [
     '#0ea5e9', '#8b5cf6', '#ef4444', '#f59e0b', 
     '#10b981', '#6366f1', '#ec4899', '#14b8a6', 
     '#f97316', '#8b5cf6', '#06b6d4', '#84cc16'
+];
+
+// Enhanced chart colors with gradients
+const enhancedChartColors = [
+    '#0ea5e9', '#8b5cf6', '#ef4444', '#f59e0b', 
+    '#10b981', '#6366f1', '#ec4899', '#14b8a6', 
+    '#f97316', '#a855f7', '#06b6d4', '#84cc16',
+    '#f43f5e', '#22d3ee', '#facc15', '#fb7185'
 ];
 
 // Global variables for month navigation
@@ -71,6 +101,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Load workout balance data
     loadWorkoutBalanceData();
+    
+    // Load personal records data
+    loadPersonalRecords();
+    
+    // Load goal setting data
+    loadGoalSetting();
     
     // Set up event listeners
     setupEventListeners();
@@ -254,6 +290,196 @@ function loadWorkoutBalanceData() {
             createWorkoutBalanceBarChart(data);
         })
         .catch(error => console.error('Error loading workout balance data:', error));
+}
+
+// Load personal records data
+function loadPersonalRecords() {
+    fetch('/api/personal_records')
+        .then(response => response.json())
+        .then(data => {
+            const lifts = ['Bench Press (Barbell)', 'Squat (Barbell)', 'Deadlift (Barbell)', 'Overhead Press (Barbell)'];
+            const liftIds = ['bench', 'squat', 'deadlift', 'ohp'];
+            
+            lifts.forEach((lift, index) => {
+                const liftId = liftIds[index];
+                const liftData = data.personal_records[lift];
+                
+                if (liftData && liftData.estimated_1rm > 0) {
+                    document.getElementById(`${liftId}-current-max`).textContent = `${liftData.current_max_weight.toFixed(0)} lbs`;
+                    document.getElementById(`${liftId}-estimated-1rm`).textContent = `${liftData.estimated_1rm.toFixed(0)} lbs`;
+                    
+                    if (liftData.best_set) {
+                        document.getElementById(`${liftId}-best-set`).textContent = 
+                            `${liftData.best_set.weight} lbs × ${liftData.best_set.reps} reps (${liftData.best_set.date})`;
+                    }
+                } else {
+                    document.getElementById(`${liftId}-current-max`).textContent = 'No data';
+                    document.getElementById(`${liftId}-estimated-1rm`).textContent = 'No data';
+                    document.getElementById(`${liftId}-best-set`).textContent = 'No data available';
+                }
+            });
+            
+            // Store training data globally for tab switching
+            window.trainingData = data;
+            
+            // Load default training recommendations (hypertrophy)
+            loadTrainingRecommendations('hypertrophy');
+        })
+        .catch(error => console.error('Error loading personal records:', error));
+}
+
+// Load goal setting data
+function loadGoalSetting() {
+    fetch('/api/goal_setting')
+        .then(response => response.json())
+        .then(data => {
+            const lifts = ['Bench Press (Barbell)', 'Squat (Barbell)', 'Deadlift (Barbell)', 'Overhead Press (Barbell)'];
+            const liftIds = ['bench', 'squat', 'deadlift', 'ohp'];
+            
+            lifts.forEach((lift, index) => {
+                const liftId = liftIds[index];
+                const goalData = data.goals[lift];
+                
+                if (goalData && goalData.current_1rm > 0) {
+                    document.getElementById(`${liftId}-baseline-1rm`).textContent = `${goalData.baseline_1rm.toFixed(0)} lbs`;
+                    document.getElementById(`${liftId}-current-1rm`).textContent = `${goalData.current_1rm.toFixed(0)} lbs`;
+                    document.getElementById(`${liftId}-goal-1rm`).textContent = `${goalData.goal_1rm.toFixed(0)} lbs`;
+                    document.getElementById(`${liftId}-remaining`).textContent = `${goalData.remaining_lbs.toFixed(0)} lbs`;
+                    document.getElementById(`${liftId}-goal-status`).textContent = goalData.status;
+                    
+                    // Update progress bar
+                    const progressBar = document.getElementById(`${liftId}-progress-bar`);
+                    const progressText = document.getElementById(`${liftId}-progress-text`);
+                    const progressContainer = progressBar.parentElement; // This is the gray container div
+                    
+                    // Only show progress bar if there's meaningful progress (> 5%)
+                    if (goalData.progress_percentage > 5) {
+                        progressContainer.style.display = 'block';
+                        progressText.style.display = 'block';
+                        progressBar.style.width = `${goalData.progress_percentage}%`;
+                        progressText.textContent = `${goalData.progress_percentage.toFixed(1)}% Complete`;
+                        
+                        // Color code progress bar based on progress
+                        if (goalData.progress_percentage >= 75) {
+                            progressBar.className = 'bg-green-600 h-2 rounded-full transition-all duration-300';
+                        } else if (goalData.progress_percentage >= 50) {
+                            progressBar.className = 'bg-yellow-500 h-2 rounded-full transition-all duration-300';
+                        } else {
+                            progressBar.className = 'bg-primary-600 h-2 rounded-full transition-all duration-300';
+                        }
+                    } else {
+                        // Hide progress bar when progress is minimal or negative
+                        progressContainer.style.display = 'none';
+                        progressText.style.display = 'block';
+                    }
+                } else {
+                    document.getElementById(`${liftId}-baseline-1rm`).textContent = 'No data';
+                    document.getElementById(`${liftId}-current-1rm`).textContent = 'No data';
+                    document.getElementById(`${liftId}-goal-1rm`).textContent = 'No data';
+                    document.getElementById(`${liftId}-remaining`).textContent = 'No data';
+                    document.getElementById(`${liftId}-goal-status`).textContent = 'No data available';
+                    document.getElementById(`${liftId}-progress-text`).textContent = 'No data available';
+                    
+                    // Hide progress bar for no data
+                    const progressBar = document.getElementById(`${liftId}-progress-bar`);
+                    const progressContainer = progressBar.parentElement;
+                    progressContainer.style.display = 'none';
+                }
+            });
+            
+            // Update motivation section
+            document.getElementById('days-remaining').textContent = data.days_remaining;
+            document.getElementById('motivation-message').textContent = data.motivation_message;
+            
+        })
+        .catch(error => console.error('Error loading goal setting data:', error));
+}
+
+// Load training recommendations based on type
+function loadTrainingRecommendations(type) {
+    if (!window.trainingData) return;
+    
+    const container = document.getElementById('training-recommendations');
+    const principles = window.trainingData.training_principles[type];
+    const lifts = ['Bench Press (Barbell)', 'Squat (Barbell)', 'Deadlift (Barbell)', 'Overhead Press (Barbell)'];
+    
+    let html = `
+        <div class="mb-6 p-4 bg-gray-50 rounded-lg">
+            <h4 class="text-lg font-medium text-gray-900 mb-2">${principles.title}</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                <div>
+                    <span class="font-medium text-gray-700">Intensity:</span>
+                    <span class="text-gray-600">${principles.intensity}</span>
+                </div>
+                <div>
+                    <span class="font-medium text-gray-700">Volume:</span>
+                    <span class="text-gray-600">${principles.volume}</span>
+                </div>
+                <div>
+                    <span class="font-medium text-gray-700">Frequency:</span>
+                    <span class="text-gray-600">${principles.frequency}</span>
+                </div>
+            </div>
+            <div class="mt-3 text-xs text-gray-500">
+                <strong>Research:</strong> ${principles.research_note}
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    `;
+    
+    lifts.forEach(lift => {
+        const liftData = window.trainingData.personal_records[lift];
+        const recommendation = liftData[`${type}_recommendation`];
+        
+        if (liftData && liftData.estimated_1rm > 0) {
+            html += `
+                <div class="bg-white border border-gray-200 rounded-lg p-4">
+                    <h5 class="font-medium text-gray-900 mb-3">${lift.replace(' (Barbell)', '')}</h5>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Weight Range:</span>
+                            <span class="font-medium text-primary-600">${recommendation.weight_range}</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Reps:</span>
+                            <span class="font-medium">${recommendation.rep_range}</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Sets:</span>
+                            <span class="font-medium">${recommendation.sets}</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Rest:</span>
+                            <span class="font-medium">${recommendation.rest}</span>
+                        </div>
+                    </div>
+                    <div class="mt-3 text-xs text-gray-500">
+                        ${recommendation.description}
+                    </div>
+                </div>
+            `;
+        }
+    });
+    
+    html += '</div>';
+    container.innerHTML = html;
+}
+
+// Set active training tab
+function setActiveTrainingTab(activeType) {
+    const tabs = ['hypertrophy', 'strength', 'power'];
+    
+    tabs.forEach(type => {
+        const tab = document.getElementById(`${type}-tab`);
+        if (tab) {
+            if (type === activeType) {
+                tab.className = 'px-4 py-2 text-sm font-medium rounded-md bg-primary-100 text-primary-700 border border-primary-200';
+            } else {
+                tab.className = 'px-4 py-2 text-sm font-medium rounded-md bg-gray-100 text-gray-700 border border-gray-200';
+            }
+        }
+    });
 }
 
 // Update month navigation state
@@ -529,6 +755,32 @@ function setupEventListeners() {
             } else {
                 document.getElementById('category-exercises').classList.add('hidden');
             }
+        });
+    }
+    
+    // Training recommendation tabs
+    const hypertrophyTab = document.getElementById('hypertrophy-tab');
+    const strengthTab = document.getElementById('strength-tab');
+    const powerTab = document.getElementById('power-tab');
+    
+    if (hypertrophyTab) {
+        hypertrophyTab.addEventListener('click', function() {
+            setActiveTrainingTab('hypertrophy');
+            loadTrainingRecommendations('hypertrophy');
+        });
+    }
+    
+    if (strengthTab) {
+        strengthTab.addEventListener('click', function() {
+            setActiveTrainingTab('strength');
+            loadTrainingRecommendations('strength');
+        });
+    }
+    
+    if (powerTab) {
+        powerTab.addEventListener('click', function() {
+            setActiveTrainingTab('power');
+            loadTrainingRecommendations('power');
         });
     }
 }
@@ -816,9 +1068,9 @@ function createBigThreeProgressChart(elementId, data, liftName) {
     const dates = data.map(item => item.date);
     const maxWeights = data.map(item => item.max_weight);
     
-    // Calculate 5-point moving average for trend line
+    // Calculate 30-point moving average for trend line
     const movingAvgWeights = [];
-    const windowSize = 5;
+    const windowSize = 30;
     
     for (let i = 0; i < maxWeights.length; i++) {
         let sum = 0;
@@ -957,29 +1209,51 @@ function createBigThreeProgressChart(elementId, data, liftName) {
 function createExerciseFrequencyChart(data) {
     const exercises = data.map(item => item.exercise);
     const counts = data.map(item => item.count);
+    const colors = data.map((item, index) => enhancedChartColors[index % enhancedChartColors.length]);
     
     const trace = {
         x: exercises,
         y: counts,
         type: 'bar',
         marker: {
-            color: chartColors,
+            color: colors,
             line: {
                 color: '#fff',
-                width: 1
-            }
+                width: 2
+            },
+            opacity: 0.8
+        },
+        hovertemplate: '<b>%{x}</b><br>Sets: %{y}<extra></extra>',
+        textposition: 'outside',
+        textfont: {
+            size: 10,
+            color: '#374151'
         }
     };
     
     const layout = {
-        margin: { t: 10, r: 10, l: 50, b: 120 },
+        margin: { t: 20, r: 20, l: 60, b: 140 },
         xaxis: {
             tickangle: -45,
-            automargin: true
+            automargin: true,
+            title: {
+                text: 'Exercise',
+                font: { size: 14, color: '#374151' }
+            },
+            tickfont: { size: 11 },
+            gridcolor: '#f3f4f6'
         },
         yaxis: {
-            title: 'Number of Sets'
-        }
+            title: {
+                text: 'Number of Sets',
+                font: { size: 14, color: '#374151' }
+            },
+            tickfont: { size: 12 },
+            gridcolor: '#f3f4f6'
+        },
+        plot_bgcolor: '#fafafa',
+        paper_bgcolor: '#ffffff',
+        font: { family: 'Inter, system-ui, sans-serif' }
     };
     
     Plotly.newPlot('exercise-frequency-chart', [trace], layout, {responsive: true});
@@ -989,29 +1263,51 @@ function createExerciseFrequencyChart(data) {
 function createExerciseVolumeChart(data) {
     const exercises = data.map(item => item.exercise);
     const volumes = data.map(item => item.volume);
+    const colors = data.map((item, index) => enhancedChartColors[index % enhancedChartColors.length]);
     
     const trace = {
         x: exercises,
         y: volumes,
         type: 'bar',
         marker: {
-            color: chartColors,
+            color: colors,
             line: {
                 color: '#fff',
-                width: 1
-            }
+                width: 2
+            },
+            opacity: 0.8
+        },
+        hovertemplate: '<b>%{x}</b><br>Volume: %{y:,.0f}<extra></extra>',
+        textposition: 'outside',
+        textfont: {
+            size: 10,
+            color: '#374151'
         }
     };
     
     const layout = {
-        margin: { t: 10, r: 10, l: 70, b: 120 },
+        margin: { t: 20, r: 20, l: 80, b: 140 },
         xaxis: {
             tickangle: -45,
-            automargin: true
+            automargin: true,
+            title: {
+                text: 'Exercise',
+                font: { size: 14, color: '#374151' }
+            },
+            tickfont: { size: 11 },
+            gridcolor: '#f3f4f6'
         },
         yaxis: {
-            title: 'Total Volume (Weight × Reps)'
-        }
+            title: {
+                text: 'Total Volume (Weight × Reps)',
+                font: { size: 14, color: '#374151' }
+            },
+            tickfont: { size: 12 },
+            gridcolor: '#f3f4f6'
+        },
+        plot_bgcolor: '#fafafa',
+        paper_bgcolor: '#ffffff',
+        font: { family: 'Inter, system-ui, sans-serif' }
     };
     
     Plotly.newPlot('exercise-volume-chart', [trace], layout, {responsive: true});
@@ -1075,9 +1371,12 @@ function createRepsDistributionChart(data) {
 
 // Create category distribution chart
 function createCategoryDistributionChart(data) {
-    const categories = data.map(item => item.category);
+    const categories = data.map(item => getCategoryDisplayName(item.category));
     const counts = data.map(item => item.count);
-    const colors = categories.map(category => categoryColors[category]);
+    const colors = data.map((item, index) => {
+        const baseColor = categoryColors[item.category];
+        return createGradientColor(baseColor, index, data.length);
+    });
     
     const trace = {
         x: categories,
@@ -1087,19 +1386,39 @@ function createCategoryDistributionChart(data) {
             color: colors,
             line: {
                 color: '#fff',
-                width: 1
-            }
+                width: 2
+            },
+            opacity: 0.8
+        },
+        hovertemplate: '<b>%{x}</b><br>Sets: %{y}<extra></extra>',
+        textposition: 'outside',
+        textfont: {
+            size: 12,
+            color: '#374151'
         }
     };
     
     const layout = {
-        margin: { t: 10, r: 10, l: 50, b: 50 },
+        margin: { t: 20, r: 20, l: 60, b: 80 },
         xaxis: {
-            title: 'Category'
+            title: {
+                text: 'Category',
+                font: { size: 14, color: '#374151' }
+            },
+            tickfont: { size: 12 },
+            gridcolor: '#f3f4f6'
         },
         yaxis: {
-            title: 'Number of Sets'
-        }
+            title: {
+                text: 'Number of Sets',
+                font: { size: 14, color: '#374151' }
+            },
+            tickfont: { size: 12 },
+            gridcolor: '#f3f4f6'
+        },
+        plot_bgcolor: '#fafafa',
+        paper_bgcolor: '#ffffff',
+        font: { family: 'Inter, system-ui, sans-serif' }
     };
     
     Plotly.newPlot('category-distribution-chart', [trace], layout, {responsive: true});
@@ -1107,9 +1426,12 @@ function createCategoryDistributionChart(data) {
 
 // Create category volume chart
 function createCategoryVolumeChart(data) {
-    const categories = data.map(item => item.category);
+    const categories = data.map(item => getCategoryDisplayName(item.category));
     const volumes = data.map(item => item.volume);
-    const colors = categories.map(category => categoryColors[category]);
+    const colors = data.map((item, index) => {
+        const baseColor = categoryColors[item.category];
+        return createGradientColor(baseColor, index, data.length);
+    });
     
     const trace = {
         x: categories,
@@ -1119,19 +1441,39 @@ function createCategoryVolumeChart(data) {
             color: colors,
             line: {
                 color: '#fff',
-                width: 1
-            }
+                width: 2
+            },
+            opacity: 0.8
+        },
+        hovertemplate: '<b>%{x}</b><br>Volume: %{y:,.0f}<extra></extra>',
+        textposition: 'outside',
+        textfont: {
+            size: 12,
+            color: '#374151'
         }
     };
     
     const layout = {
-        margin: { t: 10, r: 10, l: 70, b: 50 },
+        margin: { t: 20, r: 20, l: 80, b: 80 },
         xaxis: {
-            title: 'Category'
+            title: {
+                text: 'Category',
+                font: { size: 14, color: '#374151' }
+            },
+            tickfont: { size: 12 },
+            gridcolor: '#f3f4f6'
         },
         yaxis: {
-            title: 'Total Volume (Weight × Reps)'
-        }
+            title: {
+                text: 'Total Volume (Weight × Reps)',
+                font: { size: 14, color: '#374151' }
+            },
+            tickfont: { size: 12 },
+            gridcolor: '#f3f4f6'
+        },
+        plot_bgcolor: '#fafafa',
+        paper_bgcolor: '#ffffff',
+        font: { family: 'Inter, system-ui, sans-serif' }
     };
     
     Plotly.newPlot('category-volume-chart', [trace], layout, {responsive: true});
@@ -1139,9 +1481,12 @@ function createCategoryVolumeChart(data) {
 
 // Create category weight chart
 function createCategoryWeightChart(data) {
-    const categories = data.map(item => item.category);
+    const categories = data.map(item => getCategoryDisplayName(item.category));
     const weights = data.map(item => item.weight);
-    const colors = categories.map(category => categoryColors[category]);
+    const colors = data.map((item, index) => {
+        const baseColor = categoryColors[item.category];
+        return createGradientColor(baseColor, index, data.length);
+    });
     
     const trace = {
         x: categories,
@@ -1151,19 +1496,39 @@ function createCategoryWeightChart(data) {
             color: colors,
             line: {
                 color: '#fff',
-                width: 1
-            }
+                width: 2
+            },
+            opacity: 0.8
+        },
+        hovertemplate: '<b>%{x}</b><br>Avg Weight: %{y:.1f} lbs<extra></extra>',
+        textposition: 'outside',
+        textfont: {
+            size: 12,
+            color: '#374151'
         }
     };
     
     const layout = {
-        margin: { t: 10, r: 10, l: 50, b: 50 },
+        margin: { t: 20, r: 20, l: 70, b: 80 },
         xaxis: {
-            title: 'Category'
+            title: {
+                text: 'Category',
+                font: { size: 14, color: '#374151' }
+            },
+            tickfont: { size: 12 },
+            gridcolor: '#f3f4f6'
         },
         yaxis: {
-            title: 'Average Weight (lbs)'
-        }
+            title: {
+                text: 'Average Weight (lbs)',
+                font: { size: 14, color: '#374151' }
+            },
+            tickfont: { size: 12 },
+            gridcolor: '#f3f4f6'
+        },
+        plot_bgcolor: '#fafafa',
+        paper_bgcolor: '#ffffff',
+        font: { family: 'Inter, system-ui, sans-serif' }
     };
     
     Plotly.newPlot('category-weight-chart', [trace], layout, {responsive: true});
@@ -1171,9 +1536,12 @@ function createCategoryWeightChart(data) {
 
 // Create category reps chart
 function createCategoryRepsChart(data) {
-    const categories = data.map(item => item.category);
+    const categories = data.map(item => getCategoryDisplayName(item.category));
     const reps = data.map(item => item.reps);
-    const colors = categories.map(category => categoryColors[category]);
+    const colors = data.map((item, index) => {
+        const baseColor = categoryColors[item.category];
+        return createGradientColor(baseColor, index, data.length);
+    });
     
     const trace = {
         x: categories,
@@ -1183,19 +1551,39 @@ function createCategoryRepsChart(data) {
             color: colors,
             line: {
                 color: '#fff',
-                width: 1
-            }
+                width: 2
+            },
+            opacity: 0.8
+        },
+        hovertemplate: '<b>%{x}</b><br>Avg Reps: %{y:.1f}<extra></extra>',
+        textposition: 'outside',
+        textfont: {
+            size: 12,
+            color: '#374151'
         }
     };
     
     const layout = {
-        margin: { t: 10, r: 10, l: 50, b: 50 },
+        margin: { t: 20, r: 20, l: 60, b: 80 },
         xaxis: {
-            title: 'Category'
+            title: {
+                text: 'Category',
+                font: { size: 14, color: '#374151' }
+            },
+            tickfont: { size: 12 },
+            gridcolor: '#f3f4f6'
         },
         yaxis: {
-            title: 'Average Reps'
-        }
+            title: {
+                text: 'Average Reps',
+                font: { size: 14, color: '#374151' }
+            },
+            tickfont: { size: 12 },
+            gridcolor: '#f3f4f6'
+        },
+        plot_bgcolor: '#fafafa',
+        paper_bgcolor: '#ffffff',
+        font: { family: 'Inter, system-ui, sans-serif' }
     };
     
     Plotly.newPlot('category-reps-chart', [trace], layout, {responsive: true});
@@ -1300,35 +1688,59 @@ function createExerciseSetChart(data, exerciseName) {
 function createCategoryExercisesChart(data, categoryName) {
     const exercises = data.map(item => item.exercise);
     const volumes = data.map(item => item.volume);
+    const colors = data.map((item, index) => enhancedChartColors[index % enhancedChartColors.length]);
     
     const trace = {
         x: exercises,
         y: volumes,
         type: 'bar',
         marker: {
-            color: chartColors,
+            color: colors,
             line: {
                 color: '#fff',
-                width: 1
-            }
+                width: 2
+            },
+            opacity: 0.8
+        },
+        hovertemplate: '<b>%{x}</b><br>Volume: %{y:,.0f}<extra></extra>',
+        textposition: 'outside',
+        textfont: {
+            size: 10,
+            color: '#374151'
         }
     };
     
+    const categoryDisplayName = getCategoryDisplayName(categoryName);
     const layout = {
         title: {
-            text: `Top ${categoryName} Exercises by Volume`,
+            text: `Top ${categoryDisplayName} Exercises by Volume`,
             font: {
-                size: 16
+                size: 16,
+                color: '#374151'
             }
         },
-        margin: { t: 40, r: 10, l: 70, b: 120 },
+        margin: { t: 50, r: 20, l: 80, b: 140 },
         xaxis: {
             tickangle: -45,
-            automargin: true
+            automargin: true,
+            title: {
+                text: 'Exercise',
+                font: { size: 14, color: '#374151' }
+            },
+            tickfont: { size: 11 },
+            gridcolor: '#f3f4f6'
         },
         yaxis: {
-            title: 'Total Volume (Weight × Reps)'
-        }
+            title: {
+                text: 'Total Volume (Weight × Reps)',
+                font: { size: 14, color: '#374151' }
+            },
+            tickfont: { size: 12 },
+            gridcolor: '#f3f4f6'
+        },
+        plot_bgcolor: '#fafafa',
+        paper_bgcolor: '#ffffff',
+        font: { family: 'Inter, system-ui, sans-serif' }
     };
     
     Plotly.newPlot('category-exercises-chart', [trace], layout, {responsive: true});
@@ -1336,25 +1748,36 @@ function createCategoryExercisesChart(data, categoryName) {
 
 // Create workout balance pie chart
 function createWorkoutBalancePieChart(data) {
-    const categories = data.map(item => item.category);
+    const categories = data.map(item => getCategoryDisplayName(item.category));
     const percentages = data.map(item => item.percentage);
-    const colors = categories.map(category => categoryColors[category]);
+    const colors = data.map(item => categoryColors[item.category]);
     
     const trace = {
         labels: categories,
         values: percentages,
         type: 'pie',
         marker: {
-            colors: colors
+            colors: colors,
+            line: {
+                color: '#fff',
+                width: 2
+            }
         },
         textinfo: 'label+percent',
         insidetextorientation: 'radial',
-        hoverinfo: 'label+percent'
+        hovertemplate: '<b>%{label}</b><br>%{percent}<br>Volume: %{value:.1f}%<extra></extra>',
+        textfont: {
+            size: 12,
+            color: '#374151'
+        }
     };
     
     const layout = {
-        margin: { t: 10, r: 10, l: 10, b: 10 },
-        showlegend: false
+        margin: { t: 20, r: 20, l: 20, b: 20 },
+        showlegend: false,
+        plot_bgcolor: '#fafafa',
+        paper_bgcolor: '#ffffff',
+        font: { family: 'Inter, system-ui, sans-serif' }
     };
     
     Plotly.newPlot('workout-balance-pie-chart', [trace], layout, {responsive: true});
@@ -1362,9 +1785,9 @@ function createWorkoutBalancePieChart(data) {
 
 // Create workout balance bar chart
 function createWorkoutBalanceBarChart(data) {
-    const categories = data.map(item => item.category);
+    const categories = data.map(item => getCategoryDisplayName(item.category));
     const percentages = data.map(item => item.percentage);
-    const colors = categories.map(category => categoryColors[category]);
+    const colors = data.map(item => categoryColors[item.category]);
     
     const trace = {
         x: percentages,
@@ -1375,18 +1798,52 @@ function createWorkoutBalanceBarChart(data) {
             color: colors,
             line: {
                 color: '#fff',
-                width: 1
-            }
+                width: 2
+            },
+            opacity: 0.8
+        },
+        hovertemplate: '<b>%{y}</b><br>Volume: %{x:.1f}%<extra></extra>',
+        textposition: 'outside',
+        textfont: {
+            size: 12,
+            color: '#374151'
         }
     };
     
     const layout = {
-        margin: { t: 10, r: 10, l: 100, b: 50 },
+        margin: { t: 20, r: 20, l: 120, b: 60 },
         xaxis: {
-            title: 'Percentage of Total Volume',
-            ticksuffix: '%'
-        }
+            title: {
+                text: 'Percentage of Total Volume',
+                font: { size: 14, color: '#374151' }
+            },
+            ticksuffix: '%',
+            tickfont: { size: 12 },
+            gridcolor: '#f3f4f6'
+        },
+        yaxis: {
+            title: {
+                text: 'Category',
+                font: { size: 14, color: '#374151' }
+            },
+            tickfont: { size: 12 }
+        },
+        plot_bgcolor: '#fafafa',
+        paper_bgcolor: '#ffffff',
+        font: { family: 'Inter, system-ui, sans-serif' }
     };
     
     Plotly.newPlot('workout-balance-bar-chart', [trace], layout, {responsive: true});
+}
+
+// Function to get category display name with emoji
+function getCategoryDisplayName(category) {
+    const emoji = categoryEmojis[category] || '📊';
+    return `${emoji} ${category}`;
+}
+
+// Function to create gradient colors for bars
+function createGradientColor(baseColor, index, total) {
+    const opacity = 0.7 + (0.3 * (index / total));
+    return baseColor + Math.round(opacity * 255).toString(16).padStart(2, '0');
 } 

@@ -1846,4 +1846,92 @@ function getCategoryDisplayName(category) {
 function createGradientColor(baseColor, index, total) {
     const opacity = 0.7 + (0.3 * (index / total));
     return baseColor + Math.round(opacity * 255).toString(16).padStart(2, '0');
-} 
+}
+
+// Dark mode functionality
+class ThemeManager {
+    constructor() {
+        this.theme = localStorage.getItem('theme') || 'light';
+        this.initTheme();
+        this.setupEventListeners();
+    }
+
+    initTheme() {
+        // Apply the stored theme on page load
+        if (this.theme === 'dark') {
+            document.documentElement.classList.add('dark');
+            this.updateThemeToggleIcons(true);
+        } else {
+            document.documentElement.classList.remove('dark');
+            this.updateThemeToggleIcons(false);
+        }
+    }
+
+    toggleTheme() {
+        if (this.theme === 'light') {
+            this.theme = 'dark';
+            document.documentElement.classList.add('dark');
+        } else {
+            this.theme = 'light';
+            document.documentElement.classList.remove('dark');
+        }
+        
+        localStorage.setItem('theme', this.theme);
+        this.updateThemeToggleIcons(this.theme === 'dark');
+        
+        // Re-render charts with new theme
+        this.updateChartsForTheme();
+    }
+
+    updateThemeToggleIcons(isDark) {
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+        
+        if (isDark) {
+            darkIcon.classList.remove('hidden');
+            lightIcon.classList.add('hidden');
+        } else {
+            darkIcon.classList.add('hidden');
+            lightIcon.classList.remove('hidden');
+        }
+    }
+
+    setupEventListeners() {
+        const toggleButton = document.getElementById('theme-toggle');
+        if (toggleButton) {
+            toggleButton.addEventListener('click', () => this.toggleTheme());
+        }
+    }
+
+    updateChartsForTheme() {
+        // This will be called to update chart colors when theme changes
+        // We'll implement chart updates as needed
+        console.log('Theme changed to:', this.theme);
+        
+        // Re-render any existing charts with updated colors
+        // This is a placeholder - specific chart updates would be added here
+        if (typeof updateAllCharts === 'function') {
+            updateAllCharts();
+        }
+    }
+
+    getChartConfig() {
+        // Return chart configuration based on current theme
+        const isDark = this.theme === 'dark';
+        
+        return {
+            plot_bgcolor: isDark ? '#1f2937' : '#fafafa',
+            paper_bgcolor: isDark ? '#111827' : '#ffffff',
+            font: { 
+                family: 'Inter, system-ui, sans-serif',
+                color: isDark ? '#f3f4f6' : '#374151'
+            },
+            gridcolor: isDark ? '#374151' : '#f3f4f6'
+        };
+    }
+}
+
+// Initialize theme manager when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    window.themeManager = new ThemeManager();
+}); 

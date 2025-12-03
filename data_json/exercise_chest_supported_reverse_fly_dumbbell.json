@@ -1,0 +1,48 @@
+{
+  "stats": {
+    "sets": 6,
+    "avg_weight": 30.0,
+    "max_weight": 40.0,
+    "avg_reps": 10.0,
+    "max_reps": 10.0,
+    "total_volume": 1800.0
+  },
+  "sets": [
+    {
+      "set": 0,
+      "weight": 40.0,
+      "reps": 10.0,
+      "volume": 400.0
+    },
+    {
+      "set": 0,
+      "weight": 20.0,
+      "reps": 10.0,
+      "volume": 200.0
+    },
+    {
+      "set": 1,
+      "weight": 40.0,
+      "reps": 10.0,
+      "volume": 400.0
+    },
+    {
+      "set": 1,
+      "weight": 20.0,
+      "reps": 10.0,
+      "volume": 200.0
+    },
+    {
+      "set": 2,
+      "weight": 40.0,
+      "reps": 10.0,
+      "volume": 400.0
+    },
+    {
+      "set": 2,
+      "weight": 20.0,
+      "reps": 10.0,
+      "volume": 200.0
+    }
+  ]
+}

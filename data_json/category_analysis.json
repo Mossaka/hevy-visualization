@@ -1,0 +1,122 @@
+{
+  "category_counts": [
+    {
+      "category": "Legs",
+      "count": 1819
+    },
+    {
+      "category": "Chest",
+      "count": 1466
+    },
+    {
+      "category": "Back",
+      "count": 931
+    },
+    {
+      "category": "Arms",
+      "count": 529
+    },
+    {
+      "category": "Shoulders",
+      "count": 511
+    },
+    {
+      "category": "Core",
+      "count": 182
+    },
+    {
+      "category": "Other",
+      "count": 39
+    }
+  ],
+  "category_volume": [
+    {
+      "category": "Legs",
+      "volume": 1942321.28
+    },
+    {
+      "category": "Chest",
+      "volume": 1213458.8
+    },
+    {
+      "category": "Back",
+      "volume": 642122.52
+    },
+    {
+      "category": "Shoulders",
+      "volume": 257283.88
+    },
+    {
+      "category": "Arms",
+      "volume": 223536.78
+    },
+    {
+      "category": "Core",
+      "volume": 25775.0
+    },
+    {
+      "category": "Other",
+      "volume": 25678.0
+    }
+  ],
+  "category_weight": [
+    {
+      "category": "Legs",
+      "weight": 151.8578889499725
+    },
+    {
+      "category": "Chest",
+      "weight": 115.19329467939973
+    },
+    {
+      "category": "Other",
+      "weight": 80.02564102564102
+    },
+    {
+      "category": "Back",
+      "weight": 70.31470461868957
+    },
+    {
+      "category": "Shoulders",
+      "weight": 58.290391389432486
+    },
+    {
+      "category": "Arms",
+      "weight": 41.84646502835538
+    },
+    {
+      "category": "Core",
+      "weight": 11.469780219780219
+    }
+  ],
+  "category_reps": [
+    {
+      "category": "Arms",
+      "reps": 10.172022684310019
+    },
+    {
+      "category": "Back",
+      "reps": 9.392051557465091
+    },
+    {
+      "category": "Core",
+      "reps": 9.31868131868132
+    },
+    {
+      "category": "Shoulders",
+      "reps": 9.199608610567514
+    },
+    {
+      "category": "Chest",
+      "reps": 7.805593451568895
+    },
+    {
+      "category": "Legs",
+      "reps": 7.610775151181968
+    },
+    {
+      "category": "Other",
+      "reps": 7.282051282051282
+    }
+  ]
+}

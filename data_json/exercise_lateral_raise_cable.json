@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "sets": 16,
+    "avg_weight": 24.5,
+    "max_weight": 25.0,
+    "avg_reps": 9.625,
+    "max_reps": 10.0,
+    "total_volume": 3770.0
+  },
+  "sets": [
+    {
+      "set": 0,
+      "weight": 24.0,
+      "reps": 10.0,
+      "volume": 240.0
+    },
+    {
+      "set": 0,
+      "weight": 24.0,
+      "reps": 10.0,
+      "volume": 240.0
+    },
+    {
+      "set": 0,
+      "weight": 24.0,
+      "reps": 10.0,
+      "volume": 240.0
+    },
+    {
+      "set": 0,
+      "weight": 25.0,
+      "reps": 10.0,
+      "volume": 250.0
+    },
+    {
+      "set": 0,
+      "weight": 25.0,
+      "reps": 10.0,
+      "volume": 250.0
+    },
+    {
+      "set": 0,
+      "weight": 25.0,
+      "reps": 8.0,
+      "volume": 200.0
+    },
+    {
+      "set": 1,
+      "weight": 24.0,
+      "reps": 10.0,
+      "volume": 240.0
+    },
+    {
+      "set": 1,
+      "weight": 24.0,
+      "reps": 10.0,
+      "volume": 240.0
+    },
+    {
+      "set": 1,
+      "weight": 24.0,
+      "reps": 10.0,
+      "volume": 240.0
+    },
+    {
+      "set": 1,
+      "weight": 25.0,
+      "reps": 10.0,
+      "volume": 250.0
+    },
+    {
+      "set": 1,
+      "weight": 25.0,
+      "reps": 10.0,
+      "volume": 250.0
+    },
+    {
+      "set": 1,
+      "weight": 25.0,
+      "reps": 8.0,
+      "volume": 200.0
+    },
+    {
+      "set": 2,
+      "weight": 24.0,
+      "reps": 10.0,
+      "volume": 240.0
+    },
+    {
+      "set": 2,
+      "weight": 24.0,
+      "reps": 10.0,
+      "volume": 240.0
+    },
+    {
+      "set": 2,
+      "weight": 25.0,
+      "reps": 10.0,
+      "volume": 250.0
+    },
+    {
+      "set": 2,
+      "weight": 25.0,
+      "reps": 8.0,
+      "volume": 200.0
+    }
+  ]
+}

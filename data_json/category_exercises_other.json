@@ -1,0 +1,66 @@
+[
+  {
+    "exercise": "Seated Row (Machine)",
+    "volume": 9650.0,
+    "avg_weight": 137.85714285714286,
+    "max_weight": 165.0,
+    "avg_reps": 10.0,
+    "max_reps": 10.0
+  },
+  {
+    "exercise": "Standing Abductor",
+    "volume": 5400.0,
+    "avg_weight": 180.0,
+    "max_weight": 180.0,
+    "avg_reps": 10.0,
+    "max_reps": 10.0
+  },
+  {
+    "exercise": "Seated Dip Machine",
+    "volume": 4200.0,
+    "avg_weight": 140.0,
+    "max_weight": 140.0,
+    "avg_reps": 10.0,
+    "max_reps": 10.0
+  },
+  {
+    "exercise": "Iso-Lateral High Row (Machine)",
+    "volume": 3128.0,
+    "avg_weight": 92.0,
+    "max_weight": 92.0,
+    "avg_reps": 11.333333333333334,
+    "max_reps": 12.0
+  },
+  {
+    "exercise": "Chest Supported Reverse Fly (Dumbbell)",
+    "volume": 1800.0,
+    "avg_weight": 30.0,
+    "max_weight": 40.0,
+    "avg_reps": 10.0,
+    "max_reps": 10.0
+  },
+  {
+    "exercise": "Back Extension (Weighted Hyperextension)",
+    "volume": 1500.0,
+    "avg_weight": 25.0,
+    "max_weight": 25.0,
+    "avg_reps": 10.0,
+    "max_reps": 10.0
+  },
+  {
+    "exercise": "Battle Ropes",
+    "volume": 0.0,
+    "avg_weight": 0.0,
+    "max_weight": 0.0,
+    "avg_reps": 0.0,
+    "max_reps": 0.0
+  },
+  {
+    "exercise": "Farmers Walk",
+    "volume": 0.0,
+    "avg_weight": 147.5,
+    "max_weight": 147.5,
+    "avg_reps": 0.0,
+    "max_reps": 0.0
+  }
+]

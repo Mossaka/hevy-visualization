@@ -1,0 +1,30 @@
+[
+  {
+    "category": "Arms",
+    "percentage": 5.162302099914982
+  },
+  {
+    "category": "Back",
+    "percentage": 14.82901575927997
+  },
+  {
+    "category": "Chest",
+    "percentage": 28.02331191940903
+  },
+  {
+    "category": "Core",
+    "percentage": 0.5952413586046496
+  },
+  {
+    "category": "Legs",
+    "percentage": 44.8554784695993
+  },
+  {
+    "category": "Other",
+    "percentage": 0.593001265033955
+  },
+  {
+    "category": "Shoulders",
+    "percentage": 5.941649128158123
+  }
+]

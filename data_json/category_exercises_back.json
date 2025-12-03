@@ -1,0 +1,82 @@
+[
+  {
+    "exercise": "Lat Pulldown (Cable)",
+    "volume": 183262.66,
+    "avg_weight": 89.17965174129354,
+    "max_weight": 154.32,
+    "avg_reps": 10.223880597014926,
+    "max_reps": 15.0
+  },
+  {
+    "exercise": "T Bar Row",
+    "volume": 120084.7,
+    "avg_weight": 87.32586956521739,
+    "max_weight": 115.0,
+    "avg_reps": 10.007246376811594,
+    "max_reps": 12.0
+  },
+  {
+    "exercise": "Bent Over Row (Barbell)",
+    "volume": 89465.0,
+    "avg_weight": 114.0,
+    "max_weight": 155.0,
+    "avg_reps": 8.368421052631579,
+    "max_reps": 10.0
+  },
+  {
+    "exercise": "Seated Cable Row - V Grip (Cable)",
+    "volume": 58065.0,
+    "avg_weight": 97.12711864406779,
+    "max_weight": 120.0,
+    "avg_reps": 10.135593220338983,
+    "max_reps": 12.0
+  },
+  {
+    "exercise": "Iso-Lateral Row (Machine)",
+    "volume": 55460.0,
+    "avg_weight": 121.68888888888888,
+    "max_weight": 150.0,
+    "avg_reps": 10.133333333333333,
+    "max_reps": 12.0
+  },
+  {
+    "exercise": "Lat Pulldown - Close Grip (Cable)",
+    "volume": 42097.5,
+    "avg_weight": 85.35087719298245,
+    "max_weight": 100.5,
+    "avg_reps": 8.666666666666666,
+    "max_reps": 10.0
+  },
+  {
+    "exercise": "Chest Supported Incline Row (Dumbbell)",
+    "volume": 38850.0,
+    "avg_weight": 48.888888888888886,
+    "max_weight": 50.0,
+    "avg_reps": 14.61111111111111,
+    "max_reps": 20.0
+  },
+  {
+    "exercise": "Seated Cable Row - Bar Grip",
+    "volume": 19813.3,
+    "avg_weight": 90.33136363636363,
+    "max_weight": 132.28,
+    "avg_reps": 10.181818181818182,
+    "max_reps": 15.0
+  },
+  {
+    "exercise": "Dumbbell Row",
+    "volume": 12540.0,
+    "avg_weight": 52.5,
+    "max_weight": 65.0,
+    "avg_reps": 9.307692307692308,
+    "max_reps": 10.0
+  },
+  {
+    "exercise": "Gorilla Row (Kettlebell)",
+    "volume": 11384.36,
+    "avg_weight": 35.85212121212122,
+    "max_weight": 42.64,
+    "avg_reps": 9.636363636363637,
+    "max_reps": 10.0
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "exercise": "Squat (Barbell)",
+    "volume": 581276.7,
+    "avg_weight": 179.59124361158433,
+    "max_weight": 265.0,
+    "avg_reps": 6.006814310051107,
+    "max_reps": 15.0
+  },
+  {
+    "exercise": "Deadlift (Barbell)",
+    "volume": 357793.98,
+    "avg_weight": 194.50447129909367,
+    "max_weight": 275.0,
+    "avg_reps": 5.954682779456193,
+    "max_reps": 10.0
+  },
+  {
+    "exercise": "Lying Leg Curl (Machine)",
+    "volume": 148435.0,
+    "avg_weight": 95.39473684210526,
+    "max_weight": 110.0,
+    "avg_reps": 10.236842105263158,
+    "max_reps": 15.0
+  },
+  {
+    "exercise": "Hip Thrust (Machine)",
+    "volume": 140085.0,
+    "avg_weight": 200.7642857142857,
+    "max_weight": 225.0,
+    "avg_reps": 9.971428571428572,
+    "max_reps": 10.0
+  },
+  {
+    "exercise": "Hip Abduction (Machine)",
+    "volume": 134085.0,
+    "avg_weight": 112.2094017094017,
+    "max_weight": 230.0,
+    "avg_reps": 10.239316239316238,
+    "max_reps": 15.0
+  },
+  {
+    "exercise": "Hip Adduction (Machine)",
+    "volume": 122315.0,
+    "avg_weight": 111.86190476190477,
+    "max_weight": 175.0,
+    "avg_reps": 10.276190476190477,
+    "max_reps": 15.0
+  },
+  {
+    "exercise": "Romanian Deadlift (Barbell)",
+    "volume": 82810.0,
+    "avg_weight": 110.69767441860465,
+    "max_weight": 175.0,
+    "avg_reps": 8.906976744186046,
+    "max_reps": 12.0
+  },
+  {
+    "exercise": "Hip Thrust (Barbell)",
+    "volume": 75030.0,
+    "avg_weight": 162.12765957446808,
+    "max_weight": 195.0,
+    "avg_reps": 9.872340425531915,
+    "max_reps": 10.0
+  },
+  {
+    "exercise": "Leg Extension (Machine)",
+    "volume": 62795.0,
+    "avg_weight": 133.2826086956522,
+    "max_weight": 155.0,
+    "avg_reps": 10.23913043478261,
+    "max_reps": 15.0
+  },
+  {
+    "exercise": "Bulgarian Split Squat",
+    "volume": 60064.6,
+    "avg_weight": 65.66471698113207,
+    "max_weight": 90.0,
+    "avg_reps": 8.962264150943396,
+    "max_reps": 10.0
+  }
+]

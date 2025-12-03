@@ -1,0 +1,107 @@
+{
+  "total_exercises": 89,
+  "total_sets": 5477,
+  "total_volume": 4330176.26,
+  "top_exercises": [
+    {
+      "exercise": "Bench Press (Barbell)",
+      "volume": 679396.06
+    },
+    {
+      "exercise": "Squat (Barbell)",
+      "volume": 581276.7
+    },
+    {
+      "exercise": "Deadlift (Barbell)",
+      "volume": 357793.98
+    },
+    {
+      "exercise": "Lat Pulldown (Cable)",
+      "volume": 183262.66
+    },
+    {
+      "exercise": "Overhead Press (Barbell)",
+      "volume": 181522.84
+    },
+    {
+      "exercise": "Incline Bench Press (Barbell)",
+      "volume": 174587.5
+    },
+    {
+      "exercise": "Lying Leg Curl (Machine)",
+      "volume": 148435.0
+    },
+    {
+      "exercise": "Hip Thrust (Machine)",
+      "volume": 140085.0
+    },
+    {
+      "exercise": "Hip Abduction (Machine)",
+      "volume": 134085.0
+    },
+    {
+      "exercise": "Chest Fly (Machine)",
+      "volume": 123000.0
+    }
+  ],
+  "category_distribution": [
+    {
+      "category": "Legs",
+      "count": 1819
+    },
+    {
+      "category": "Chest",
+      "count": 1466
+    },
+    {
+      "category": "Back",
+      "count": 931
+    },
+    {
+      "category": "Arms",
+      "count": 529
+    },
+    {
+      "category": "Shoulders",
+      "count": 511
+    },
+    {
+      "category": "Core",
+      "count": 182
+    },
+    {
+      "category": "Other",
+      "count": 39
+    }
+  ],
+  "category_volume": [
+    {
+      "category": "Legs",
+      "volume": 1942321.28
+    },
+    {
+      "category": "Chest",
+      "volume": 1213458.8
+    },
+    {
+      "category": "Back",
+      "volume": 642122.52
+    },
+    {
+      "category": "Shoulders",
+      "volume": 257283.88
+    },
+    {
+      "category": "Arms",
+      "volume": 223536.78
+    },
+    {
+      "category": "Core",
+      "volume": 25775.0
+    },
+    {
+      "category": "Other",
+      "volume": 25678.0
+    }
+  ]
+}

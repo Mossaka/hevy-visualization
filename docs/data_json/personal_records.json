@@ -1,0 +1,155 @@
+{
+  "personal_records": {
+    "Bench Press (Barbell)": {
+      "current_max_weight": 185.0,
+      "estimated_1rm": 206.72179247799411,
+      "best_set": {
+        "weight": 155.0,
+        "reps": 10,
+        "date": "2025-02-08",
+        "estimated_1rm": 206.72179247799411
+      },
+      "total_sets": 625,
+      "hypertrophy_recommendation": {
+        "weight_range": "134-165 lbs",
+        "rep_range": "8-15 reps",
+        "sets": "3-5 sets",
+        "rest": "60-90 seconds",
+        "description": "Muscle growth focus - moderate weight, higher volume"
+      },
+      "strength_recommendation": {
+        "weight_range": "165-186 lbs",
+        "rep_range": "1-6 reps",
+        "sets": "3-6 sets",
+        "rest": "3-5 minutes",
+        "description": "Maximum strength focus - heavy weight, low reps"
+      },
+      "power_recommendation": {
+        "weight_range": "62-124 lbs",
+        "rep_range": "1-5 reps",
+        "sets": "3-6 sets",
+        "rest": "3-5 minutes",
+        "description": "Explosive power focus - light to moderate weight, fast movement"
+      }
+    },
+    "Squat (Barbell)": {
+      "current_max_weight": 265.0,
+      "estimated_1rm": 298.15481548154816,
+      "best_set": {
+        "weight": 265.0,
+        "reps": 5,
+        "date": "2025-03-22",
+        "estimated_1rm": 298.15481548154816
+      },
+      "total_sets": 382,
+      "hypertrophy_recommendation": {
+        "weight_range": "194-239 lbs",
+        "rep_range": "8-15 reps",
+        "sets": "3-5 sets",
+        "rest": "60-90 seconds",
+        "description": "Muscle growth focus - moderate weight, higher volume"
+      },
+      "strength_recommendation": {
+        "weight_range": "239-268 lbs",
+        "rep_range": "1-6 reps",
+        "sets": "3-6 sets",
+        "rest": "3-5 minutes",
+        "description": "Maximum strength focus - heavy weight, low reps"
+      },
+      "power_recommendation": {
+        "weight_range": "89-179 lbs",
+        "rep_range": "1-5 reps",
+        "sets": "3-6 sets",
+        "rest": "3-5 minutes",
+        "description": "Explosive power focus - light to moderate weight, fast movement"
+      }
+    },
+    "Deadlift (Barbell)": {
+      "current_max_weight": 275.0,
+      "estimated_1rm": 309.4059405940594,
+      "best_set": {
+        "weight": 275.0,
+        "reps": 5,
+        "date": "2024-06-28",
+        "estimated_1rm": 309.4059405940594
+      },
+      "total_sets": 245,
+      "hypertrophy_recommendation": {
+        "weight_range": "201-248 lbs",
+        "rep_range": "8-15 reps",
+        "sets": "3-5 sets",
+        "rest": "60-90 seconds",
+        "description": "Muscle growth focus - moderate weight, higher volume"
+      },
+      "strength_recommendation": {
+        "weight_range": "248-278 lbs",
+        "rep_range": "1-6 reps",
+        "sets": "3-6 sets",
+        "rest": "3-5 minutes",
+        "description": "Maximum strength focus - heavy weight, low reps"
+      },
+      "power_recommendation": {
+        "weight_range": "93-186 lbs",
+        "rep_range": "1-5 reps",
+        "sets": "3-6 sets",
+        "rest": "3-5 minutes",
+        "description": "Explosive power focus - light to moderate weight, fast movement"
+      }
+    },
+    "Overhead Press (Barbell)": {
+      "current_max_weight": 95.0,
+      "estimated_1rm": 126.70045345425446,
+      "best_set": {
+        "weight": 95.0,
+        "reps": 10,
+        "date": "2023-11-26",
+        "estimated_1rm": 126.70045345425446
+      },
+      "total_sets": 303,
+      "hypertrophy_recommendation": {
+        "weight_range": "82-101 lbs",
+        "rep_range": "8-15 reps",
+        "sets": "3-5 sets",
+        "rest": "60-90 seconds",
+        "description": "Muscle growth focus - moderate weight, higher volume"
+      },
+      "strength_recommendation": {
+        "weight_range": "101-114 lbs",
+        "rep_range": "1-6 reps",
+        "sets": "3-6 sets",
+        "rest": "3-5 minutes",
+        "description": "Maximum strength focus - heavy weight, low reps"
+      },
+      "power_recommendation": {
+        "weight_range": "38-76 lbs",
+        "rep_range": "1-5 reps",
+        "sets": "3-6 sets",
+        "rest": "3-5 minutes",
+        "description": "Explosive power focus - light to moderate weight, fast movement"
+      }
+    }
+  },
+  "training_principles": {
+    "hypertrophy": {
+      "title": "Hypertrophy Training (Muscle Growth)",
+      "intensity": "65-80% of 1RM",
+      "volume": "High volume, moderate intensity",
+      "frequency": "2-3x per week per muscle group",
+      "research_note": "Based on Schoenfeld et al. (2017) meta-analysis showing optimal hypertrophy occurs at 6-20 reps with 65-85% 1RM"
+    },
+    "strength": {
+      "title": "Strength Training (Max Effort)",
+      "intensity": "80-100% of 1RM",
+      "volume": "Low volume, high intensity",
+      "frequency": "2-3x per week with adequate recovery",
+      "research_note": "Based on Helms et al. (2018) recommendations for strength development at >85% 1RM"
+    },
+    "power": {
+      "title": "Power Training (Speed-Strength)",
+      "intensity": "30-60% of 1RM",
+      "volume": "Low volume, explosive intent",
+      "frequency": "2-3x per week when fresh",
+      "research_note": "Based on Cormie et al. (2011) showing optimal power development at 30-60% 1RM with maximal intent"
+    }
+  }
+}

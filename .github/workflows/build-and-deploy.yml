@@ -1,0 +1,48 @@
+name: Build and Deploy Static Site
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'data/**'
+      - '*.py'
+      - 'static/**'
+      - 'templates/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build static site
+        run: python build_static_site.py
+
+      - name: Verify build
+        run: |
+          test -f docs/index.html || exit 1
+          test -f docs/data_json/summary.json || exit 1
+          echo "JSON files generated:"
+          ls docs/data_json/*.json | wc -l
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          cname: workout.mossaka.com

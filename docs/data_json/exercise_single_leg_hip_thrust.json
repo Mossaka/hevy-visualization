@@ -1,0 +1,18 @@
+{
+  "stats": {
+    "sets": 1,
+    "avg_weight": 0.0,
+    "max_weight": 0.0,
+    "avg_reps": 8.0,
+    "max_reps": 8.0,
+    "total_volume": 0.0
+  },
+  "sets": [
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 8.0,
+      "volume": 0.0
+    }
+  ]
+}

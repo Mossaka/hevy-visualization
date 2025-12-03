@@ -1,0 +1,40 @@
+{
+  "goals": {
+    "Bench Press (Barbell)": {
+      "baseline_1rm": 196.8946894689469,
+      "current_1rm": 152.45274527452744,
+      "goal_1rm": 236.27362736273625,
+      "progress_percentage": 0.0,
+      "remaining_lbs": 83.8208820882088,
+      "status": "Building Foundation \ud83d\udcaa"
+    },
+    "Squat (Barbell)": {
+      "baseline_1rm": 284.5528455284553,
+      "current_1rm": 232.5,
+      "goal_1rm": 341.4634146341463,
+      "progress_percentage": 0.0,
+      "remaining_lbs": 108.96341463414632,
+      "status": "Building Foundation \ud83d\udcaa"
+    },
+    "Deadlift (Barbell)": {
+      "baseline_1rm": 275.65256525652563,
+      "current_1rm": 261.3240418118467,
+      "goal_1rm": 330.78307830783075,
+      "progress_percentage": 0.0,
+      "remaining_lbs": 69.45903649598404,
+      "status": "Building Foundation \ud83d\udcaa"
+    },
+    "Overhead Press (Barbell)": {
+      "baseline_1rm": 105.53762105785944,
+      "current_1rm": 95.63456345634563,
+      "goal_1rm": 126.64514526943132,
+      "progress_percentage": 0.0,
+      "remaining_lbs": 31.010581813085693,
+      "status": "Building Foundation \ud83d\udcaa"
+    }
+  },
+  "target_date": "End of 2025",
+  "days_remaining": 27,
+  "year_progress": 92.05479452054794,
+  "motivation_message": "You're 92.1% through 2025 with 27 days left to achieve your 20% strength goals! Stay consistent and trust the process."
+}

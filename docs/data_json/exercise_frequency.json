@@ -1,0 +1,62 @@
+[
+  {
+    "exercise": "Bench Press (Barbell)",
+    "count": 868
+  },
+  {
+    "exercise": "Squat (Barbell)",
+    "count": 587
+  },
+  {
+    "exercise": "Deadlift (Barbell)",
+    "count": 331
+  },
+  {
+    "exercise": "Overhead Press (Barbell)",
+    "count": 303
+  },
+  {
+    "exercise": "Incline Bench Press (Barbell)",
+    "count": 208
+  },
+  {
+    "exercise": "Lat Pulldown (Cable)",
+    "count": 201
+  },
+  {
+    "exercise": "Lying Leg Curl (Machine)",
+    "count": 152
+  },
+  {
+    "exercise": "T Bar Row",
+    "count": 138
+  },
+  {
+    "exercise": "Chest Fly (Machine)",
+    "count": 136
+  },
+  {
+    "exercise": "Incline Bench Press (Dumbbell)",
+    "count": 119
+  },
+  {
+    "exercise": "Hip Abduction (Machine)",
+    "count": 117
+  },
+  {
+    "exercise": "Pull Up",
+    "count": 113
+  },
+  {
+    "exercise": "Skullcrusher (Barbell)",
+    "count": 112
+  },
+  {
+    "exercise": "Bulgarian Split Squat",
+    "count": 106
+  },
+  {
+    "exercise": "Hip Adduction (Machine)",
+    "count": 105
+  }
+]

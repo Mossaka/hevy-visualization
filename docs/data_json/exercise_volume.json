@@ -1,0 +1,62 @@
+[
+  {
+    "exercise": "Bench Press (Barbell)",
+    "volume": 679396.06
+  },
+  {
+    "exercise": "Squat (Barbell)",
+    "volume": 581276.7
+  },
+  {
+    "exercise": "Deadlift (Barbell)",
+    "volume": 357793.98
+  },
+  {
+    "exercise": "Lat Pulldown (Cable)",
+    "volume": 183262.66
+  },
+  {
+    "exercise": "Overhead Press (Barbell)",
+    "volume": 181522.84
+  },
+  {
+    "exercise": "Incline Bench Press (Barbell)",
+    "volume": 174587.5
+  },
+  {
+    "exercise": "Lying Leg Curl (Machine)",
+    "volume": 148435.0
+  },
+  {
+    "exercise": "Hip Thrust (Machine)",
+    "volume": 140085.0
+  },
+  {
+    "exercise": "Hip Abduction (Machine)",
+    "volume": 134085.0
+  },
+  {
+    "exercise": "Chest Fly (Machine)",
+    "volume": 123000.0
+  },
+  {
+    "exercise": "Hip Adduction (Machine)",
+    "volume": 122315.0
+  },
+  {
+    "exercise": "T Bar Row",
+    "volume": 120084.7
+  },
+  {
+    "exercise": "Chest Press (Machine)",
+    "volume": 107800.0
+  },
+  {
+    "exercise": "Incline Bench Press (Dumbbell)",
+    "volume": 92160.24
+  },
+  {
+    "exercise": "Bent Over Row (Barbell)",
+    "volume": 89465.0
+  }
+]

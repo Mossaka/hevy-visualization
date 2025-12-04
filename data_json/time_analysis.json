@@ -1,6 +1,132 @@
 {
   "monthly": [
     {
+      "month": "2023-07",
+      "workouts": 2,
+      "volume": 83366.7,
+      "sets": 131,
+      "duration_minutes": 283.0
+    },
+    {
+      "month": "2023-08",
+      "workouts": 3,
+      "volume": 213270.76,
+      "sets": 316,
+      "duration_minutes": 969.0
+    },
+    {
+      "month": "2023-09",
+      "workouts": 3,
+      "volume": 125554.56999999999,
+      "sets": 172,
+      "duration_minutes": 1786.0
+    },
+    {
+      "month": "2023-10",
+      "workouts": 3,
+      "volume": 106096.0,
+      "sets": 130,
+      "duration_minutes": 439.0
+    },
+    {
+      "month": "2023-11",
+      "workouts": 5,
+      "volume": 188767.0,
+      "sets": 233,
+      "duration_minutes": 648.0
+    },
+    {
+      "month": "2023-12",
+      "workouts": 2,
+      "volume": 34805.0,
+      "sets": 46,
+      "duration_minutes": 108.0
+    },
+    {
+      "month": "2024-01",
+      "workouts": 4,
+      "volume": 221645.0,
+      "sets": 294,
+      "duration_minutes": 871.0
+    },
+    {
+      "month": "2024-02",
+      "workouts": 3,
+      "volume": 179375.0,
+      "sets": 235,
+      "duration_minutes": 624.0
+    },
+    {
+      "month": "2024-03",
+      "workouts": 3,
+      "volume": 124640.0,
+      "sets": 171,
+      "duration_minutes": 473.0
+    },
+    {
+      "month": "2024-04",
+      "workouts": 3,
+      "volume": 156538.0,
+      "sets": 214,
+      "duration_minutes": 692.0
+    },
+    {
+      "month": "2024-05",
+      "workouts": 5,
+      "volume": 220546.7,
+      "sets": 310,
+      "duration_minutes": 1017.0
+    },
+    {
+      "month": "2024-06",
+      "workouts": 3,
+      "volume": 371912.35,
+      "sets": 467,
+      "duration_minutes": 1446.0
+    },
+    {
+      "month": "2024-07",
+      "workouts": 3,
+      "volume": 193161.77,
+      "sets": 236,
+      "duration_minutes": 787.0
+    },
+    {
+      "month": "2024-08",
+      "workouts": 3,
+      "volume": 74878.93000000001,
+      "sets": 105,
+      "duration_minutes": 306.0
+    },
+    {
+      "month": "2024-09",
+      "workouts": 4,
+      "volume": 134254.48,
+      "sets": 155,
+      "duration_minutes": 466.0
+    },
+    {
+      "month": "2024-10",
+      "workouts": 6,
+      "volume": 143940.0,
+      "sets": 187,
+      "duration_minutes": 618.0
+    },
+    {
+      "month": "2024-11",
+      "workouts": 6,
+      "volume": 90458.0,
+      "sets": 114,
+      "duration_minutes": 390.0
+    },
+    {
+      "month": "2024-12",
+      "workouts": 2,
+      "volume": 91904.0,
+      "sets": 103,
+      "duration_minutes": 435.0
+    },
+    {
       "month": "2025-01",
       "workouts": 5,
       "volume": 114620.0,
@@ -79,6 +205,20 @@
     }
   ],
   "yearly": [
+    {
+      "year": 2023,
+      "workouts": 6,
+      "volume": 751860.03,
+      "sets": 1028,
+      "duration_minutes": 4233.0
+    },
+    {
+      "year": 2024,
+      "workouts": 13,
+      "volume": 2003254.23,
+      "sets": 2591,
+      "duration_minutes": 8125.0
+    },
     {
       "year": 2025,
       "workouts": 8,

@@ -1,6 +1,6 @@
 {
   "stats": {
-    "sets": 4,
+    "sets": 42,
     "avg_weight": 0.0,
     "max_weight": 0.0,
     "avg_reps": 0.0,
@@ -16,6 +16,234 @@
     },
     {
       "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 0,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 1,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 1,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 1,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 1,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 1,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 1,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 1,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 1,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 1,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 1,
+      "weight": 0.0,
+      "reps": 0.0,
+      "volume": 0.0
+    },
+    {
+      "set": 1,
       "weight": 0.0,
       "reps": 0.0,
       "volume": 0.0

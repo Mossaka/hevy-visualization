@@ -9,7 +9,7 @@
         "date": "2025-02-08",
         "estimated_1rm": 206.72179247799411
       },
-      "total_sets": 254,
+      "total_sets": 625,
       "hypertrophy_recommendation": {
         "weight_range": "134-165 lbs",
         "rep_range": "8-15 reps",
@@ -41,7 +41,7 @@
         "date": "2025-03-22",
         "estimated_1rm": 298.15481548154816
       },
-      "total_sets": 93,
+      "total_sets": 382,
       "hypertrophy_recommendation": {
         "weight_range": "194-239 lbs",
         "rep_range": "8-15 reps",
@@ -65,31 +65,31 @@
       }
     },
     "Deadlift (Barbell)": {
-      "current_max_weight": 265.0,
-      "estimated_1rm": 298.15481548154816,
+      "current_max_weight": 275.0,
+      "estimated_1rm": 309.4059405940594,
       "best_set": {
-        "weight": 265.0,
+        "weight": 275.0,
         "reps": 5,
-        "date": "2025-03-24",
-        "estimated_1rm": 298.15481548154816
+        "date": "2024-06-28",
+        "estimated_1rm": 309.4059405940594
       },
-      "total_sets": 57,
+      "total_sets": 245,
       "hypertrophy_recommendation": {
-        "weight_range": "194-239 lbs",
+        "weight_range": "201-248 lbs",
         "rep_range": "8-15 reps",
         "sets": "3-5 sets",
         "rest": "60-90 seconds",
         "description": "Muscle growth focus - moderate weight, higher volume"
       },
       "strength_recommendation": {
-        "weight_range": "239-268 lbs",
+        "weight_range": "248-278 lbs",
         "rep_range": "1-6 reps",
         "sets": "3-6 sets",
         "rest": "3-5 minutes",
         "description": "Maximum strength focus - heavy weight, low reps"
       },
       "power_recommendation": {
-        "weight_range": "89-179 lbs",
+        "weight_range": "93-186 lbs",
         "rep_range": "1-5 reps",
         "sets": "3-6 sets",
         "rest": "3-5 minutes",
@@ -97,31 +97,31 @@
       }
     },
     "Overhead Press (Barbell)": {
-      "current_max_weight": 85.0,
-      "estimated_1rm": 105.53762105785944,
+      "current_max_weight": 95.0,
+      "estimated_1rm": 126.70045345425446,
       "best_set": {
-        "weight": 85.0,
-        "reps": 8,
-        "date": "2025-11-25",
-        "estimated_1rm": 105.53762105785944
+        "weight": 95.0,
+        "reps": 10,
+        "date": "2023-11-26",
+        "estimated_1rm": 126.70045345425446
       },
-      "total_sets": 68,
+      "total_sets": 303,
       "hypertrophy_recommendation": {
-        "weight_range": "69-84 lbs",
+        "weight_range": "82-101 lbs",
         "rep_range": "8-15 reps",
         "sets": "3-5 sets",
         "rest": "60-90 seconds",
         "description": "Muscle growth focus - moderate weight, higher volume"
       },
       "strength_recommendation": {
-        "weight_range": "84-95 lbs",
+        "weight_range": "101-114 lbs",
         "rep_range": "1-6 reps",
         "sets": "3-6 sets",
         "rest": "3-5 minutes",
         "description": "Maximum strength focus - heavy weight, low reps"
       },
       "power_recommendation": {
-        "weight_range": "32-63 lbs",
+        "weight_range": "38-76 lbs",
         "rep_range": "1-5 reps",
         "sets": "3-6 sets",
         "rest": "3-5 minutes",

@@ -1,50 +1,82 @@
 [
   {
     "exercise": "Bench Press (Barbell)",
-    "volume": 279750.0,
-    "avg_weight": 131.46186440677965,
+    "volume": 679396.06,
+    "avg_weight": 129.83425115207373,
     "max_weight": 185.0,
-    "avg_reps": 6.65819209039548,
+    "avg_reps": 6.5449308755760365,
     "max_reps": 12.0
   },
   {
     "exercise": "Incline Bench Press (Barbell)",
-    "volume": 102640.0,
-    "avg_weight": 98.1896551724138,
-    "max_weight": 125.0,
-    "avg_reps": 9.051724137931034,
+    "volume": 174587.5,
+    "avg_weight": 97.95673076923077,
+    "max_weight": 135.0,
+    "avg_reps": 8.721153846153847,
+    "max_reps": 20.0
+  },
+  {
+    "exercise": "Chest Fly (Machine)",
+    "volume": 123000.0,
+    "avg_weight": 89.48529411764706,
+    "max_weight": 115.0,
+    "avg_reps": 10.102941176470589,
     "max_reps": 12.0
   },
   {
     "exercise": "Chest Press (Machine)",
-    "volume": 49280.0,
-    "avg_weight": 124.23076923076923,
-    "max_weight": 155.0,
-    "avg_reps": 10.153846153846153,
+    "volume": 107800.0,
+    "avg_weight": 123.43023255813954,
+    "max_weight": 180.0,
+    "avg_reps": 10.162790697674419,
     "max_reps": 12.0
-  },
-  {
-    "exercise": "Chest Fly (Machine)",
-    "volume": 47050.0,
-    "avg_weight": 92.6470588235294,
-    "max_weight": 105.0,
-    "avg_reps": 9.96078431372549,
-    "max_reps": 10.0
   },
   {
     "exercise": "Incline Bench Press (Dumbbell)",
-    "volume": 21640.0,
-    "avg_weight": 87.08333333333333,
+    "volume": 92160.24,
+    "avg_weight": 76.19529411764705,
     "max_weight": 100.0,
-    "avg_reps": 10.333333333333334,
-    "max_reps": 15.0
+    "avg_reps": 10.277310924369749,
+    "max_reps": 16.0
+  },
+  {
+    "exercise": "Bench Press - Close Grip (Barbell)",
+    "volume": 17615.0,
+    "avg_weight": 116.66666666666667,
+    "max_weight": 145.0,
+    "avg_reps": 8.61111111111111,
+    "max_reps": 10.0
   },
   {
     "exercise": "Chest Fly (Dumbbell)",
-    "volume": 2400.0,
-    "avg_weight": 33.333333333333336,
+    "volume": 6250.0,
+    "avg_weight": 30.789473684210527,
     "max_weight": 40.0,
-    "avg_reps": 12.0,
+    "avg_reps": 10.631578947368421,
     "max_reps": 12.0
+  },
+  {
+    "exercise": "Floor Press (Dumbbell)",
+    "volume": 5550.0,
+    "avg_weight": 92.5,
+    "max_weight": 110.0,
+    "avg_reps": 10.0,
+    "max_reps": 10.0
+  },
+  {
+    "exercise": "Incline Chest Press (Machine)",
+    "volume": 3950.0,
+    "avg_weight": 131.66666666666666,
+    "max_weight": 145.0,
+    "avg_reps": 10.0,
+    "max_reps": 10.0
+  },
+  {
+    "exercise": "Bench Press (Smith Machine)",
+    "volume": 3150.0,
+    "avg_weight": 105.0,
+    "max_weight": 105.0,
+    "avg_reps": 10.0,
+    "max_reps": 10.0
   }
 ]

@@ -1,11 +1,11 @@
 {
   "stats": {
-    "sets": 13,
-    "avg_weight": 65.0,
+    "sets": 19,
+    "avg_weight": 59.473684210526315,
     "max_weight": 90.0,
-    "avg_reps": 10.153846153846153,
+    "avg_reps": 10.105263157894736,
     "max_reps": 12.0,
-    "total_volume": 8560.0
+    "total_volume": 11410.0
   },
   "sets": [
     {
@@ -16,9 +16,27 @@
     },
     {
       "set": 0,
+      "weight": 55.0,
+      "reps": 10.0,
+      "volume": 550.0
+    },
+    {
+      "set": 0,
       "weight": 70.0,
       "reps": 10.0,
       "volume": 700.0
+    },
+    {
+      "set": 0,
+      "weight": 40.0,
+      "reps": 10.0,
+      "volume": 400.0
+    },
+    {
+      "set": 0,
+      "weight": 40.0,
+      "reps": 10.0,
+      "volume": 400.0
     },
     {
       "set": 0,
@@ -33,25 +51,13 @@
       "volume": 660.0
     },
     {
-      "set": 0,
+      "set": 1,
       "weight": 40.0,
       "reps": 10.0,
       "volume": 400.0
     },
     {
       "set": 1,
-      "weight": 70.0,
-      "reps": 10.0,
-      "volume": 700.0
-    },
-    {
-      "set": 1,
-      "weight": 70.0,
-      "reps": 10.0,
-      "volume": 700.0
-    },
-    {
-      "set": 1,
       "weight": 55.0,
       "reps": 10.0,
       "volume": 550.0
@@ -69,22 +75,52 @@
       "volume": 550.0
     },
     {
-      "set": 2,
-      "weight": 90.0,
+      "set": 1,
+      "weight": 70.0,
       "reps": 10.0,
-      "volume": 900.0
+      "volume": 700.0
     },
     {
-      "set": 2,
-      "weight": 90.0,
+      "set": 1,
+      "weight": 70.0,
       "reps": 10.0,
-      "volume": 900.0
+      "volume": 700.0
+    },
+    {
+      "set": 1,
+      "weight": 55.0,
+      "reps": 10.0,
+      "volume": 550.0
     },
     {
       "set": 2,
       "weight": 70.0,
       "reps": 10.0,
       "volume": 700.0
+    },
+    {
+      "set": 2,
+      "weight": 90.0,
+      "reps": 10.0,
+      "volume": 900.0
+    },
+    {
+      "set": 2,
+      "weight": 90.0,
+      "reps": 10.0,
+      "volume": 900.0
+    },
+    {
+      "set": 2,
+      "weight": 40.0,
+      "reps": 10.0,
+      "volume": 400.0
+    },
+    {
+      "set": 2,
+      "weight": 55.0,
+      "reps": 10.0,
+      "volume": 550.0
     }
   ]
 }

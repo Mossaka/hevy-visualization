@@ -1,11 +1,11 @@
 {
   "stats": {
-    "sets": 51,
-    "avg_weight": 92.6470588235294,
-    "max_weight": 105.0,
-    "avg_reps": 9.96078431372549,
-    "max_reps": 10.0,
-    "total_volume": 47050.0
+    "sets": 136,
+    "avg_weight": 89.48529411764706,
+    "max_weight": 115.0,
+    "avg_reps": 10.102941176470589,
+    "max_reps": 12.0,
+    "total_volume": 123000.0
   },
   "sets": [
     {
@@ -16,84 +16,6 @@
     },
     {
       "set": 0,
-      "weight": 70.0,
-      "reps": 10.0,
-      "volume": 700.0
-    },
-    {
-      "set": 0,
-      "weight": 85.0,
-      "reps": 10.0,
-      "volume": 850.0
-    },
-    {
-      "set": 0,
-      "weight": 100.0,
-      "reps": 10.0,
-      "volume": 1000.0
-    },
-    {
-      "set": 0,
-      "weight": 90.0,
-      "reps": 10.0,
-      "volume": 900.0
-    },
-    {
-      "set": 0,
-      "weight": 100.0,
-      "reps": 10.0,
-      "volume": 1000.0
-    },
-    {
-      "set": 0,
-      "weight": 100.0,
-      "reps": 10.0,
-      "volume": 1000.0
-    },
-    {
-      "set": 0,
-      "weight": 90.0,
-      "reps": 10.0,
-      "volume": 900.0
-    },
-    {
-      "set": 0,
-      "weight": 90.0,
-      "reps": 10.0,
-      "volume": 900.0
-    },
-    {
-      "set": 0,
-      "weight": 90.0,
-      "reps": 10.0,
-      "volume": 900.0
-    },
-    {
-      "set": 0,
-      "weight": 90.0,
-      "reps": 10.0,
-      "volume": 900.0
-    },
-    {
-      "set": 0,
-      "weight": 100.0,
-      "reps": 10.0,
-      "volume": 1000.0
-    },
-    {
-      "set": 0,
-      "weight": 100.0,
-      "reps": 10.0,
-      "volume": 1000.0
-    },
-    {
-      "set": 0,
-      "weight": 90.0,
-      "reps": 10.0,
-      "volume": 900.0
-    },
-    {
-      "set": 0,
       "weight": 100.0,
       "reps": 10.0,
       "volume": 1000.0
@@ -112,15 +34,315 @@
     },
     {
       "set": 0,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 0,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 0,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 0,
+      "weight": 90.0,
+      "reps": 10.0,
+      "volume": 900.0
+    },
+    {
+      "set": 0,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 0,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 0,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 0,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 0,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 0,
+      "weight": 70.0,
+      "reps": 10.0,
+      "volume": 700.0
+    },
+    {
+      "set": 0,
+      "weight": 85.0,
+      "reps": 12.0,
+      "volume": 1020.0
+    },
+    {
+      "set": 0,
+      "weight": 55.0,
+      "reps": 12.0,
+      "volume": 660.0
+    },
+    {
+      "set": 0,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 0,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 0,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 0,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 0,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 0,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 0,
+      "weight": 75.0,
+      "reps": 10.0,
+      "volume": 750.0
+    },
+    {
+      "set": 0,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 0,
+      "weight": 70.0,
+      "reps": 10.0,
+      "volume": 700.0
+    },
+    {
+      "set": 0,
+      "weight": 80.0,
+      "reps": 10.0,
+      "volume": 800.0
+    },
+    {
+      "set": 0,
+      "weight": 90.0,
+      "reps": 10.0,
+      "volume": 900.0
+    },
+    {
+      "set": 0,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 0,
+      "weight": 40.0,
+      "reps": 10.0,
+      "volume": 400.0
+    },
+    {
+      "set": 0,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 0,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 0,
+      "weight": 90.0,
+      "reps": 10.0,
+      "volume": 900.0
+    },
+    {
+      "set": 0,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 0,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 0,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 0,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 0,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 0,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 0,
+      "weight": 90.0,
+      "reps": 10.0,
+      "volume": 900.0
+    },
+    {
+      "set": 0,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 0,
+      "weight": 105.0,
+      "reps": 10.0,
+      "volume": 1050.0
+    },
+    {
+      "set": 0,
+      "weight": 90.0,
+      "reps": 10.0,
+      "volume": 900.0
+    },
+    {
+      "set": 0,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 0,
+      "weight": 55.0,
+      "reps": 10.0,
+      "volume": 550.0
+    },
+    {
+      "set": 0,
+      "weight": 90.0,
+      "reps": 10.0,
+      "volume": 900.0
+    },
+    {
+      "set": 0,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 0,
+      "weight": 70.0,
+      "reps": 10.0,
+      "volume": 700.0
+    },
+    {
+      "set": 0,
       "weight": 100.0,
       "reps": 10.0,
       "volume": 1000.0
     },
     {
       "set": 1,
-      "weight": 90.0,
+      "weight": 80.0,
       "reps": 10.0,
-      "volume": 900.0
+      "volume": 800.0
+    },
+    {
+      "set": 1,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 1,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 1,
+      "weight": 100.0,
+      "reps": 12.0,
+      "volume": 1200.0
+    },
+    {
+      "set": 1,
+      "weight": 40.0,
+      "reps": 10.0,
+      "volume": 400.0
+    },
+    {
+      "set": 1,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 1,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 1,
+      "weight": 100.0,
+      "reps": 12.0,
+      "volume": 1200.0
     },
     {
       "set": 1,
@@ -137,14 +359,80 @@
     {
       "set": 1,
       "weight": 100.0,
+      "reps": 12.0,
+      "volume": 1200.0
+    },
+    {
+      "set": 1,
+      "weight": 115.0,
+      "reps": 10.0,
+      "volume": 1150.0
+    },
+    {
+      "set": 1,
+      "weight": 105.0,
+      "reps": 10.0,
+      "volume": 1050.0
+    },
+    {
+      "set": 1,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 1,
+      "weight": 100.0,
       "reps": 10.0,
       "volume": 1000.0
     },
     {
       "set": 1,
-      "weight": 90.0,
+      "weight": 85.0,
       "reps": 10.0,
-      "volume": 900.0
+      "volume": 850.0
+    },
+    {
+      "set": 1,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 1,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 1,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 1,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 1,
+      "weight": 70.0,
+      "reps": 10.0,
+      "volume": 700.0
+    },
+    {
+      "set": 1,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 1,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
     },
     {
       "set": 1,
@@ -160,21 +448,27 @@
     },
     {
       "set": 1,
-      "weight": 100.0,
+      "weight": 90.0,
       "reps": 10.0,
-      "volume": 1000.0
-    },
-    {
-      "set": 1,
-      "weight": 100.0,
-      "reps": 10.0,
-      "volume": 1000.0
+      "volume": 900.0
     },
     {
       "set": 1,
       "weight": 90.0,
       "reps": 10.0,
       "volume": 900.0
+    },
+    {
+      "set": 1,
+      "weight": 90.0,
+      "reps": 10.0,
+      "volume": 900.0
+    },
+    {
+      "set": 1,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
     },
     {
       "set": 1,
@@ -190,9 +484,21 @@
     },
     {
       "set": 1,
-      "weight": 90.0,
+      "weight": 100.0,
       "reps": 10.0,
-      "volume": 900.0
+      "volume": 1000.0
+    },
+    {
+      "set": 1,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 1,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
     },
     {
       "set": 1,
@@ -214,6 +520,18 @@
     },
     {
       "set": 1,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 1,
+      "weight": 90.0,
+      "reps": 10.0,
+      "volume": 900.0
+    },
+    {
+      "set": 1,
       "weight": 90.0,
       "reps": 10.0,
       "volume": 900.0
@@ -223,12 +541,36 @@
       "weight": 100.0,
       "reps": 10.0,
       "volume": 1000.0
+    },
+    {
+      "set": 1,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 1,
+      "weight": 75.0,
+      "reps": 10.0,
+      "volume": 750.0
+    },
+    {
+      "set": 1,
+      "weight": 70.0,
+      "reps": 10.0,
+      "volume": 700.0
+    },
+    {
+      "set": 1,
+      "weight": 75.0,
+      "reps": 12.0,
+      "volume": 900.0
     },
     {
       "set": 2,
-      "weight": 90.0,
+      "weight": 85.0,
       "reps": 10.0,
-      "volume": 900.0
+      "volume": 850.0
     },
     {
       "set": 2,
@@ -244,9 +586,21 @@
     },
     {
       "set": 2,
-      "weight": 100.0,
+      "weight": 105.0,
       "reps": 10.0,
-      "volume": 1000.0
+      "volume": 1050.0
+    },
+    {
+      "set": 2,
+      "weight": 100.0,
+      "reps": 12.0,
+      "volume": 1200.0
+    },
+    {
+      "set": 2,
+      "weight": 80.0,
+      "reps": 10.0,
+      "volume": 800.0
     },
     {
       "set": 2,
@@ -256,15 +610,165 @@
     },
     {
       "set": 2,
+      "weight": 75.0,
+      "reps": 10.0,
+      "volume": 750.0
+    },
+    {
+      "set": 2,
       "weight": 100.0,
       "reps": 10.0,
       "volume": 1000.0
     },
     {
       "set": 2,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 2,
+      "weight": 100.0,
+      "reps": 12.0,
+      "volume": 1200.0
+    },
+    {
+      "set": 2,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 2,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 2,
+      "weight": 40.0,
+      "reps": 10.0,
+      "volume": 400.0
+    },
+    {
+      "set": 2,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 2,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 2,
+      "weight": 70.0,
+      "reps": 8.0,
+      "volume": 560.0
+    },
+    {
+      "set": 2,
+      "weight": 100.0,
+      "reps": 12.0,
+      "volume": 1200.0
+    },
+    {
+      "set": 2,
       "weight": 90.0,
       "reps": 10.0,
       "volume": 900.0
+    },
+    {
+      "set": 2,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 2,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 2,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 2,
+      "weight": 90.0,
+      "reps": 10.0,
+      "volume": 900.0
+    },
+    {
+      "set": 2,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 2,
+      "weight": 115.0,
+      "reps": 10.0,
+      "volume": 1150.0
+    },
+    {
+      "set": 2,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 2,
+      "weight": 90.0,
+      "reps": 10.0,
+      "volume": 900.0
+    },
+    {
+      "set": 2,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 2,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 2,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 2,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
+    },
+    {
+      "set": 2,
+      "weight": 75.0,
+      "reps": 12.0,
+      "volume": 900.0
+    },
+    {
+      "set": 2,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 2,
+      "weight": 70.0,
+      "reps": 8.0,
+      "volume": 560.0
     },
     {
       "set": 2,
@@ -292,18 +796,6 @@
     },
     {
       "set": 2,
-      "weight": 90.0,
-      "reps": 10.0,
-      "volume": 900.0
-    },
-    {
-      "set": 2,
-      "weight": 90.0,
-      "reps": 10.0,
-      "volume": 900.0
-    },
-    {
-      "set": 2,
       "weight": 100.0,
       "reps": 10.0,
       "volume": 1000.0
@@ -313,6 +805,24 @@
       "weight": 90.0,
       "reps": 10.0,
       "volume": 900.0
+    },
+    {
+      "set": 2,
+      "weight": 90.0,
+      "reps": 10.0,
+      "volume": 900.0
+    },
+    {
+      "set": 2,
+      "weight": 85.0,
+      "reps": 10.0,
+      "volume": 850.0
+    },
+    {
+      "set": 3,
+      "weight": 100.0,
+      "reps": 10.0,
+      "volume": 1000.0
     }
   ]
 }

@@ -1,62 +1,62 @@
 [
   {
     "exercise": "Bench Press (Barbell)",
-    "count": 354
+    "count": 868
   },
   {
     "exercise": "Squat (Barbell)",
-    "count": 187
-  },
-  {
-    "exercise": "Incline Bench Press (Barbell)",
-    "count": 116
+    "count": 587
   },
   {
     "exercise": "Deadlift (Barbell)",
-    "count": 112
-  },
-  {
-    "exercise": "T Bar Row",
-    "count": 93
-  },
-  {
-    "exercise": "Lat Pulldown (Cable)",
-    "count": 83
-  },
-  {
-    "exercise": "Lying Leg Curl (Machine)",
-    "count": 78
-  },
-  {
-    "exercise": "Romanian Deadlift (Barbell)",
-    "count": 73
+    "count": 331
   },
   {
     "exercise": "Overhead Press (Barbell)",
-    "count": 68
+    "count": 303
   },
   {
-    "exercise": "Skullcrusher (Barbell)",
-    "count": 58
+    "exercise": "Incline Bench Press (Barbell)",
+    "count": 208
   },
   {
-    "exercise": "Bulgarian Split Squat",
-    "count": 55
+    "exercise": "Lat Pulldown (Cable)",
+    "count": 201
+  },
+  {
+    "exercise": "Lying Leg Curl (Machine)",
+    "count": 152
+  },
+  {
+    "exercise": "T Bar Row",
+    "count": 138
   },
   {
     "exercise": "Chest Fly (Machine)",
-    "count": 51
+    "count": 136
   },
   {
-    "exercise": "Seated Cable Row - V Grip (Cable)",
-    "count": 41
+    "exercise": "Incline Bench Press (Dumbbell)",
+    "count": 119
   },
   {
-    "exercise": "Hip Thrust (Barbell)",
-    "count": 41
+    "exercise": "Hip Abduction (Machine)",
+    "count": 117
   },
   {
-    "exercise": "Bent Over Row (Barbell)",
-    "count": 39
+    "exercise": "Pull Up",
+    "count": 113
+  },
+  {
+    "exercise": "Skullcrusher (Barbell)",
+    "count": 112
+  },
+  {
+    "exercise": "Bulgarian Split Squat",
+    "count": 106
+  },
+  {
+    "exercise": "Hip Adduction (Machine)",
+    "count": 105
   }
 ]

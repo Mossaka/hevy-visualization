@@ -667,12 +667,11 @@ function loadRecentWorkouts(daysCount = null, dateIndex = null) {
                 
                 container.appendChild(dayCard);
             });
-            
+
             // Update the date navigation text
             updateWorkoutDateNavigation();
-        });
+        }
     }
-}
 
 // Load all available workout dates
 function loadWorkoutDates() {

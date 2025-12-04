@@ -1,11 +1,11 @@
 {
   "stats": {
-    "sets": 18,
-    "avg_weight": 67.19444444444444,
-    "max_weight": 80.0,
-    "avg_reps": 10.777777777777779,
+    "sets": 14,
+    "avg_weight": 65.67857142857143,
+    "max_weight": 79.5,
+    "avg_reps": 11.0,
     "max_reps": 12.0,
-    "total_volume": 12936.0
+    "total_volume": 10036.0
   },
   "sets": [
     {
@@ -22,12 +22,6 @@
     },
     {
       "set": 0,
-      "weight": 50.0,
-      "reps": 10.0,
-      "volume": 500.0
-    },
-    {
-      "set": 0,
       "weight": 60.0,
       "reps": 12.0,
       "volume": 720.0
@@ -52,45 +46,33 @@
     },
     {
       "set": 1,
-      "weight": 80.0,
+      "weight": 70.0,
+      "reps": 12.0,
+      "volume": 840.0
+    },
+    {
+      "set": 1,
+      "weight": 70.0,
+      "reps": 12.0,
+      "volume": 840.0
+    },
+    {
+      "set": 1,
+      "weight": 70.0,
+      "reps": 12.0,
+      "volume": 840.0
+    },
+    {
+      "set": 1,
+      "weight": 60.0,
+      "reps": 12.0,
+      "volume": 720.0
+    },
+    {
+      "set": 2,
+      "weight": 70.0,
       "reps": 10.0,
-      "volume": 800.0
-    },
-    {
-      "set": 1,
-      "weight": 70.0,
-      "reps": 12.0,
-      "volume": 840.0
-    },
-    {
-      "set": 1,
-      "weight": 70.0,
-      "reps": 12.0,
-      "volume": 840.0
-    },
-    {
-      "set": 1,
-      "weight": 70.0,
-      "reps": 12.0,
-      "volume": 840.0
-    },
-    {
-      "set": 1,
-      "weight": 60.0,
-      "reps": 12.0,
-      "volume": 720.0
-    },
-    {
-      "set": 2,
-      "weight": 60.0,
-      "reps": 12.0,
-      "volume": 720.0
-    },
-    {
-      "set": 2,
-      "weight": 70.0,
-      "reps": 8.0,
-      "volume": 560.0
+      "volume": 700.0
     },
     {
       "set": 2,
@@ -101,20 +83,14 @@
     {
       "set": 2,
       "weight": 70.0,
-      "reps": 10.0,
-      "volume": 700.0
+      "reps": 8.0,
+      "volume": 560.0
     },
     {
       "set": 2,
-      "weight": 80.0,
-      "reps": 10.0,
-      "volume": 800.0
-    },
-    {
-      "set": 3,
-      "weight": 80.0,
-      "reps": 10.0,
-      "volume": 800.0
+      "weight": 60.0,
+      "reps": 12.0,
+      "volume": 720.0
     }
   ]
 }

@@ -1,30 +1,30 @@
 [
   {
     "category": "Arms",
-    "percentage": 5.162302099914982
+    "percentage": 3.663728792898311
   },
   {
     "category": "Back",
-    "percentage": 14.82901575927997
+    "percentage": 17.050757367011585
   },
   {
     "category": "Chest",
-    "percentage": 28.02331191940903
+    "percentage": 31.92001330741266
   },
   {
     "category": "Core",
-    "percentage": 0.5952413586046496
+    "percentage": 1.2031272419752366
   },
   {
     "category": "Legs",
-    "percentage": 44.8554784695993
+    "percentage": 41.72159572131129
   },
   {
     "category": "Other",
-    "percentage": 0.593001265033955
+    "percentage": 0.09523434633049366
   },
   {
     "category": "Shoulders",
-    "percentage": 5.941649128158123
+    "percentage": 4.345543223060425
   }
 ]

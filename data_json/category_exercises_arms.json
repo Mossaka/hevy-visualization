@@ -1,82 +1,74 @@
 [
   {
     "exercise": "Skullcrusher (Barbell)",
-    "volume": 49990.0,
-    "avg_weight": 44.419642857142854,
-    "max_weight": 55.0,
-    "avg_reps": 10.053571428571429,
-    "max_reps": 12.0
-  },
-  {
-    "exercise": "Bicep Curl (Dumbbell)",
-    "volume": 36853.6,
-    "avg_weight": 51.306301369863014,
-    "max_weight": 70.0,
-    "avg_reps": 9.863013698630137,
+    "volume": 27550.0,
+    "avg_weight": 47.5,
+    "max_weight": 50.0,
+    "avg_reps": 10.0,
     "max_reps": 10.0
   },
   {
-    "exercise": "Triceps Extension (Machine)",
-    "volume": 26085.0,
-    "avg_weight": 70.95588235294117,
-    "max_weight": 95.0,
-    "avg_reps": 10.882352941176471,
-    "max_reps": 12.0
-  },
-  {
-    "exercise": "Bicep Curl (Barbell)",
-    "volume": 25430.0,
-    "avg_weight": 53.4375,
-    "max_weight": 55.0,
-    "avg_reps": 9.916666666666666,
-    "max_reps": 12.0
-  },
-  {
-    "exercise": "Preacher Curl (Barbell)",
-    "volume": 24688.0,
-    "avg_weight": 54.38095238095238,
-    "max_weight": 65.0,
-    "avg_reps": 10.80952380952381,
+    "exercise": "Triceps Pushdown",
+    "volume": 10036.0,
+    "avg_weight": 65.67857142857143,
+    "max_weight": 79.5,
+    "avg_reps": 11.0,
     "max_reps": 12.0
   },
   {
     "exercise": "EZ Bar Biceps Curl",
-    "volume": 17625.0,
-    "avg_weight": 52.714285714285715,
-    "max_weight": 65.0,
-    "avg_reps": 9.628571428571428,
-    "max_reps": 12.0
+    "volume": 8750.0,
+    "avg_weight": 49.166666666666664,
+    "max_weight": 55.0,
+    "avg_reps": 9.88888888888889,
+    "max_reps": 10.0
   },
   {
-    "exercise": "Triceps Rope Pushdown",
-    "volume": 13110.0,
-    "avg_weight": 40.416666666666664,
-    "max_weight": 90.0,
-    "avg_reps": 10.5,
-    "max_reps": 15.0
+    "exercise": "Bicep Curl (Dumbbell)",
+    "volume": 4700.0,
+    "avg_weight": 42.72727272727273,
+    "max_weight": 50.0,
+    "avg_reps": 10.0,
+    "max_reps": 10.0
   },
   {
-    "exercise": "Triceps Pushdown",
-    "volume": 12936.0,
-    "avg_weight": 67.19444444444444,
-    "max_weight": 80.0,
-    "avg_reps": 10.777777777777779,
-    "max_reps": 12.0
+    "exercise": "Bicep Curl (Barbell)",
+    "volume": 4200.0,
+    "avg_weight": 46.666666666666664,
+    "max_weight": 50.0,
+    "avg_reps": 10.0,
+    "max_reps": 10.0
   },
   {
     "exercise": "Bicep Curl (Machine)",
-    "volume": 12034.18,
-    "avg_weight": 50.6704347826087,
-    "max_weight": 64.99,
-    "avg_reps": 10.347826086956522,
+    "volume": 1510.0,
+    "avg_weight": 45.0,
+    "max_weight": 55.0,
+    "avg_reps": 11.333333333333334,
     "max_reps": 12.0
   },
   {
+    "exercise": "Preacher Curl (Barbell)",
+    "volume": 960.0,
+    "avg_weight": 40.0,
+    "max_weight": 40.0,
+    "avg_reps": 8.0,
+    "max_reps": 8.0
+  },
+  {
+    "exercise": "Triceps Dip",
+    "volume": 0.0,
+    "avg_weight": 0.0,
+    "max_weight": 0.0,
+    "avg_reps": 11.666666666666666,
+    "max_reps": 15.0
+  },
+  {
     "exercise": "Triceps Dip (Weighted)",
-    "volume": 3810.0,
-    "avg_weight": 24.03846153846154,
-    "max_weight": 55.0,
-    "avg_reps": 7.538461538461538,
+    "volume": 0.0,
+    "avg_weight": 0.0,
+    "max_weight": 0.0,
+    "avg_reps": 13.333333333333334,
     "max_reps": 15.0
   }
 ]

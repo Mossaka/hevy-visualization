@@ -1,43 +1,27 @@
 [
   {
     "exercise": "Overhead Press (Barbell)",
-    "volume": 181522.84,
-    "avg_weight": 73.54610561056106,
-    "max_weight": 95.0,
-    "avg_reps": 8.336633663366337,
-    "max_reps": 20.0
-  },
-  {
-    "exercise": "Lateral Raise (Dumbbell)",
-    "volume": 23424.04,
-    "avg_weight": 26.678024691358026,
-    "max_weight": 40.0,
-    "avg_reps": 11.320987654320987,
-    "max_reps": 40.0
-  },
-  {
-    "exercise": "Face Pull",
-    "volume": 15065.0,
-    "avg_weight": 30.833333333333332,
-    "max_weight": 42.5,
-    "avg_reps": 10.208333333333334,
-    "max_reps": 12.0
+    "volume": 42770.0,
+    "avg_weight": 70.0,
+    "max_weight": 85.0,
+    "avg_reps": 9.117647058823529,
+    "max_reps": 15.0
   },
   {
     "exercise": "Rear Delt Reverse Fly (Machine)",
-    "volume": 11410.0,
-    "avg_weight": 59.473684210526315,
+    "volume": 8560.0,
+    "avg_weight": 65.0,
     "max_weight": 90.0,
-    "avg_reps": 10.105263157894736,
+    "avg_reps": 10.153846153846153,
     "max_reps": 12.0
   },
   {
-    "exercise": "Rear Delt Reverse Fly (Dumbbell)",
-    "volume": 8350.0,
-    "avg_weight": 37.95454545454545,
-    "max_weight": 40.0,
-    "avg_reps": 10.0,
-    "max_reps": 10.0
+    "exercise": "Lateral Raise (Dumbbell)",
+    "volume": 8325.0,
+    "avg_weight": 28.103448275862068,
+    "max_weight": 35.0,
+    "avg_reps": 10.241379310344827,
+    "max_reps": 15.0
   },
   {
     "exercise": "Shoulder Press (Dumbbell)",
@@ -49,33 +33,17 @@
   },
   {
     "exercise": "Shoulder Press (Machine Plates)",
-    "volume": 3800.0,
-    "avg_weight": 79.16666666666667,
-    "max_weight": 90.0,
+    "volume": 1640.0,
+    "avg_weight": 68.33333333333333,
+    "max_weight": 70.0,
     "avg_reps": 8.0,
     "max_reps": 8.0
-  },
-  {
-    "exercise": "Lateral Raise (Cable)",
-    "volume": 3770.0,
-    "avg_weight": 24.5,
-    "max_weight": 25.0,
-    "avg_reps": 9.625,
-    "max_reps": 10.0
   },
   {
     "exercise": "Lateral Raise (Machine)",
     "volume": 1500.0,
     "avg_weight": 50.0,
     "max_weight": 50.0,
-    "avg_reps": 10.0,
-    "max_reps": 10.0
-  },
-  {
-    "exercise": "Arnold Press (Dumbbell)",
-    "volume": 1400.0,
-    "avg_weight": 70.0,
-    "max_weight": 70.0,
     "avg_reps": 10.0,
     "max_reps": 10.0
   }

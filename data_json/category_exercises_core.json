@@ -2,18 +2,10 @@
   {
     "exercise": "Cable Crunch",
     "volume": 13035.0,
-    "avg_weight": 59.078947368421055,
+    "avg_weight": 70.15625,
     "max_weight": 75.0,
-    "avg_reps": 11.68421052631579,
+    "avg_reps": 11.625,
     "max_reps": 12.0
-  },
-  {
-    "exercise": "Crunch (Machine)",
-    "volume": 6525.0,
-    "avg_weight": 145.0,
-    "max_weight": 145.0,
-    "avg_reps": 15.0,
-    "max_reps": 15.0
   },
   {
     "exercise": "Decline Crunch (Weighted)",
@@ -32,51 +24,11 @@
     "max_reps": 10.0
   },
   {
-    "exercise": "Landmine 180",
-    "volume": 300.0,
-    "avg_weight": 10.0,
-    "max_weight": 10.0,
-    "avg_reps": 10.0,
-    "max_reps": 10.0
-  },
-  {
-    "exercise": "Ab Wheel",
+    "exercise": "Plank",
     "volume": 0.0,
     "avg_weight": 0.0,
     "max_weight": 0.0,
-    "avg_reps": 10.0,
-    "max_reps": 10.0
-  },
-  {
-    "exercise": "Crunch",
-    "volume": 0.0,
-    "avg_weight": 0.0,
-    "max_weight": 0.0,
-    "avg_reps": 10.0,
-    "max_reps": 10.0
-  },
-  {
-    "exercise": "Decline Crunch",
-    "volume": 0.0,
-    "avg_weight": 0.0,
-    "max_weight": 0.0,
-    "avg_reps": 15.0,
-    "max_reps": 15.0
-  },
-  {
-    "exercise": "Dragon Flag",
-    "volume": 0.0,
-    "avg_weight": 0.0,
-    "max_weight": 0.0,
-    "avg_reps": 10.0,
-    "max_reps": 10.0
-  },
-  {
-    "exercise": "Jack Knife (Suspension)",
-    "volume": 0.0,
-    "avg_weight": 0.0,
-    "max_weight": 0.0,
-    "avg_reps": 15.526315789473685,
-    "max_reps": 25.0
+    "avg_reps": 0.0,
+    "max_reps": 0.0
   }
 ]

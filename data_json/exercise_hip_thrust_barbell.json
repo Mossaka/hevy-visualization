@@ -1,11 +1,11 @@
 {
   "stats": {
-    "sets": 47,
-    "avg_weight": 162.12765957446808,
+    "sets": 41,
+    "avg_weight": 163.17073170731706,
     "max_weight": 195.0,
-    "avg_reps": 9.872340425531915,
+    "avg_reps": 9.853658536585366,
     "max_reps": 10.0,
-    "total_volume": 75030.0
+    "total_volume": 65730.0
   },
   "sets": [
     {
@@ -28,18 +28,6 @@
     },
     {
       "set": 0,
-      "weight": 125.0,
-      "reps": 10.0,
-      "volume": 1250.0
-    },
-    {
-      "set": 0,
-      "weight": 105.0,
-      "reps": 10.0,
-      "volume": 1050.0
-    },
-    {
-      "set": 0,
       "weight": 180.0,
       "reps": 10.0,
       "volume": 1800.0
@@ -49,12 +37,6 @@
       "weight": 105.0,
       "reps": 10.0,
       "volume": 1050.0
-    },
-    {
-      "set": 0,
-      "weight": 195.0,
-      "reps": 10.0,
-      "volume": 1950.0
     },
     {
       "set": 0,
@@ -64,6 +46,30 @@
     },
     {
       "set": 0,
+      "weight": 125.0,
+      "reps": 10.0,
+      "volume": 1250.0
+    },
+    {
+      "set": 0,
+      "weight": 105.0,
+      "reps": 10.0,
+      "volume": 1050.0
+    },
+    {
+      "set": 0,
+      "weight": 125.0,
+      "reps": 10.0,
+      "volume": 1250.0
+    },
+    {
+      "set": 0,
+      "weight": 195.0,
+      "reps": 10.0,
+      "volume": 1950.0
+    },
+    {
+      "set": 0,
       "weight": 180.0,
       "reps": 10.0,
       "volume": 1800.0
@@ -81,34 +87,28 @@
       "volume": 1800.0
     },
     {
-      "set": 0,
-      "weight": 175.0,
-      "reps": 10.0,
-      "volume": 1750.0
-    },
-    {
-      "set": 0,
-      "weight": 135.0,
-      "reps": 10.0,
-      "volume": 1350.0
-    },
-    {
-      "set": 0,
-      "weight": 125.0,
-      "reps": 10.0,
-      "volume": 1250.0
-    },
-    {
       "set": 1,
-      "weight": 135.0,
+      "weight": 195.0,
       "reps": 10.0,
-      "volume": 1350.0
+      "volume": 1950.0
     },
     {
       "set": 1,
       "weight": 195.0,
       "reps": 10.0,
       "volume": 1950.0
+    },
+    {
+      "set": 1,
+      "weight": 195.0,
+      "reps": 10.0,
+      "volume": 1950.0
+    },
+    {
+      "set": 1,
+      "weight": 125.0,
+      "reps": 10.0,
+      "volume": 1250.0
     },
     {
       "set": 1,
@@ -124,30 +124,6 @@
     },
     {
       "set": 1,
-      "weight": 195.0,
-      "reps": 10.0,
-      "volume": 1950.0
-    },
-    {
-      "set": 1,
-      "weight": 175.0,
-      "reps": 10.0,
-      "volume": 1750.0
-    },
-    {
-      "set": 1,
-      "weight": 195.0,
-      "reps": 10.0,
-      "volume": 1950.0
-    },
-    {
-      "set": 1,
-      "weight": 125.0,
-      "reps": 10.0,
-      "volume": 1250.0
-    },
-    {
-      "set": 1,
       "weight": 170.0,
       "reps": 10.0,
       "volume": 1700.0
@@ -187,18 +163,6 @@
       "weight": 180.0,
       "reps": 10.0,
       "volume": 1800.0
-    },
-    {
-      "set": 2,
-      "weight": 175.0,
-      "reps": 10.0,
-      "volume": 1750.0
-    },
-    {
-      "set": 2,
-      "weight": 135.0,
-      "reps": 10.0,
-      "volume": 1350.0
     },
     {
       "set": 2,
@@ -208,9 +172,15 @@
     },
     {
       "set": 2,
-      "weight": 180.0,
+      "weight": 135.0,
       "reps": 10.0,
-      "volume": 1800.0
+      "volume": 1350.0
+    },
+    {
+      "set": 2,
+      "weight": 195.0,
+      "reps": 10.0,
+      "volume": 1950.0
     },
     {
       "set": 2,
@@ -232,18 +202,6 @@
     },
     {
       "set": 2,
-      "weight": 170.0,
-      "reps": 10.0,
-      "volume": 1700.0
-    },
-    {
-      "set": 2,
-      "weight": 195.0,
-      "reps": 10.0,
-      "volume": 1950.0
-    },
-    {
-      "set": 2,
       "weight": 180.0,
       "reps": 10.0,
       "volume": 1800.0
@@ -268,12 +226,24 @@
     },
     {
       "set": 2,
+      "weight": 180.0,
+      "reps": 10.0,
+      "volume": 1800.0
+    },
+    {
+      "set": 2,
       "weight": 170.0,
       "reps": 10.0,
       "volume": 1700.0
     },
     {
       "set": 2,
+      "weight": 170.0,
+      "reps": 10.0,
+      "volume": 1700.0
+    },
+    {
+      "set": 3,
       "weight": 135.0,
       "reps": 10.0,
       "volume": 1350.0
@@ -283,12 +253,6 @@
       "weight": 195.0,
       "reps": 8.0,
       "volume": 1560.0
-    },
-    {
-      "set": 3,
-      "weight": 135.0,
-      "reps": 10.0,
-      "volume": 1350.0
     }
   ]
 }

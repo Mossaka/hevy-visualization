@@ -1,107 +1,107 @@
 {
-  "total_exercises": 89,
-  "total_sets": 5477,
-  "total_volume": 4330176.26,
+  "total_exercises": 48,
+  "total_sets": 1858,
+  "total_volume": 1575062.0,
   "top_exercises": [
     {
       "exercise": "Bench Press (Barbell)",
-      "volume": 679396.06
+      "volume": 279750.0
     },
     {
       "exercise": "Squat (Barbell)",
-      "volume": 581276.7
+      "volume": 180181.0
     },
     {
       "exercise": "Deadlift (Barbell)",
-      "volume": 357793.98
-    },
-    {
-      "exercise": "Lat Pulldown (Cable)",
-      "volume": 183262.66
-    },
-    {
-      "exercise": "Overhead Press (Barbell)",
-      "volume": 181522.84
+      "volume": 109135.0
     },
     {
       "exercise": "Incline Bench Press (Barbell)",
-      "volume": 174587.5
+      "volume": 102640.0
+    },
+    {
+      "exercise": "T Bar Row",
+      "volume": 86890.0
+    },
+    {
+      "exercise": "Lat Pulldown (Cable)",
+      "volume": 79110.0
     },
     {
       "exercise": "Lying Leg Curl (Machine)",
-      "volume": 148435.0
+      "volume": 73120.0
     },
     {
-      "exercise": "Hip Thrust (Machine)",
-      "volume": 140085.0
+      "exercise": "Romanian Deadlift (Barbell)",
+      "volume": 72090.0
     },
     {
-      "exercise": "Hip Abduction (Machine)",
-      "volume": 134085.0
+      "exercise": "Hip Thrust (Barbell)",
+      "volume": 65730.0
     },
     {
-      "exercise": "Chest Fly (Machine)",
-      "volume": 123000.0
+      "exercise": "Chest Press (Machine)",
+      "volume": 49280.0
     }
   ],
   "category_distribution": [
     {
       "category": "Legs",
-      "count": 1819
+      "count": 621
     },
     {
       "category": "Chest",
-      "count": 1466
+      "count": 590
     },
     {
       "category": "Back",
-      "count": 931
+      "count": 345
     },
     {
       "category": "Arms",
-      "count": 529
+      "count": 128
     },
     {
       "category": "Shoulders",
-      "count": 511
+      "count": 124
     },
     {
       "category": "Core",
-      "count": 182
+      "count": 44
     },
     {
       "category": "Other",
-      "count": 39
+      "count": 6
     }
   ],
   "category_volume": [
     {
       "category": "Legs",
-      "volume": 1942321.28
+      "volume": 657141.0
     },
     {
       "category": "Chest",
-      "volume": 1213458.8
+      "volume": 502760.0
     },
     {
       "category": "Back",
-      "volume": 642122.52
+      "volume": 268560.0
     },
     {
       "category": "Shoulders",
-      "volume": 257283.88
+      "volume": 68445.0
     },
     {
       "category": "Arms",
-      "volume": 223536.78
+      "volume": 57706.0
     },
     {
       "category": "Core",
-      "volume": 25775.0
+      "volume": 18950.0
     },
     {
       "category": "Other",
-      "volume": 25678.0
+      "volume": 1500.0
     }
   ]
 }

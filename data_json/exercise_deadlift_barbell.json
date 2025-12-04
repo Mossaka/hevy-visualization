@@ -1,11 +1,11 @@
 {
   "stats": {
-    "sets": 331,
-    "avg_weight": 194.50447129909364,
-    "max_weight": 275.0,
-    "avg_reps": 5.954682779456193,
+    "sets": 112,
+    "avg_weight": 185.26785714285714,
+    "max_weight": 265.0,
+    "avg_reps": 5.955357142857143,
     "max_reps": 10.0,
-    "total_volume": 357793.98
+    "total_volume": 109135.0
   },
   "sets": [
     {
@@ -16,75 +16,9 @@
     },
     {
       "set": 0,
-      "weight": 135.0,
-      "reps": 5.0,
-      "volume": 675.0
-    },
-    {
-      "set": 0,
-      "weight": 135.0,
-      "reps": 9.0,
-      "volume": 1215.0
-    },
-    {
-      "set": 0,
-      "weight": 135.0,
-      "reps": 8.0,
-      "volume": 1080.0
-    },
-    {
-      "set": 0,
       "weight": 45.0,
-      "reps": 8.0,
-      "volume": 360.0
-    },
-    {
-      "set": 0,
-      "weight": 135.0,
       "reps": 10.0,
-      "volume": 1350.0
-    },
-    {
-      "set": 0,
-      "weight": 135.0,
-      "reps": 9.0,
-      "volume": 1215.0
-    },
-    {
-      "set": 0,
-      "weight": 132.28,
-      "reps": 8.0,
-      "volume": 1058.24
-    },
-    {
-      "set": 0,
-      "weight": 132.28,
-      "reps": 10.0,
-      "volume": 1322.8
-    },
-    {
-      "set": 0,
-      "weight": 135.0,
-      "reps": 10.0,
-      "volume": 1350.0
-    },
-    {
-      "set": 0,
-      "weight": 135.0,
-      "reps": 6.0,
-      "volume": 810.0
-    },
-    {
-      "set": 0,
-      "weight": 135.0,
-      "reps": 8.0,
-      "volume": 1080.0
-    },
-    {
-      "set": 0,
-      "weight": 135.0,
-      "reps": 8.0,
-      "volume": 1080.0
+      "volume": 450.0
     },
     {
       "set": 0,
@@ -130,159 +64,9 @@
     },
     {
       "set": 0,
-      "weight": 135.0,
-      "reps": 5.0,
-      "volume": 675.0
-    },
-    {
-      "set": 0,
       "weight": 45.0,
       "reps": 10.0,
       "volume": 450.0
-    },
-    {
-      "set": 0,
-      "weight": 135.0,
-      "reps": 5.0,
-      "volume": 675.0
-    },
-    {
-      "set": 0,
-      "weight": 135.0,
-      "reps": 5.0,
-      "volume": 675.0
-    },
-    {
-      "set": 0,
-      "weight": 45.0,
-      "reps": 10.0,
-      "volume": 450.0
-    },
-    {
-      "set": 0,
-      "weight": 45.0,
-      "reps": 10.0,
-      "volume": 450.0
-    },
-    {
-      "set": 0,
-      "weight": 135.0,
-      "reps": 10.0,
-      "volume": 1350.0
-    },
-    {
-      "set": 0,
-      "weight": 135.0,
-      "reps": 10.0,
-      "volume": 1350.0
-    },
-    {
-      "set": 0,
-      "weight": 135.0,
-      "reps": 10.0,
-      "volume": 1350.0
-    },
-    {
-      "set": 0,
-      "weight": 132.28,
-      "reps": 10.0,
-      "volume": 1322.8
-    },
-    {
-      "set": 0,
-      "weight": 132.28,
-      "reps": 10.0,
-      "volume": 1322.8
-    },
-    {
-      "set": 0,
-      "weight": 135.0,
-      "reps": 10.0,
-      "volume": 1350.0
-    },
-    {
-      "set": 0,
-      "weight": 135.0,
-      "reps": 10.0,
-      "volume": 1350.0
-    },
-    {
-      "set": 0,
-      "weight": 135.0,
-      "reps": 10.0,
-      "volume": 1350.0
-    },
-    {
-      "set": 0,
-      "weight": 135.0,
-      "reps": 10.0,
-      "volume": 1350.0
-    },
-    {
-      "set": 0,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
-    },
-    {
-      "set": 0,
-      "weight": 135.0,
-      "reps": 5.0,
-      "volume": 675.0
-    },
-    {
-      "set": 0,
-      "weight": 135.0,
-      "reps": 5.0,
-      "volume": 675.0
-    },
-    {
-      "set": 0,
-      "weight": 135.0,
-      "reps": 5.0,
-      "volume": 675.0
-    },
-    {
-      "set": 0,
-      "weight": 135.0,
-      "reps": 8.0,
-      "volume": 1080.0
-    },
-    {
-      "set": 0,
-      "weight": 135.0,
-      "reps": 8.0,
-      "volume": 1080.0
-    },
-    {
-      "set": 0,
-      "weight": 135.0,
-      "reps": 5.0,
-      "volume": 675.0
-    },
-    {
-      "set": 0,
-      "weight": 135.0,
-      "reps": 5.0,
-      "volume": 675.0
-    },
-    {
-      "set": 0,
-      "weight": 135.0,
-      "reps": 8.0,
-      "volume": 1080.0
-    },
-    {
-      "set": 0,
-      "weight": 45.0,
-      "reps": 10.0,
-      "volume": 450.0
-    },
-    {
-      "set": 0,
-      "weight": 45.0,
-      "reps": 8.0,
-      "volume": 360.0
     },
     {
       "set": 0,
@@ -341,66 +125,6 @@
     {
       "set": 1,
       "weight": 135.0,
-      "reps": 10.0,
-      "volume": 1350.0
-    },
-    {
-      "set": 1,
-      "weight": 185.0,
-      "reps": 5.0,
-      "volume": 925.0
-    },
-    {
-      "set": 1,
-      "weight": 176.37,
-      "reps": 5.0,
-      "volume": 881.85
-    },
-    {
-      "set": 1,
-      "weight": 176.37,
-      "reps": 5.0,
-      "volume": 881.85
-    },
-    {
-      "set": 1,
-      "weight": 176.37,
-      "reps": 8.0,
-      "volume": 1410.96
-    },
-    {
-      "set": 1,
-      "weight": 155.0,
-      "reps": 5.0,
-      "volume": 775.0
-    },
-    {
-      "set": 1,
-      "weight": 155.0,
-      "reps": 6.0,
-      "volume": 930.0
-    },
-    {
-      "set": 1,
-      "weight": 185.0,
-      "reps": 6.0,
-      "volume": 1110.0
-    },
-    {
-      "set": 1,
-      "weight": 185.0,
-      "reps": 6.0,
-      "volume": 1110.0
-    },
-    {
-      "set": 1,
-      "weight": 185.0,
-      "reps": 6.0,
-      "volume": 1110.0
-    },
-    {
-      "set": 1,
-      "weight": 135.0,
       "reps": 8.0,
       "volume": 1080.0
     },
@@ -412,141 +136,21 @@
     },
     {
       "set": 1,
-      "weight": 176.37,
+      "weight": 135.0,
       "reps": 5.0,
-      "volume": 881.85
+      "volume": 675.0
     },
     {
       "set": 1,
-      "weight": 185.0,
-      "reps": 8.0,
-      "volume": 1480.0
-    },
-    {
-      "set": 1,
-      "weight": 185.0,
-      "reps": 8.0,
-      "volume": 1480.0
-    },
-    {
-      "set": 1,
-      "weight": 185.0,
+      "weight": 135.0,
       "reps": 5.0,
-      "volume": 925.0
-    },
-    {
-      "set": 1,
-      "weight": 235.0,
-      "reps": 5.0,
-      "volume": 1175.0
-    },
-    {
-      "set": 1,
-      "weight": 185.0,
-      "reps": 5.0,
-      "volume": 925.0
-    },
-    {
-      "set": 1,
-      "weight": 185.0,
-      "reps": 8.0,
-      "volume": 1480.0
+      "volume": 675.0
     },
     {
       "set": 1,
       "weight": 135.0,
       "reps": 8.0,
       "volume": 1080.0
-    },
-    {
-      "set": 1,
-      "weight": 185.0,
-      "reps": 5.0,
-      "volume": 925.0
-    },
-    {
-      "set": 1,
-      "weight": 185.0,
-      "reps": 5.0,
-      "volume": 925.0
-    },
-    {
-      "set": 1,
-      "weight": 185.0,
-      "reps": 8.0,
-      "volume": 1480.0
-    },
-    {
-      "set": 1,
-      "weight": 185.0,
-      "reps": 10.0,
-      "volume": 1850.0
-    },
-    {
-      "set": 1,
-      "weight": 155.0,
-      "reps": 6.0,
-      "volume": 930.0
-    },
-    {
-      "set": 1,
-      "weight": 185.0,
-      "reps": 5.0,
-      "volume": 925.0
-    },
-    {
-      "set": 1,
-      "weight": 185.0,
-      "reps": 10.0,
-      "volume": 1850.0
-    },
-    {
-      "set": 1,
-      "weight": 185.0,
-      "reps": 5.0,
-      "volume": 925.0
-    },
-    {
-      "set": 1,
-      "weight": 185.0,
-      "reps": 8.0,
-      "volume": 1480.0
-    },
-    {
-      "set": 1,
-      "weight": 185.0,
-      "reps": 5.0,
-      "volume": 925.0
-    },
-    {
-      "set": 1,
-      "weight": 135.0,
-      "reps": 8.0,
-      "volume": 1080.0
-    },
-    {
-      "set": 1,
-      "weight": 185.0,
-      "reps": 5.0,
-      "volume": 925.0
-    },
-    {
-      "set": 1,
-      "weight": 185.0,
-      "reps": 5.0,
-      "volume": 925.0
-    },
-    {
-      "set": 1,
-      "weight": 135.0,
-      "reps": 8.0,
-      "volume": 1080.0
-    },
-    {
-      "set": 1,
-      "weight": 185.0,
-      "reps": 5.0,
-      "volume": 925.0
     },
     {
       "set": 1,
@@ -556,15 +160,15 @@
     },
     {
       "set": 1,
-      "weight": 185.0,
+      "weight": 135.0,
       "reps": 5.0,
-      "volume": 925.0
+      "volume": 675.0
     },
     {
       "set": 1,
       "weight": 135.0,
-      "reps": 5.0,
-      "volume": 675.0
+      "reps": 8.0,
+      "volume": 1080.0
     },
     {
       "set": 1,
@@ -581,26 +185,8 @@
     {
       "set": 1,
       "weight": 135.0,
-      "reps": 5.0,
-      "volume": 675.0
-    },
-    {
-      "set": 1,
-      "weight": 135.0,
-      "reps": 5.0,
-      "volume": 675.0
-    },
-    {
-      "set": 1,
-      "weight": 135.0,
-      "reps": 5.0,
-      "volume": 675.0
-    },
-    {
-      "set": 1,
-      "weight": 155.0,
-      "reps": 6.0,
-      "volume": 930.0
+      "reps": 8.0,
+      "volume": 1080.0
     },
     {
       "set": 1,
@@ -611,68 +197,14 @@
     {
       "set": 1,
       "weight": 135.0,
-      "reps": 10.0,
-      "volume": 1350.0
-    },
-    {
-      "set": 1,
-      "weight": 135.0,
-      "reps": 5.0,
-      "volume": 675.0
-    },
-    {
-      "set": 1,
-      "weight": 135.0,
-      "reps": 10.0,
-      "volume": 1350.0
-    },
-    {
-      "set": 1,
-      "weight": 135.0,
       "reps": 8.0,
       "volume": 1080.0
     },
     {
       "set": 2,
       "weight": 185.0,
-      "reps": 5.0,
-      "volume": 925.0
-    },
-    {
-      "set": 2,
-      "weight": 205.0,
-      "reps": 5.0,
-      "volume": 1025.0
-    },
-    {
-      "set": 2,
-      "weight": 245.0,
-      "reps": 5.0,
-      "volume": 1225.0
-    },
-    {
-      "set": 2,
-      "weight": 185.0,
-      "reps": 6.0,
-      "volume": 1110.0
-    },
-    {
-      "set": 2,
-      "weight": 205.0,
-      "reps": 5.0,
-      "volume": 1025.0
-    },
-    {
-      "set": 2,
-      "weight": 185.0,
-      "reps": 5.0,
-      "volume": 925.0
-    },
-    {
-      "set": 2,
-      "weight": 185.0,
-      "reps": 6.0,
-      "volume": 1110.0
+      "reps": 3.0,
+      "volume": 555.0
     },
     {
       "set": 2,
@@ -688,99 +220,9 @@
     },
     {
       "set": 2,
-      "weight": 185.0,
+      "weight": 135.0,
       "reps": 5.0,
-      "volume": 925.0
-    },
-    {
-      "set": 2,
-      "weight": 205.0,
-      "reps": 5.0,
-      "volume": 1025.0
-    },
-    {
-      "set": 2,
-      "weight": 185.0,
-      "reps": 3.0,
-      "volume": 555.0
-    },
-    {
-      "set": 2,
-      "weight": 235.0,
-      "reps": 5.0,
-      "volume": 1175.0
-    },
-    {
-      "set": 2,
-      "weight": 185.0,
-      "reps": 8.0,
-      "volume": 1480.0
-    },
-    {
-      "set": 2,
-      "weight": 198.42,
-      "reps": 5.0,
-      "volume": 992.0999999999999
-    },
-    {
-      "set": 2,
-      "weight": 185.0,
-      "reps": 5.0,
-      "volume": 925.0
-    },
-    {
-      "set": 2,
-      "weight": 205.0,
-      "reps": 5.0,
-      "volume": 1025.0
-    },
-    {
-      "set": 2,
-      "weight": 245.0,
-      "reps": 5.0,
-      "volume": 1225.0
-    },
-    {
-      "set": 2,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
-    },
-    {
-      "set": 2,
-      "weight": 185.0,
-      "reps": 10.0,
-      "volume": 1850.0
-    },
-    {
-      "set": 2,
-      "weight": 185.0,
-      "reps": 8.0,
-      "volume": 1480.0
-    },
-    {
-      "set": 2,
-      "weight": 205.0,
-      "reps": 5.0,
-      "volume": 1025.0
-    },
-    {
-      "set": 2,
-      "weight": 205.0,
-      "reps": 5.0,
-      "volume": 1025.0
-    },
-    {
-      "set": 2,
-      "weight": 185.0,
-      "reps": 5.0,
-      "volume": 925.0
-    },
-    {
-      "set": 2,
-      "weight": 185.0,
-      "reps": 8.0,
-      "volume": 1480.0
+      "volume": 675.0
     },
     {
       "set": 2,
@@ -796,9 +238,21 @@
     },
     {
       "set": 2,
-      "weight": 205.0,
+      "weight": 185.0,
       "reps": 5.0,
-      "volume": 1025.0
+      "volume": 925.0
+    },
+    {
+      "set": 2,
+      "weight": 185.0,
+      "reps": 5.0,
+      "volume": 925.0
+    },
+    {
+      "set": 2,
+      "weight": 185.0,
+      "reps": 5.0,
+      "volume": 925.0
     },
     {
       "set": 2,
@@ -809,60 +263,6 @@
     {
       "set": 2,
       "weight": 185.0,
-      "reps": 10.0,
-      "volume": 1850.0
-    },
-    {
-      "set": 2,
-      "weight": 205.0,
-      "reps": 5.0,
-      "volume": 1025.0
-    },
-    {
-      "set": 2,
-      "weight": 205.0,
-      "reps": 5.0,
-      "volume": 1025.0
-    },
-    {
-      "set": 2,
-      "weight": 185.0,
-      "reps": 5.0,
-      "volume": 925.0
-    },
-    {
-      "set": 2,
-      "weight": 185.0,
-      "reps": 5.0,
-      "volume": 925.0
-    },
-    {
-      "set": 2,
-      "weight": 185.0,
-      "reps": 8.0,
-      "volume": 1480.0
-    },
-    {
-      "set": 2,
-      "weight": 185.0,
-      "reps": 5.0,
-      "volume": 925.0
-    },
-    {
-      "set": 2,
-      "weight": 205.0,
-      "reps": 5.0,
-      "volume": 1025.0
-    },
-    {
-      "set": 2,
-      "weight": 220.46,
-      "reps": 5.0,
-      "volume": 1102.3
-    },
-    {
-      "set": 2,
-      "weight": 185.0,
       "reps": 3.0,
       "volume": 555.0
     },
@@ -880,18 +280,6 @@
     },
     {
       "set": 2,
-      "weight": 205.0,
-      "reps": 6.0,
-      "volume": 1230.0
-    },
-    {
-      "set": 2,
-      "weight": 205.0,
-      "reps": 6.0,
-      "volume": 1230.0
-    },
-    {
-      "set": 2,
       "weight": 185.0,
       "reps": 5.0,
       "volume": 925.0
@@ -904,93 +292,15 @@
     },
     {
       "set": 2,
-      "weight": 220.46,
-      "reps": 5.0,
-      "volume": 1102.3
-    },
-    {
-      "set": 2,
-      "weight": 185.0,
-      "reps": 5.0,
-      "volume": 925.0
-    },
-    {
-      "set": 2,
-      "weight": 185.0,
-      "reps": 5.0,
-      "volume": 925.0
-    },
-    {
-      "set": 2,
-      "weight": 205.0,
-      "reps": 6.0,
-      "volume": 1230.0
-    },
-    {
-      "set": 2,
-      "weight": 198.42,
-      "reps": 5.0,
-      "volume": 992.0999999999999
-    },
-    {
-      "set": 2,
-      "weight": 135.0,
-      "reps": 5.0,
-      "volume": 675.0
-    },
-    {
-      "set": 2,
-      "weight": 185.0,
-      "reps": 3.0,
-      "volume": 555.0
-    },
-    {
-      "set": 3,
       "weight": 185.0,
       "reps": 5.0,
       "volume": 925.0
     },
     {
       "set": 3,
-      "weight": 205.0,
+      "weight": 225.0,
       "reps": 2.0,
-      "volume": 410.0
-    },
-    {
-      "set": 3,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
-    },
-    {
-      "set": 3,
-      "weight": 205.0,
-      "reps": 5.0,
-      "volume": 1025.0
-    },
-    {
-      "set": 3,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
-    },
-    {
-      "set": 3,
-      "weight": 185.0,
-      "reps": 8.0,
-      "volume": 1480.0
-    },
-    {
-      "set": 3,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
-    },
-    {
-      "set": 3,
-      "weight": 225.0,
-      "reps": 6.0,
-      "volume": 1350.0
+      "volume": 450.0
     },
     {
       "set": 3,
@@ -1006,39 +316,27 @@
     },
     {
       "set": 3,
-      "weight": 225.0,
+      "weight": 205.0,
       "reps": 5.0,
-      "volume": 1125.0
+      "volume": 1025.0
+    },
+    {
+      "set": 3,
+      "weight": 205.0,
+      "reps": 5.0,
+      "volume": 1025.0
     },
     {
       "set": 3,
       "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
-    },
-    {
-      "set": 3,
-      "weight": 225.0,
-      "reps": 6.0,
-      "volume": 1350.0
+      "reps": 2.0,
+      "volume": 450.0
     },
     {
       "set": 3,
       "weight": 185.0,
-      "reps": 8.0,
-      "volume": 1480.0
-    },
-    {
-      "set": 3,
-      "weight": 185.0,
-      "reps": 10.0,
-      "volume": 1850.0
-    },
-    {
-      "set": 3,
-      "weight": 225.0,
       "reps": 5.0,
-      "volume": 1125.0
+      "volume": 925.0
     },
     {
       "set": 3,
@@ -1051,24 +349,6 @@
       "weight": 225.0,
       "reps": 5.0,
       "volume": 1125.0
-    },
-    {
-      "set": 3,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
-    },
-    {
-      "set": 3,
-      "weight": 205.0,
-      "reps": 5.0,
-      "volume": 1025.0
-    },
-    {
-      "set": 3,
-      "weight": 185.0,
-      "reps": 10.0,
-      "volume": 1850.0
     },
     {
       "set": 3,
@@ -1078,111 +358,9 @@
     },
     {
       "set": 3,
-      "weight": 205.0,
-      "reps": 5.0,
-      "volume": 1025.0
-    },
-    {
-      "set": 3,
-      "weight": 205.0,
-      "reps": 5.0,
-      "volume": 1025.0
-    },
-    {
-      "set": 3,
       "weight": 225.0,
       "reps": 5.0,
       "volume": 1125.0
-    },
-    {
-      "set": 3,
-      "weight": 225.0,
-      "reps": 6.0,
-      "volume": 1350.0
-    },
-    {
-      "set": 3,
-      "weight": 255.0,
-      "reps": 3.0,
-      "volume": 765.0
-    },
-    {
-      "set": 3,
-      "weight": 264.55,
-      "reps": 4.0,
-      "volume": 1058.2
-    },
-    {
-      "set": 3,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
-    },
-    {
-      "set": 3,
-      "weight": 255.0,
-      "reps": 5.0,
-      "volume": 1275.0
-    },
-    {
-      "set": 3,
-      "weight": 225.0,
-      "reps": 2.0,
-      "volume": 450.0
-    },
-    {
-      "set": 3,
-      "weight": 242.51,
-      "reps": 5.0,
-      "volume": 1212.55
-    },
-    {
-      "set": 3,
-      "weight": 255.0,
-      "reps": 5.0,
-      "volume": 1275.0
-    },
-    {
-      "set": 3,
-      "weight": 205.0,
-      "reps": 5.0,
-      "volume": 1025.0
-    },
-    {
-      "set": 3,
-      "weight": 220.46,
-      "reps": 5.0,
-      "volume": 1102.3
-    },
-    {
-      "set": 3,
-      "weight": 235.0,
-      "reps": 5.0,
-      "volume": 1175.0
-    },
-    {
-      "set": 3,
-      "weight": 245.0,
-      "reps": 5.0,
-      "volume": 1225.0
-    },
-    {
-      "set": 3,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
-    },
-    {
-      "set": 3,
-      "weight": 205.0,
-      "reps": 8.0,
-      "volume": 1640.0
-    },
-    {
-      "set": 3,
-      "weight": 205.0,
-      "reps": 5.0,
-      "volume": 1025.0
     },
     {
       "set": 3,
@@ -1198,39 +376,9 @@
     },
     {
       "set": 3,
-      "weight": 185.0,
-      "reps": 8.0,
-      "volume": 1480.0
-    },
-    {
-      "set": 3,
       "weight": 225.0,
       "reps": 5.0,
       "volume": 1125.0
-    },
-    {
-      "set": 3,
-      "weight": 225.0,
-      "reps": 2.0,
-      "volume": 450.0
-    },
-    {
-      "set": 3,
-      "weight": 225.0,
-      "reps": 6.0,
-      "volume": 1350.0
-    },
-    {
-      "set": 3,
-      "weight": 205.0,
-      "reps": 5.0,
-      "volume": 1025.0
-    },
-    {
-      "set": 3,
-      "weight": 220.46,
-      "reps": 5.0,
-      "volume": 1102.3
     },
     {
       "set": 3,
@@ -1245,10 +393,10 @@
       "volume": 1125.0
     },
     {
-      "set": 3,
-      "weight": 205.0,
-      "reps": 5.0,
-      "volume": 1025.0
+      "set": 4,
+      "weight": 245.0,
+      "reps": 1.0,
+      "volume": 245.0
     },
     {
       "set": 4,
@@ -1258,27 +406,9 @@
     },
     {
       "set": 4,
-      "weight": 235.0,
-      "reps": 5.0,
-      "volume": 1175.0
-    },
-    {
-      "set": 4,
       "weight": 245.0,
-      "reps": 5.0,
-      "volume": 1225.0
-    },
-    {
-      "set": 4,
-      "weight": 185.0,
-      "reps": 5.0,
-      "volume": 925.0
-    },
-    {
-      "set": 4,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
+      "reps": 1.0,
+      "volume": 245.0
     },
     {
       "set": 4,
@@ -1291,6 +421,24 @@
       "weight": 225.0,
       "reps": 5.0,
       "volume": 1125.0
+    },
+    {
+      "set": 4,
+      "weight": 225.0,
+      "reps": 5.0,
+      "volume": 1125.0
+    },
+    {
+      "set": 4,
+      "weight": 225.0,
+      "reps": 5.0,
+      "volume": 1125.0
+    },
+    {
+      "set": 4,
+      "weight": 245.0,
+      "reps": 5.0,
+      "volume": 1225.0
     },
     {
       "set": 4,
@@ -1300,9 +448,15 @@
     },
     {
       "set": 4,
-      "weight": 245.0,
+      "weight": 225.0,
       "reps": 5.0,
-      "volume": 1225.0
+      "volume": 1125.0
+    },
+    {
+      "set": 4,
+      "weight": 225.0,
+      "reps": 5.0,
+      "volume": 1125.0
     },
     {
       "set": 4,
@@ -1318,39 +472,15 @@
     },
     {
       "set": 4,
+      "weight": 225.0,
+      "reps": 5.0,
+      "volume": 1125.0
+    },
+    {
+      "set": 4,
       "weight": 245.0,
       "reps": 5.0,
       "volume": 1225.0
-    },
-    {
-      "set": 4,
-      "weight": 185.0,
-      "reps": 10.0,
-      "volume": 1850.0
-    },
-    {
-      "set": 4,
-      "weight": 185.0,
-      "reps": 8.0,
-      "volume": 1480.0
-    },
-    {
-      "set": 4,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
-    },
-    {
-      "set": 4,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
-    },
-    {
-      "set": 4,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
     },
     {
       "set": 4,
@@ -1359,202 +489,16 @@
       "volume": 245.0
     },
     {
-      "set": 4,
-      "weight": 220.46,
-      "reps": 5.0,
-      "volume": 1102.3
-    },
-    {
-      "set": 4,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
-    },
-    {
-      "set": 4,
-      "weight": 220.46,
-      "reps": 5.0,
-      "volume": 1102.3
-    },
-    {
-      "set": 4,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
-    },
-    {
-      "set": 4,
-      "weight": 185.0,
-      "reps": 10.0,
-      "volume": 1850.0
-    },
-    {
-      "set": 4,
-      "weight": 235.0,
-      "reps": 5.0,
-      "volume": 1175.0
-    },
-    {
-      "set": 4,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
-    },
-    {
-      "set": 4,
+      "set": 5,
       "weight": 245.0,
       "reps": 5.0,
       "volume": 1225.0
     },
     {
-      "set": 4,
-      "weight": 215.0,
-      "reps": 5.0,
-      "volume": 1075.0
-    },
-    {
-      "set": 4,
-      "weight": 255.0,
-      "reps": 5.0,
-      "volume": 1275.0
-    },
-    {
-      "set": 4,
-      "weight": 264.55,
-      "reps": 5.0,
-      "volume": 1322.75
-    },
-    {
-      "set": 4,
-      "weight": 245.0,
-      "reps": 1.0,
-      "volume": 245.0
-    },
-    {
-      "set": 4,
-      "weight": 264.55,
-      "reps": 5.0,
-      "volume": 1322.75
-    },
-    {
-      "set": 4,
-      "weight": 275.0,
-      "reps": 5.0,
-      "volume": 1375.0
-    },
-    {
-      "set": 4,
-      "weight": 225.0,
-      "reps": 6.0,
-      "volume": 1350.0
-    },
-    {
-      "set": 4,
+      "set": 5,
       "weight": 245.0,
       "reps": 5.0,
       "volume": 1225.0
-    },
-    {
-      "set": 4,
-      "weight": 235.0,
-      "reps": 5.0,
-      "volume": 1175.0
-    },
-    {
-      "set": 4,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
-    },
-    {
-      "set": 4,
-      "weight": 235.5,
-      "reps": 5.0,
-      "volume": 1177.5
-    },
-    {
-      "set": 4,
-      "weight": 235.0,
-      "reps": 5.0,
-      "volume": 1175.0
-    },
-    {
-      "set": 4,
-      "weight": 215.5,
-      "reps": 2.0,
-      "volume": 431.0
-    },
-    {
-      "set": 4,
-      "weight": 245.0,
-      "reps": 1.0,
-      "volume": 245.0
-    },
-    {
-      "set": 4,
-      "weight": 245.0,
-      "reps": 5.0,
-      "volume": 1225.0
-    },
-    {
-      "set": 4,
-      "weight": 205.0,
-      "reps": 5.0,
-      "volume": 1025.0
-    },
-    {
-      "set": 4,
-      "weight": 235.0,
-      "reps": 4.0,
-      "volume": 940.0
-    },
-    {
-      "set": 4,
-      "weight": 245.0,
-      "reps": 6.0,
-      "volume": 1470.0
-    },
-    {
-      "set": 4,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
-    },
-    {
-      "set": 4,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
-    },
-    {
-      "set": 5,
-      "weight": 225.0,
-      "reps": 2.0,
-      "volume": 450.0
-    },
-    {
-      "set": 5,
-      "weight": 242.51,
-      "reps": 4.0,
-      "volume": 970.04
-    },
-    {
-      "set": 5,
-      "weight": 242.51,
-      "reps": 4.0,
-      "volume": 970.04
-    },
-    {
-      "set": 5,
-      "weight": 255.0,
-      "reps": 5.0,
-      "volume": 1275.0
-    },
-    {
-      "set": 5,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
     },
     {
       "set": 5,
@@ -1570,114 +514,6 @@
     },
     {
       "set": 5,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
-    },
-    {
-      "set": 5,
-      "weight": 245.0,
-      "reps": 5.0,
-      "volume": 1225.0
-    },
-    {
-      "set": 5,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
-    },
-    {
-      "set": 5,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
-    },
-    {
-      "set": 5,
-      "weight": 135.0,
-      "reps": 5.0,
-      "volume": 675.0
-    },
-    {
-      "set": 5,
-      "weight": 225.5,
-      "reps": 5.0,
-      "volume": 1127.5
-    },
-    {
-      "set": 5,
-      "weight": 185.0,
-      "reps": 10.0,
-      "volume": 1850.0
-    },
-    {
-      "set": 5,
-      "weight": 275.0,
-      "reps": 5.0,
-      "volume": 1375.0
-    },
-    {
-      "set": 5,
-      "weight": 264.55,
-      "reps": 5.0,
-      "volume": 1322.75
-    },
-    {
-      "set": 5,
-      "weight": 264.55,
-      "reps": 5.0,
-      "volume": 1322.75
-    },
-    {
-      "set": 5,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
-    },
-    {
-      "set": 5,
-      "weight": 245.0,
-      "reps": 5.0,
-      "volume": 1225.0
-    },
-    {
-      "set": 5,
-      "weight": 245.0,
-      "reps": 6.0,
-      "volume": 1470.0
-    },
-    {
-      "set": 5,
-      "weight": 265.0,
-      "reps": 6.0,
-      "volume": 1590.0
-    },
-    {
-      "set": 5,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
-    },
-    {
-      "set": 5,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
-    },
-    {
-      "set": 5,
-      "weight": 245.0,
-      "reps": 5.0,
-      "volume": 1225.0
-    },
-    {
-      "set": 5,
-      "weight": 265.0,
-      "reps": 5.0,
-      "volume": 1325.0
-    },
-    {
-      "set": 5,
       "weight": 255.0,
       "reps": 5.0,
       "volume": 1275.0
@@ -1685,20 +521,14 @@
     {
       "set": 5,
       "weight": 265.0,
-      "reps": 3.0,
-      "volume": 795.0
-    },
-    {
-      "set": 5,
-      "weight": 265.0,
       "reps": 5.0,
       "volume": 1325.0
     },
     {
       "set": 5,
       "weight": 245.0,
-      "reps": 4.0,
-      "volume": 980.0
+      "reps": 5.0,
+      "volume": 1225.0
     },
     {
       "set": 5,
@@ -1721,8 +551,14 @@
     {
       "set": 5,
       "weight": 245.0,
-      "reps": 5.0,
-      "volume": 1225.0
+      "reps": 4.0,
+      "volume": 980.0
+    },
+    {
+      "set": 5,
+      "weight": 265.0,
+      "reps": 3.0,
+      "volume": 795.0
     },
     {
       "set": 5,
@@ -1732,87 +568,39 @@
     },
     {
       "set": 5,
-      "weight": 245.0,
-      "reps": 5.0,
-      "volume": 1225.0
-    },
-    {
-      "set": 5,
-      "weight": 245.0,
-      "reps": 5.0,
-      "volume": 1225.0
-    },
-    {
-      "set": 5,
-      "weight": 245.0,
-      "reps": 5.0,
-      "volume": 1225.0
-    },
-    {
-      "set": 5,
-      "weight": 245.0,
-      "reps": 5.0,
-      "volume": 1225.0
-    },
-    {
-      "set": 5,
-      "weight": 245.0,
-      "reps": 5.0,
-      "volume": 1225.0
-    },
-    {
-      "set": 5,
       "weight": 255.0,
       "reps": 5.0,
       "volume": 1275.0
     },
     {
       "set": 5,
-      "weight": 245.0,
-      "reps": 5.0,
-      "volume": 1225.0
-    },
-    {
-      "set": 6,
-      "weight": 245.0,
-      "reps": 5.0,
-      "volume": 1225.0
-    },
-    {
-      "set": 6,
-      "weight": 225.0,
-      "reps": 2.0,
-      "volume": 450.0
-    },
-    {
-      "set": 6,
       "weight": 265.0,
       "reps": 5.0,
       "volume": 1325.0
     },
     {
-      "set": 6,
-      "weight": 245.0,
-      "reps": 5.0,
-      "volume": 1225.0
-    },
-    {
-      "set": 6,
+      "set": 5,
       "weight": 225.0,
       "reps": 5.0,
       "volume": 1125.0
     },
     {
       "set": 6,
-      "weight": 255.0,
-      "reps": 5.0,
-      "volume": 1275.0
-    },
-    {
-      "set": 6,
       "weight": 265.0,
       "reps": 5.0,
       "volume": 1325.0
+    },
+    {
+      "set": 6,
+      "weight": 245.0,
+      "reps": 5.0,
+      "volume": 1225.0
+    },
+    {
+      "set": 6,
+      "weight": 245.0,
+      "reps": 5.0,
+      "volume": 1225.0
     },
     {
       "set": 6,
@@ -1822,63 +610,9 @@
     },
     {
       "set": 6,
-      "weight": 255.0,
-      "reps": 5.0,
-      "volume": 1275.0
-    },
-    {
-      "set": 6,
       "weight": 245.0,
       "reps": 5.0,
       "volume": 1225.0
-    },
-    {
-      "set": 6,
-      "weight": 245.0,
-      "reps": 5.0,
-      "volume": 1225.0
-    },
-    {
-      "set": 6,
-      "weight": 255.0,
-      "reps": 4.0,
-      "volume": 1020.0
-    },
-    {
-      "set": 6,
-      "weight": 245.0,
-      "reps": 5.0,
-      "volume": 1225.0
-    },
-    {
-      "set": 6,
-      "weight": 245.0,
-      "reps": 5.0,
-      "volume": 1225.0
-    },
-    {
-      "set": 6,
-      "weight": 255.0,
-      "reps": 5.0,
-      "volume": 1275.0
-    },
-    {
-      "set": 6,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
-    },
-    {
-      "set": 6,
-      "weight": 245.0,
-      "reps": 5.0,
-      "volume": 1225.0
-    },
-    {
-      "set": 6,
-      "weight": 255.0,
-      "reps": 5.0,
-      "volume": 1275.0
     },
     {
       "set": 6,
@@ -1900,21 +634,27 @@
     },
     {
       "set": 6,
-      "weight": 185.0,
-      "reps": 6.0,
-      "volume": 1110.0
-    },
-    {
-      "set": 6,
       "weight": 255.0,
       "reps": 5.0,
       "volume": 1275.0
     },
     {
-      "set": 7,
+      "set": 6,
       "weight": 265.0,
       "reps": 5.0,
       "volume": 1325.0
+    },
+    {
+      "set": 6,
+      "weight": 245.0,
+      "reps": 5.0,
+      "volume": 1225.0
+    },
+    {
+      "set": 7,
+      "weight": 265.0,
+      "reps": 3.0,
+      "volume": 795.0
     },
     {
       "set": 7,
@@ -1930,54 +670,6 @@
     },
     {
       "set": 7,
-      "weight": 255.0,
-      "reps": 5.0,
-      "volume": 1275.0
-    },
-    {
-      "set": 7,
-      "weight": 225.0,
-      "reps": 5.0,
-      "volume": 1125.0
-    },
-    {
-      "set": 7,
-      "weight": 255.0,
-      "reps": 5.0,
-      "volume": 1275.0
-    },
-    {
-      "set": 7,
-      "weight": 245.0,
-      "reps": 5.0,
-      "volume": 1225.0
-    },
-    {
-      "set": 7,
-      "weight": 185.0,
-      "reps": 6.0,
-      "volume": 1110.0
-    },
-    {
-      "set": 7,
-      "weight": 245.0,
-      "reps": 5.0,
-      "volume": 1225.0
-    },
-    {
-      "set": 7,
-      "weight": 265.0,
-      "reps": 3.0,
-      "volume": 795.0
-    },
-    {
-      "set": 7,
-      "weight": 265.0,
-      "reps": 5.0,
-      "volume": 1325.0
-    },
-    {
-      "set": 7,
       "weight": 265.0,
       "reps": 3.0,
       "volume": 795.0
@@ -1987,12 +679,6 @@
       "weight": 245.0,
       "reps": 5.0,
       "volume": 1225.0
-    },
-    {
-      "set": 8,
-      "weight": 275.0,
-      "reps": 3.0,
-      "volume": 825.0
     }
   ]
 }

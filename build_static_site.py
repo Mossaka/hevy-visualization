@@ -58,13 +58,6 @@ def load_workout_data():
     category_df['month'] = pd.to_datetime(category_df['start_time']).dt.to_period('M')
     category_df['year'] = pd.to_datetime(category_df['start_time']).dt.year
 
-    # FILTER TO 2025 DATA ONLY
-    print(f"Filtering to 2025 data only...")
-    print(f"  Before filter: {len(df):,} rows")
-    df = df[df['year'] == 2025].copy()
-    category_df = category_df[category_df['year'] == 2025].copy()
-    print(f"  After filter: {len(df):,} rows (2025 only)")
-
     return df, category_df
 
 def calculate_brzycki_1rm(weight, reps):
